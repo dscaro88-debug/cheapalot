@@ -308,3 +308,55 @@ if (sourcingForm) {
         lastScrollY = currentY;
     }, { passive: true });
 })();
+
+// ─── Product Inquiry Pre-fill ───
+// Called when "Add to Cart" or "View" button is clicked on product cards
+// Pre-fills the inquiry form with product info and scrolls to it
+function prefillInquiry(productName, price) {
+    // Find the inquiry form
+    const inquiryForm = document.getElementById('quickInquiryForm') ||
+                        document.getElementById('inquiry-form');
+    if (!inquiryForm) {
+        // Fallback: find any form with class inquiry-form
+        const form = document.querySelector('.inquiry-form');
+        if (!form) return;
+    }
+
+    // Find the message/product field in the form
+    const form = document.getElementById('quickInquiryForm') || document.querySelector('.inquiry-form');
+    if (!form) return;
+
+    // Look for a textarea or input for product/message
+    let messageField = form.querySelector('textarea') ||
+                       form.querySelector('input[name="iq-product"]') ||
+                       form.querySelector('input[name="message"]') ||
+                       form.querySelector('input[placeholder*="product"]') ||
+                       form.querySelector('input[placeholder*="Product"]');
+
+    // If no message field exists, try to find the notes/message field
+    if (!messageField) {
+        messageField = form.querySelector('input[name="iq-notes"]') ||
+                       form.querySelector('textarea[name="message"]') ||
+                       form.querySelector('input[name="message"]');
+    }
+
+    // Pre-fill the field
+    if (messageField) {
+        const message = `I'm interested in: ${productName} (${price}). Please send me pricing and availability.`;
+        if (messageField.tagName === 'TEXTAREA') {
+            messageField.value = message;
+        } else {
+            messageField.value = productName + ' (' + price + ')';
+        }
+        messageField.focus();
+    }
+
+    // Scroll to the form
+    const formSection = form.closest('section') || form;
+    if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+// Expose globally for inline onclick handlers
+window.prefillInquiry = prefillInquiry;

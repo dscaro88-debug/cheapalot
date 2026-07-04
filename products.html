@@ -295,7 +295,7 @@
 
             <div class="filter-group">
                 <h4>Category</h4>
-                <label><input type="checkbox" checked> Household Textiles <span class="count">(1,240)</span></label>
+                <label><input type="checkbox"> Household Textiles <span class="count">(1,240)</span></label>
                 <label><input type="checkbox"> Electrical <span class="count">(2,580)</span></label>
                 <label><input type="checkbox"> Apparel <span class="count">(3,820)</span></label>
                 <label><input type="checkbox"> DIY & Auto <span class="count">(980)</span></label>
@@ -333,7 +333,7 @@
             </div>
 
             <a href="products.html" class="btn btn-outline" style="width:100%;justify-content:center">Clear Filters</a>
-        </aside>
+            </aside>
 
         <!-- Products -->
         <main>
@@ -350,10 +350,11 @@
                 </div>
             </div>
 
+            
             <div class="product-grid">
-                <div class="product-card">
+                <div class="product-card" data-id="p1" data-category="household" data-price="0.18" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('images/products/p1.jpg')">
-                        <span class="product-tag">Best Seller</span>
+                        <span class="product-tag ">Best Seller</span>
                     </div>
                     <div class="product-body">
                         <div class="product-cat">Household</div>
@@ -364,13 +365,13 @@
                         </div>
                         <div class="product-price">£0.18<small>per unit · Bulk pricing</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('Heavy Duty Black Refuse Sacks (50 Pack)', '£0.18')">Add to Cart</a>
+                            <a href="#inquiry" class="btn btn-outline">View</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p2" data-category="household" data-price="2.4" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('images/products/p2.jpg')">
                         <span class="product-tag green">New</span>
                     </div>
@@ -383,13 +384,13 @@
                         </div>
                         <div class="product-price">£2.40<small>per unit</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('Pet Bowl & Lead Bundle Pack', '£2.40')">Add to Cart</a>
+                            <a href="#inquiry" class="btn btn-outline">View</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p3" data-category="mixed" data-price="280" data-stock="limited">
                     <div class="product-img" style="background-image: url('images/products/p3.jpg')">
                         <span class="product-tag orange">70% Off</span>
                     </div>
@@ -402,15 +403,15 @@
                         </div>
                         <div class="product-price">£280<small>per pallet</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('Mixed Confectionery Pallet - 200kg', '£280')">Add to Cart</a>
+                            <a href="#inquiry" class="btn btn-outline">View</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p4" data-category="apparel" data-price="0.45" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('images/products/p4.jpg')">
-                        <span class="product-tag">Clearance</span>
+                        <span class="product-tag ">Clearance</span>
                     </div>
                     <div class="product-body">
                         <div class="product-cat">Beauty</div>
@@ -421,15 +422,15 @@
                         </div>
                         <div class="product-price">£0.45<small>per unit</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('Shampoo & Conditioner Mixed Lot', '£0.45')">Add to Cart</a>
+                            <a href="#inquiry" class="btn btn-outline">View</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p5" data-category="household" data-price="8.5" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('images/products/p5.jpg')">
-                        <span class="product-tag">Seasonal</span>
+                        <span class="product-tag ">Seasonal</span>
                     </div>
                     <div class="product-body">
                         <div class="product-cat">Garden</div>
@@ -440,13 +441,13 @@
                         </div>
                         <div class="product-price">£8.50<small>per set</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('Garden Tool & Accessory Bundle', '£8.50')">Add to Cart</a>
+                            <a href="#inquiry" class="btn btn-outline">View</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p6" data-category="household" data-price="4.2" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('images/products/p6.jpg')">
                         <span class="product-tag orange">Hot</span>
                     </div>
@@ -459,13 +460,13 @@
                         </div>
                         <div class="product-price">£4.20<small>per set</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('BBQ Tools Set - Stainless Steel', '£4.20')">Add to Cart</a>
+                            <a href="#inquiry" class="btn btn-outline">View</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p7" data-category="diy" data-price="1.8" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('images/products/p7.jpg')">
                         <span class="product-tag green">New</span>
                     </div>
@@ -478,15 +479,15 @@
                         </div>
                         <div class="product-price">£1.80<small>per unit</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('Power Tool Accessory Mixed Pack', '£1.80')">Add to Cart</a>
+                            <a href="#inquiry" class="btn btn-outline">View</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p8" data-category="furniture" data-price="185" data-stock="limited">
                     <div class="product-img" style="background-image: url('images/products/p8.jpg')">
-                        <span class="product-tag">Best Seller</span>
+                        <span class="product-tag ">Best Seller</span>
                     </div>
                     <div class="product-body">
                         <div class="product-cat">Furniture</div>
@@ -497,15 +498,15 @@
                         </div>
                         <div class="product-price">£185<small>per unit</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('3-Seater Sofa - Mixed Colours', '£185')">Add to Cart</a>
+                            <a href="#inquiry" class="btn btn-outline">View</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p9" data-category="toys" data-price="450" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('images/products/p9.jpg')">
-                        <span class="product-tag">Clearance</span>
+                        <span class="product-tag ">Clearance</span>
                     </div>
                     <div class="product-body">
                         <div class="product-cat">Toys</div>
@@ -516,13 +517,13 @@
                         </div>
                         <div class="product-price">£450<small>per pallet</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('Plush Toy Mixed Pallet - 500pcs', '£450')">Add to Cart</a>
+                            <a href="#inquiry" class="btn btn-outline">View</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p10" data-category="apparel" data-price="3.2" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('images/products/p10.jpg')">
                         <span class="product-tag green">New</span>
                     </div>
@@ -535,15 +536,15 @@
                         </div>
                         <div class="product-price">£3.20<small>per set</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('Skincare Set - Mixed Brands', '£3.20')">Add to Cart</a>
+                            <a href="#inquiry" class="btn btn-outline">View</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p11" data-category="sports" data-price="5.8" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('images/products/p11.jpg')">
-                        <span class="product-tag">Best Seller</span>
+                        <span class="product-tag ">Best Seller</span>
                     </div>
                     <div class="product-body">
                         <div class="product-cat">Sports</div>
@@ -554,13 +555,13 @@
                         </div>
                         <div class="product-price">£5.80<small>per set</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('Yoga Mat & Fitness Band Bundle', '£5.80')">Add to Cart</a>
+                            <a href="#inquiry" class="btn btn-outline">View</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p12" data-category="apparel" data-price="1200" data-stock="limited">
                     <div class="product-img" style="background-image: url('images/products/p12.jpg')">
                         <span class="product-tag orange">70% Off</span>
                     </div>
@@ -573,13 +574,14 @@
                         </div>
                         <div class="product-price">£1,200<small>per pallet</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('Mixed Fashion Returns - 1000pcs', '£1,200')">Add to Cart</a>
+                            <a href="#inquiry" class="btn btn-outline">View</a>
                         </div>
                     </div>
                 </div>
             </div>
 
+            
             <div class="pagination">
                 <a href="#">← Previous</a>
                 <a href="#" class="active">1</a>
@@ -591,7 +593,9 @@
                 <a href="#">1041</a>
                 <a href="#">Next →</a>
             </div>
-        </main>
+
+        
+            </main>
     </div>
 
     <!-- Footer -->

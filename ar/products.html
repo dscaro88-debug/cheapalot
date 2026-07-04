@@ -297,7 +297,7 @@
 
             <div class="filter-group">
                 <h4>الفئة</h4>
-                <label><input type="checkbox" checked> منسوجات منزلية <span class="count">(1,240)</span></label>
+                <label><input type="checkbox"> منسوجات منزلية <span class="count">(1,240)</span></label>
                 <label><input type="checkbox"> كهربائيات <span class="count">(2,580)</span></label>
                 <label><input type="checkbox"> أزياء <span class="count">(3,820)</span></label>
                 <label><input type="checkbox"> ديكور وسيارات <span class="count">(980)</span></label>
@@ -318,9 +318,9 @@
 
             <div class="filter-group">
                 <h4>الحد الأدنى للكمية</h4>
-                <label><input type="checkbox"> 100+ قطعة</label>
-                <label><input type="checkbox"> 500+ قطعة</label>
-                <label><input type="checkbox"> 1,000+ قطعة</label>
+                <label><input type="checkbox"> +100 قطعة</label>
+                <label><input type="checkbox"> +500 قطعة</label>
+                <label><input type="checkbox"> +1,000 قطعة</label>
                 <label><input type="checkbox"> منصة كاملة</label>
                 <label><input type="checkbox"> حاوية كاملة</label>
             </div>
@@ -331,11 +331,11 @@
                 <label><input type="checkbox"> £1 - £5</label>
                 <label><input type="checkbox"> £5 - £20</label>
                 <label><input type="checkbox"> £20 - £50</label>
-                <label><input type="checkbox"> £50+</label>
+                <label><input type="checkbox"> +£50</label>
             </div>
 
-            <a href="products.html" class="btn btn-outline" style="width:100%;justify-content:center">مسح التصفية</a>
-        </aside>
+            <a href="../products.html" class="btn btn-outline" style="width:100%;justify-content:center">مسح الفلاتر</a>
+            </aside>
 
         <!-- Products -->
         <main>
@@ -343,19 +343,20 @@
                 <div class="toolbar-info">عرض <strong>1-12</strong> من أصل <strong>12,490</strong> منتج</div>
                 <div class="toolbar-sort">
                     <select>
-                        <option>ترتيب: الأحدث أولاً</option>
-                        <option>السعر: من الأقل للأعلى</option>
-                        <option>السعر: من الأعلى للأقل</option>
-                        <option>الكمية: من الأعلى للأقل</option>
+                        <option>ترتيب: الأحدث</option>
+                        <option>السعر: من الأقل</option>
+                        <option>السعر: من الأعلى</option>
+                        <option>الكمية: من الأعلى</option>
                         <option>الأكثر شعبية</option>
                     </select>
                 </div>
             </div>
 
+            
             <div class="product-grid">
-                <div class="product-card">
+                <div class="product-card" data-id="p1" data-category="household" data-price="0.18" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('../images/products/p1.jpg')">
-                        <span class="product-tag">الأكثر مبيعاً</span>
+                        <span class="product-tag ">الأكثر مبيعاً</span>
                     </div>
                     <div class="product-body">
                         <div class="product-cat">منزلي</div>
@@ -366,13 +367,13 @@
                         </div>
                         <div class="product-price">£0.18<small>للقطعة · سعر الجملة</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">أضف للسلة</a>
-                            <a href="#" class="btn btn-outline">عرض</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('أكياس قمامة سوداء ثقيلة (50 قطعة)', '£0.18')">أضف للسلة</a>
+                            <a href="#inquiry" class="btn btn-outline">عرض</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p2" data-category="household" data-price="2.4" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('../images/products/p2.jpg')">
                         <span class="product-tag green">جديد</span>
                     </div>
@@ -385,13 +386,13 @@
                         </div>
                         <div class="product-price">£2.40<small>للقطعة</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">أضف للسلة</a>
-                            <a href="#" class="btn btn-outline">عرض</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('باقة أوعية الطعام ومقود الحيوانات', '£2.40')">أضف للسلة</a>
+                            <a href="#inquiry" class="btn btn-outline">عرض</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p3" data-category="mixed" data-price="280" data-stock="limited">
                     <div class="product-img" style="background-image: url('../images/products/p3.jpg')">
                         <span class="product-tag orange">خصم 70%</span>
                     </div>
@@ -404,15 +405,15 @@
                         </div>
                         <div class="product-price">£280<small>للمنصة</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">أضف للسلة</a>
-                            <a href="#" class="btn btn-outline">عرض</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('منصة حلويات مختلطة - 200 كجم', '£280')">أضف للسلة</a>
+                            <a href="#inquiry" class="btn btn-outline">عرض</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p4" data-category="apparel" data-price="0.45" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('../images/products/p4.jpg')">
-                        <span class="product-tag">تصفية</span>
+                        <span class="product-tag ">تصفية</span>
                     </div>
                     <div class="product-body">
                         <div class="product-cat">تجميل</div>
@@ -423,15 +424,15 @@
                         </div>
                         <div class="product-price">£0.45<small>للقطعة</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">أضف للسلة</a>
-                            <a href="#" class="btn btn-outline">عرض</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('شامبو وبلسم - لوت مختلط', '£0.45')">أضف للسلة</a>
+                            <a href="#inquiry" class="btn btn-outline">عرض</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p5" data-category="household" data-price="8.5" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('../images/products/p5.jpg')">
-                        <span class="product-tag">موسمي</span>
+                        <span class="product-tag ">موسمي</span>
                     </div>
                     <div class="product-body">
                         <div class="product-cat">حديقة</div>
@@ -442,13 +443,13 @@
                         </div>
                         <div class="product-price">£8.50<small>للمجموعة</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">أضف للسلة</a>
-                            <a href="#" class="btn btn-outline">عرض</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('باقة أدوات واكسسوارات الحديقة', '£8.50')">أضف للسلة</a>
+                            <a href="#inquiry" class="btn btn-outline">عرض</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p6" data-category="household" data-price="4.2" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('../images/products/p6.jpg')">
                         <span class="product-tag orange">رائج</span>
                     </div>
@@ -461,13 +462,13 @@
                         </div>
                         <div class="product-price">£4.20<small>للمجموعة</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">أضف للسلة</a>
-                            <a href="#" class="btn btn-outline">عرض</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('مجموعة أدوات الشواء - فولاذ مقاوم للصدأ', '£4.20')">أضف للسلة</a>
+                            <a href="#inquiry" class="btn btn-outline">عرض</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p7" data-category="diy" data-price="1.8" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('../images/products/p7.jpg')">
                         <span class="product-tag green">جديد</span>
                     </div>
@@ -480,15 +481,15 @@
                         </div>
                         <div class="product-price">£1.80<small>للقطعة</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">أضف للسلة</a>
-                            <a href="#" class="btn btn-outline">عرض</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('باقة ملحقات أدوات الطاقة المختلطة', '£1.80')">أضف للسلة</a>
+                            <a href="#inquiry" class="btn btn-outline">عرض</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p8" data-category="furniture" data-price="185" data-stock="limited">
                     <div class="product-img" style="background-image: url('../images/products/p8.jpg')">
-                        <span class="product-tag">الأكثر مبيعاً</span>
+                        <span class="product-tag ">الأكثر مبيعاً</span>
                     </div>
                     <div class="product-body">
                         <div class="product-cat">أثاث</div>
@@ -499,15 +500,15 @@
                         </div>
                         <div class="product-price">£185<small>للقطعة</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">أضف للسلة</a>
-                            <a href="#" class="btn btn-outline">عرض</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('أريكة 3 مقاعد - ألوان مختلطة', '£185')">أضف للسلة</a>
+                            <a href="#inquiry" class="btn btn-outline">عرض</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p9" data-category="toys" data-price="450" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('../images/products/p9.jpg')">
-                        <span class="product-tag">تصفية</span>
+                        <span class="product-tag ">تصفية</span>
                     </div>
                     <div class="product-body">
                         <div class="product-cat">ألعاب</div>
@@ -518,13 +519,13 @@
                         </div>
                         <div class="product-price">£450<small>للمنصة</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">أضف للسلة</a>
-                            <a href="#" class="btn btn-outline">عرض</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('منصة ألعاب محشوة مختلطة - 500 قطعة', '£450')">أضف للسلة</a>
+                            <a href="#inquiry" class="btn btn-outline">عرض</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p10" data-category="apparel" data-price="3.2" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('../images/products/p10.jpg')">
                         <span class="product-tag green">جديد</span>
                     </div>
@@ -537,15 +538,15 @@
                         </div>
                         <div class="product-price">£3.20<small>للمجموعة</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">أضف للسلة</a>
-                            <a href="#" class="btn btn-outline">عرض</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('مجموعة العناية بالبشرة - ماركات مختلطة', '£3.20')">أضف للسلة</a>
+                            <a href="#inquiry" class="btn btn-outline">عرض</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p11" data-category="sports" data-price="5.8" data-stock="in_stock">
                     <div class="product-img" style="background-image: url('../images/products/p11.jpg')">
-                        <span class="product-tag">الأكثر مبيعاً</span>
+                        <span class="product-tag ">الأكثر مبيعاً</span>
                     </div>
                     <div class="product-body">
                         <div class="product-cat">رياضة</div>
@@ -556,13 +557,13 @@
                         </div>
                         <div class="product-price">£5.80<small>للمجموعة</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">أضف للسلة</a>
-                            <a href="#" class="btn btn-outline">عرض</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('باقة حصيرة يوجا وشريط لياقة', '£5.80')">أضف للسلة</a>
+                            <a href="#inquiry" class="btn btn-outline">عرض</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-id="p12" data-category="apparel" data-price="1200" data-stock="limited">
                     <div class="product-img" style="background-image: url('../images/products/p12.jpg')">
                         <span class="product-tag orange">خصم 70%</span>
                     </div>
@@ -575,15 +576,16 @@
                         </div>
                         <div class="product-price">£1,200<small>للمنصة</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">أضف للسلة</a>
-                            <a href="#" class="btn btn-outline">عرض</a>
+                            <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry('مرتجعات أزياء مختلطة - 1000 قطعة', '£1,200')">أضف للسلة</a>
+                            <a href="#inquiry" class="btn btn-outline">عرض</a>
                         </div>
                     </div>
                 </div>
             </div>
 
+            
             <div class="pagination">
-                <a href="#">السابق ←</a>
+                <a href="#">السابق →</a>
                 <a href="#" class="active">1</a>
                 <a href="#">2</a>
                 <a href="#">3</a>
@@ -593,7 +595,9 @@
                 <a href="#">1041</a>
                 <a href="#">→ التالي</a>
             </div>
-        </main>
+
+        
+            </main>
     </div>
 
     <!-- Footer -->

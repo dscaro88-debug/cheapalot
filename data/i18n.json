@@ -1,0 +1,128 @@
+{
+  "languages": {
+    "en": { "code": "en", "dir": "ltr", "flag": "\ud83c\uddec\ud83c\udde7", "label": "EN", "html_lang": "en" },
+    "es": { "code": "es", "dir": "ltr", "flag": "\ud83c\uddea\ud83c\uddf8", "label": "ES", "html_lang": "es" },
+    "ar": { "code": "ar", "dir": "rtl", "flag": "\ud83c\uddf8\ud83c\udde6", "label": "AR", "html_lang": "ar" }
+  },
+  "ui": {
+    "top_bar": {
+      "phone": { "en": "\ud83d\udcde +44 7435 712 880", "es": "\ud83d\udcde +44 7435 712 880", "ar": "\ud83d\udcde +44 7435 712 880" },
+      "email": { "en": "\u2709 info@cheapalot.com", "es": "\u2709 info@cheapalot.com", "ar": "\u2709 info@cheapalot.com" },
+      "trade_badge": {
+        "en": "\u26a1 Trade to Trade \u00b7 Min Order \u00a3250",
+        "es": "\u26a1 Empresa a Empresa \u00b7 Pedido M\u00edn \u00a3250",
+        "ar": "\u26a1 \u062a\u062c\u0627\u0631\u064a \u0644\u062a\u062c\u0627\u0631\u064a \u00b7 \u0623\u062f\u0646\u0649 \u0637\u0644\u0628 \u00a3250"
+      }
+    },
+    "header": {
+      "logo_tag": {
+        "en": "Yiwu Sourcing \u00b7 Wholesale \u00b7 Clearance",
+        "es": "Sourcing Yiwu \u00b7 Mayorista \u00b7 Liquidaci\u00f3n",
+        "ar": "\u062a\u062f\u0648\u064a\u0631 \u064a\u0648\u0648 \u00b7 \u062c\u0645\u0644\u0629 \u00b7 \u062a\u0635\u0641\u064a\u0629"
+      },
+      "search_placeholder": {
+        "en": "Search 20,000+ products...",
+        "es": "Buscar m\u00e1s de 20.000 productos...",
+        "ar": "\u0628\u062d\u062b \u0623\u0643\u062b\u0631 \u0645\u0646 20,000 \u0645\u0646\u062a\u062c..."
+      },
+      "search_btn": {
+        "en": "\ud83d\udd0d SEARCH",
+        "es": "\ud83d\udd0d BUSCAR",
+        "ar": "\ud83d\udd0d \u0628\u062d\u062b"
+      },
+      "account": { "en": "\ud83d\udccb Account", "es": "\ud83d\udccb Cuenta", "ar": "\ud83d\udccb \u062d\u0633\u0627\u0628" },
+      "cart": { "en": "\ud83d\uded2 Cart", "es": "\ud83d\uded2 Carrito", "ar": "\ud83d\uded2 \u0633\u0644\u0629" }
+    },
+    "nav": {
+      "home": { "en": "HOME", "es": "INICIO", "ar": "\u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629" },
+      "household": { "en": "HOUSEHOLD TEXTILES", "es": "TEXTILES DEL HOGAR", "ar": "\u0645\u0646\u0633\u0648\u062c\u0627\u062a \u0645\u0646\u0632\u0644\u064a\u0629" },
+      "diy": { "en": "DIY & AUTO", "es": "DIY Y AUTO", "ar": "\u062f\u064a\u0643\u0648\u0631 \u0648\u0633\u064a\u0627\u0631\u0627\u062a" },
+      "electrical": { "en": "ELECTRICAL", "es": "EL\u00c9CTRICO", "ar": "\u0643\u0647\u0631\u0628\u0627\u0626\u064a\u0627\u062a" },
+      "sports": { "en": "SPORTS & LEISURE", "es": "DEPORTES Y OCIO", "ar": "\u0631\u064a\u0627\u0636\u0629 \u0648\u062a\u0631\u0641\u064a\u0647" },
+      "apparel": { "en": "FASHION & BEAUTY", "es": "MODA Y BELLEZA", "ar": "\u0623\u0632\u064a\u0627\u0621 \u0648\u062a\u062c\u0645\u064a\u0644" },
+      "furniture": { "en": "FURNITURE & SOFAS", "es": "MUEBLES Y SOF\u00c1S", "ar": "\u0623\u062b\u0627\u062b \u0648\u0623\u0631\u0627\u0626\u0643" },
+      "mixed": { "en": "MIXED HOUSEHOLD", "es": "HOGAR MIXTO", "ar": "\u0633\u0644\u0639 \u0645\u0646\u0632\u0644\u064a\u0629 \u0645\u062e\u062a\u0644\u0637\u0629" },
+      "toys": { "en": "TOYS & NURSERY", "es": "JUGUETES Y BEB\u00c9", "ar": "\u0623\u0644\u0639\u0627\u0628 \u0648\u0637\u0641\u0648\u0644\u0629" },
+      "all_categories": { "en": "ALL CATEGORIES \u25be", "es": "TODAS LAS CATEGOR\u00cdAS \u25be", "ar": "\u062c\u0645\u064a\u0639 \u0627\u0644\u0641\u0626\u0627\u062a \u25be" }
+    },
+    "products_page": {
+      "breadcrumb_home": { "en": "Home", "es": "Inicio", "ar": "\u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629" },
+      "breadcrumb_current": { "en": "Live Stock List", "es": "Lista de Stock en Vivo", "ar": "\u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u0645\u062e\u0632\u0648\u0646 \u0627\u0644\u0645\u0628\u0627\u0634\u0631" },
+      "title": { "en": "Live Stock List", "es": "Lista de Stock en Vivo", "ar": "\u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u0645\u062e\u0632\u0648\u0646 \u0627\u0644\u0645\u0628\u0627\u0634\u0631" },
+      "subtitle": {
+        "en": "Browse 20,000+ wholesale products available for immediate dispatch",
+        "es": "Explore m\u00e1s de 20.000 productos al por mayor disponibles para env\u00edo inmediato",
+        "ar": "\u062a\u0635\u0641\u062d \u0623\u0643\u062b\u0631 \u0645\u0646 20,000 \u0645\u0646\u062a\u062c \u062c\u0645\u0644\u0629 \u0645\u062a\u0627\u062d\u0629 \u0644\u0644\u0634\u062d\u0646 \u0627\u0644\u0641\u0648\u0631\u064a"
+      },
+      "filters": { "en": "Filters", "es": "Filtros", "ar": "\u062a\u0635\u0641\u064a\u0629" },
+      "filter_category": { "en": "Category", "es": "Categor\u00eda", "ar": "\u0627\u0644\u0641\u0626\u0629" },
+      "filter_condition": { "en": "Stock Condition", "es": "Condici\u00f3n de Stock", "ar": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u062e\u0632\u0648\u0646" },
+      "filter_quantity": { "en": "Min Quantity", "es": "Cantidad M\u00edn", "ar": "\u0627\u0644\u062d\u062f \u0627\u0644\u0623\u062f\u0646\u0649 \u0644\u0644\u0643\u0645\u064a\u0629" },
+      "filter_price": { "en": "Price Range", "es": "Rango de Precio", "ar": "\u0646\u0637\u0627\u0642 \u0627\u0644\u0633\u0639\u0631" },
+      "condition_new": { "en": "New / Unused", "es": "Nuevo / Sin Usar", "ar": "\u062c\u062f\u064a\u062f / \u063a\u064a\u0631 \u0645\u0633\u062a\u062e\u062f\u0645" },
+      "condition_returns": { "en": "Customer Returns", "es": "Devoluciones", "ar": "\u0645\u0631\u062a\u062c\u0639\u0627\u062a \u0627\u0644\u0639\u0645\u0644\u0627\u0621" },
+      "condition_like_new": { "en": "Like New", "es": "Como Nuevo", "ar": "\u0643\u0623\u0646\u0647 \u062c\u062f\u064a\u062f" },
+      "condition_damaged": { "en": "Damaged / Refurb", "es": "Da\u00f1ado / Refurb", "ar": "\u062a\u0627\u0644\u0641 / \u0645\u062c\u062f\u062f" },
+      "condition_mixed": { "en": "Mixed Pallets", "es": "Paletas Mixtas", "ar": "\u0645\u0646\u0635\u0627\u062a \u0645\u062e\u062a\u0644\u0637\u0629" },
+      "qty_100": { "en": "100+ units", "es": "100+ unidades", "ar": "+100 \u0642\u0637\u0639\u0629" },
+      "qty_500": { "en": "500+ units", "es": "500+ unidades", "ar": "+500 \u0642\u0637\u0639\u0629" },
+      "qty_1000": { "en": "1,000+ units", "es": "1.000+ unidades", "ar": "+1,000 \u0642\u0637\u0639\u0629" },
+      "qty_pallet": { "en": "Full Pallet", "es": "Paleta Completa", "ar": "\u0645\u0646\u0635\u0629 \u0643\u0627\u0645\u0644\u0629" },
+      "qty_container": { "en": "Container Load", "es": "Contenedor", "ar": "\u062d\u0627\u0648\u064a\u0629 \u0643\u0627\u0645\u0644\u0629" },
+      "price_under1": { "en": "Under \u00a31", "es": "Menos de \u00a31", "ar": "\u0623\u0642\u0644 \u0645\u0646 \u00a31" },
+      "price_1_5": { "en": "\u00a31 - \u00a35", "es": "\u00a31 - \u00a35", "ar": "\u00a31 - \u00a35" },
+      "price_5_20": { "en": "\u00a35 - \u00a320", "es": "\u00a35 - \u00a320", "ar": "\u00a35 - \u00a320" },
+      "price_20_50": { "en": "\u00a320 - \u00a350", "es": "\u00a320 - \u00a350", "ar": "\u00a320 - \u00a350" },
+      "price_50_plus": { "en": "\u00a350+", "es": "\u00a350+", "ar": "+\u00a350" },
+      "clear_filters": { "en": "Clear Filters", "es": "Limpiar Filtros", "ar": "\u0645\u0633\u062d \u0627\u0644\u0641\u0644\u0627\u062a\u0631" },
+      "showing": { "en": "Showing", "es": "Mostrando", "ar": "\u0639\u0631\u0636" },
+      "of": { "en": "of", "es": "de", "ar": "\u0645\u0646 \u0623\u0635\u0644" },
+      "products_word": { "en": "products", "es": "productos", "ar": "\u0645\u0646\u062a\u062c" },
+      "sort_newest": { "en": "Sort: Newest First", "es": "Ordenar: M\u00e1s Recientes", "ar": "\u062a\u0631\u062a\u064a\u0628: \u0627\u0644\u0623\u062d\u062f\u062b" },
+      "sort_price_low": { "en": "Price: Low to High", "es": "Precio: Menor a Mayor", "ar": "\u0627\u0644\u0633\u0639\u0631: \u0645\u0646 \u0627\u0644\u0623\u0642\u0644" },
+      "sort_price_high": { "en": "Price: High to Low", "es": "Precio: Mayor a Menor", "ar": "\u0627\u0644\u0633\u0639\u0631: \u0645\u0646 \u0627\u0644\u0623\u0639\u0644\u0649" },
+      "sort_quantity": { "en": "Quantity: High to Low", "es": "Cantidad: Mayor a Menor", "ar": "\u0627\u0644\u0643\u0645\u064a\u0629: \u0645\u0646 \u0627\u0644\u0623\u0639\u0644\u0649" },
+      "sort_popular": { "en": "Most Popular", "es": "M\u00e1s Populares", "ar": "\u0627\u0644\u0623\u0643\u062b\u0631 \u0634\u0639\u0628\u064a\u0629" },
+      "add_to_cart": { "en": "Add to Cart", "es": "A\u00f1adir al Carrito", "ar": "\u0623\u0636\u0641 \u0644\u0644\u0633\u0644\u0629" },
+      "view": { "en": "View", "es": "Ver", "ar": "\u0639\u0631\u0636" },
+      "in_stock": { "en": "\u2713 In Stock", "es": "\u2713 En Stock", "ar": "\u2713 \u0645\u062a\u0648\u0641\u0631" },
+      "limited": { "en": "\ud83d\udd25 Limited", "es": "\ud83d\udd25 Limitado", "ar": "\ud83d\udd25 \u0645\u062d\u062f\u0648\u062f" },
+      "min_order_label": { "en": "\ud83d\udce6 Min:", "es": "\ud83d\udce6 M\u00edn:", "ar": "\ud83d\udce6 \u0627\u0644\u062d\u062f \u0627\u0644\u0623\u062f\u0646\u0649:" },
+      "pagination_prev": { "en": "\u2190 Previous", "es": "\u2190 Anterior", "ar": "\u0627\u0644\u0633\u0627\u0628\u0642 \u2192" },
+      "pagination_next": { "en": "Next \u2192", "es": "Siguiente \u2192", "ar": "\u2192 \u0627\u0644\u062a\u0627\u0644\u064a" }
+    },
+    "tags": {
+      "best_seller": { "en": "Best Seller", "es": "M\u00e1s Vendido", "ar": "\u0627\u0644\u0623\u0643\u062b\u0631 \u0645\u0628\u064a\u0639\u0627\u064b" },
+      "new": { "en": "New", "es": "Nuevo", "ar": "\u062c\u062f\u064a\u062f" },
+      "clearance": { "en": "Clearance", "es": "Liquidaci\u00f3n", "ar": "\u062a\u0635\u0641\u064a\u0629" },
+      "seasonal": { "en": "Seasonal", "es": "Temporada", "ar": "\u0645\u0648\u0633\u0645\u064a" },
+      "hot": { "en": "Hot", "es": "Caliente", "ar": "\u0631\u0627\u0626\u062c" },
+      "70_off": { "en": "70% Off", "es": "70% Descuento", "ar": "\u062e\u0635\u0645 70%" }
+    },
+    "footer": {
+      "about_title": { "en": "CheapALot", "es": "CheapALot", "ar": "CheapALot" },
+      "about_text": {
+        "en": "Your trusted B2B partner for wholesale, returns, and liquidation stock. Direct from factories to global trade buyers.",
+        "es": "Su socio B2B de confianza para mayorista, devoluciones y stock de liquidaci\u00f3n. Directo de f\u00e1bricas a compradores globales.",
+        "ar": "\u0634\u0631\u064a\u0643\u0643 \u0627\u0644\u0645\u0648\u062b\u0648\u0642 B2B \u0644\u0644\u062c\u0645\u0644\u0629 \u0648\u0627\u0644\u0645\u0631\u062a\u062c\u0639\u0627\u062a \u0648\u062a\u0635\u0641\u064a\u0629 \u0627\u0644\u0645\u062e\u0632\u0648\u0646. \u0645\u0628\u0627\u0634\u0631 \u0645\u0646 \u0627\u0644\u0645\u0635\u0627\u0646\u0639 \u0625\u0644\u0649 \u0627\u0644\u0645\u0634\u062a\u0631\u064a\u0646 \u0627\u0644\u0639\u0627\u0644\u0645\u064a\u064a\u0646."
+      },
+      "categories_title": { "en": "Categories", "es": "Categor\u00edas", "ar": "\u0627\u0644\u0641\u0626\u0627\u062a" },
+      "info_title": { "en": "Information", "es": "Informaci\u00f3n", "ar": "\u0645\u0639\u0644\u0648\u0645\u0627\u062a" },
+      "contact_title": { "en": "Contact", "es": "Contacto", "ar": "\u062a\u0648\u0627\u0635\u0644" },
+      "about_us": { "en": "About Us", "es": "Sobre Nosotros", "ar": "\u0639\u0646 \u0646\u0627" },
+      "buying": { "en": "Buying From Us", "es": "Comprar de Nosotros", "ar": "\u0627\u0644\u0634\u0631\u0627\u0621 \u0645\u0646\u0627" },
+      "sell_stock": { "en": "Sell Your Stock", "es": "Vende Tu Stock", "ar": "\u0628\u064a\u0639 \u0645\u062e\u0632\u0648\u0646\u0643" },
+      "terms": { "en": "Terms & Conditions", "es": "T\u00e9rminos y Condiciones", "ar": "\u0627\u0644\u0634\u0631\u0648\u0637 \u0648\u0627\u0644\u0623\u062d\u0643\u0627\u0645" },
+      "copyright": {
+        "en": "\u00a9 2026 CheapALot.com \u00b7 All Rights Reserved \u00b7 A Lot of Stock. A Lot Cheap.",
+        "es": "\u00a9 2026 CheapALot.com \u00b7 Todos los Derechos Reservados \u00b7 A Lot of Stock. A Lot Cheap.",
+        "ar": "\u00a9 2026 CheapALot.com \u00b7 \u062c\u0645\u064a\u0639 \u0627\u0644\u062d\u0642\u0648\u0642 \u0645\u062d\u0641\u0648\u0638\u0629 \u00b7 A Lot of Stock. A Lot Cheap."
+      },
+      "trade_only": {
+        "en": "Trade to Trade Only \u00b7 Minimum Order \u00a3250",
+        "es": "Solo Empresa a Empresa \u00b7 Pedido M\u00ednimo \u00a3250",
+        "ar": "\u062a\u062c\u0627\u0631\u064a \u0644\u0644\u062a\u062c\u0627\u0631 \u0641\u0642\u0637 \u00b7 \u0623\u062f\u0646\u0649 \u0637\u0644\u0628 \u00a3250"
+      }
+    }
+  }
+}

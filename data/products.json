@@ -1,0 +1,513 @@
+{
+  "meta": {
+    "updated": "2026-07-04",
+    "currency": "GBP",
+    "symbol": "\u00a3",
+    "total_products": 12,
+    "total_display": "12,490"
+  },
+  "categories": [
+    {
+      "id": "household",
+      "slug": "household",
+      "count": 1240,
+      "name": { "en": "Household Textiles", "es": "Textiles del Hogar", "ar": "\u0645\u0646\u0633\u0648\u062c\u0627\u062a \u0645\u0646\u0632\u0644\u064a\u0629" }
+    },
+    {
+      "id": "electrical",
+      "slug": "electrical",
+      "count": 2580,
+      "name": { "en": "Electrical", "es": "El\u00e9ctrico", "ar": "\u0643\u0647\u0631\u0628\u0627\u0626\u064a\u0627\u062a" }
+    },
+    {
+      "id": "apparel",
+      "slug": "apparel",
+      "count": 3820,
+      "name": { "en": "Apparel", "es": "Ropa", "ar": "\u0623\u0632\u064a\u0627\u0621" }
+    },
+    {
+      "id": "diy",
+      "slug": "diy",
+      "count": 980,
+      "name": { "en": "DIY & Auto", "es": "DIY y Auto", "ar": "\u062f\u064a\u0643\u0648\u0631 \u0648\u0633\u064a\u0627\u0631\u0627\u062a" }
+    },
+    {
+      "id": "furniture",
+      "slug": "furniture",
+      "count": 450,
+      "name": { "en": "Furniture & Sofas", "es": "Muebles y Sof\u00e1s", "ar": "\u0623\u062b\u0627\u062b \u0648\u0623\u0631\u0627\u0626\u0643" }
+    },
+    {
+      "id": "toys",
+      "slug": "toys",
+      "count": 1500,
+      "name": { "en": "Toys & Nursery", "es": "Juguetes y Beb\u00e9", "ar": "\u0623\u0644\u0639\u0627\u0628 \u0648\u0637\u0641\u0648\u0644\u0629" }
+    },
+    {
+      "id": "sports",
+      "slug": "sports",
+      "count": 720,
+      "name": { "en": "Sports & Leisure", "es": "Deportes y Ocio", "ar": "\u0631\u064a\u0627\u0636\u0629 \u0648\u062a\u0631\u0641\u064a\u0647" }
+    },
+    {
+      "id": "mixed",
+      "slug": "mixed",
+      "count": 1200,
+      "name": { "en": "Mixed Household", "es": "Hogar Mixto", "ar": "\u0633\u0644\u0639 \u0645\u0646\u0632\u0644\u064a\u0629 \u0645\u062e\u062a\u0644\u0637\u0629" }
+    }
+  ],
+  "products": [
+    {
+      "id": "p1",
+      "image": "images/products/p1.jpg",
+      "tag": "best_seller",
+      "category": "household",
+      "price": 0.18,
+      "price_display": "\u00a30.18",
+      "stock_status": "in_stock",
+      "name": {
+        "en": "Heavy Duty Black Refuse Sacks (50 Pack)",
+        "es": "Bolsas de Basura Negras Reforzadas (Pack 50)",
+        "ar": "\u0623\u0643\u064a\u0627\u0633 \u0642\u0645\u0627\u0645\u0629 \u0633\u0648\u062f\u0627\u0621 \u062b\u0642\u064a\u0644\u0629 (50 \u0642\u0637\u0639\u0629)"
+      },
+      "category_display": {
+        "en": "Household",
+        "es": "Hogar",
+        "ar": "\u0645\u0646\u0632\u0644\u064a"
+      },
+      "price_unit": {
+        "en": "per unit \u00b7 Bulk pricing",
+        "es": "por unidad \u00b7 precios al por mayor",
+        "ar": "\u0644\u0644\u0642\u0637\u0639\u0629 \u00b7 \u0633\u0639\u0631 \u0627\u0644\u062c\u0645\u0644\u0629"
+      },
+      "min_order": {
+        "en": "500 pcs",
+        "es": "500 pcs",
+        "ar": "500 \u0642\u0637\u0639\u0629"
+      }
+    },
+    {
+      "id": "p2",
+      "image": "images/products/p2.jpg",
+      "tag": "new",
+      "category": "household",
+      "price": 2.40,
+      "price_display": "\u00a32.40",
+      "stock_status": "in_stock",
+      "name": {
+        "en": "Pet Bowl & Lead Bundle Pack",
+        "es": "Pack Comedero y Correa para Mascotas",
+        "ar": "\u0628\u0627\u0642\u0629 \u0623\u0648\u0639\u064a\u0629 \u0627\u0644\u0637\u0639\u0627\u0645 \u0648\u0645\u0642\u0648\u062f \u0627\u0644\u062d\u064a\u0648\u0627\u0646\u0627\u062a"
+      },
+      "category_display": {
+        "en": "Pet Supplies",
+        "es": "Mascotas",
+        "ar": "\u0645\u0633\u062a\u0644\u0632\u0645\u0627\u062a \u062d\u064a\u0648\u0627\u0646\u0627\u062a"
+      },
+      "price_unit": {
+        "en": "per unit",
+        "es": "por unidad",
+        "ar": "\u0644\u0644\u0642\u0637\u0639\u0629"
+      },
+      "min_order": {
+        "en": "200 pcs",
+        "es": "200 pcs",
+        "ar": "200 \u0642\u0637\u0639\u0629"
+      }
+    },
+    {
+      "id": "p3",
+      "image": "images/products/p3.jpg",
+      "tag": "70_off",
+      "category": "mixed",
+      "price": 280,
+      "price_display": "\u00a3280",
+      "stock_status": "limited",
+      "name": {
+        "en": "Mixed Confectionery Pallet - 200kg",
+        "es": "Paleta de Golosinas Mixtas - 200kg",
+        "ar": "\u0645\u0646\u0635\u0629 \u062d\u0644\u0648\u064a\u0627\u062a \u0645\u062e\u062a\u0644\u0637\u0629 - 200 \u0643\u062c\u0645"
+      },
+      "category_display": {
+        "en": "Food & Beverage",
+        "es": "Alimentaci\u00f3n",
+        "ar": "\u0637\u0639\u0627\u0645 \u0648\u0645\u0634\u0631\u0648\u0628\u0627\u062a"
+      },
+      "price_unit": {
+        "en": "per pallet",
+        "es": "por paleta",
+        "ar": "\u0644\u0644\u0645\u0646\u0635\u0629"
+      },
+      "min_order": {
+        "en": "1 Pallet",
+        "es": "1 Paleta",
+        "ar": "\u0645\u0646\u0635\u0629 \u0648\u0627\u062d\u062f\u0629"
+      }
+    },
+    {
+      "id": "p4",
+      "image": "images/products/p4.jpg",
+      "tag": "clearance",
+      "category": "apparel",
+      "price": 0.45,
+      "price_display": "\u00a30.45",
+      "stock_status": "in_stock",
+      "name": {
+        "en": "Shampoo & Conditioner Mixed Lot",
+        "es": "Lote Mixto de Champ\u00fa y Acondicionador",
+        "ar": "\u0634\u0627\u0645\u0628\u0648 \u0648\u0628\u0644\u0633\u0645 - \u0644\u0648\u062a \u0645\u062e\u062a\u0644\u0637"
+      },
+      "category_display": {
+        "en": "Beauty",
+        "es": "Belleza",
+        "ar": "\u062a\u062c\u0645\u064a\u0644"
+      },
+      "price_unit": {
+        "en": "per unit",
+        "es": "por unidad",
+        "ar": "\u0644\u0644\u0642\u0637\u0639\u0629"
+      },
+      "min_order": {
+        "en": "1,000 pcs",
+        "es": "1.000 pcs",
+        "ar": "1,000 \u0642\u0637\u0639\u0629"
+      }
+    },
+    {
+      "id": "p5",
+      "image": "images/products/p5.jpg",
+      "tag": "seasonal",
+      "category": "household",
+      "price": 8.50,
+      "price_display": "\u00a38.50",
+      "stock_status": "in_stock",
+      "name": {
+        "en": "Garden Tool & Accessory Bundle",
+        "es": "Pack de Herramientas y Accesorios de Jard\u00edn",
+        "ar": "\u0628\u0627\u0642\u0629 \u0623\u062f\u0648\u0627\u062a \u0648\u0627\u0643\u0633\u0633\u0648\u0627\u0631\u0627\u062a \u0627\u0644\u062d\u062f\u064a\u0642\u0629"
+      },
+      "category_display": {
+        "en": "Garden",
+        "es": "Jard\u00edn",
+        "ar": "\u062d\u062f\u064a\u0642\u0629"
+      },
+      "price_unit": {
+        "en": "per set",
+        "es": "por set",
+        "ar": "\u0644\u0644\u0645\u062c\u0645\u0648\u0639\u0629"
+      },
+      "min_order": {
+        "en": "100 sets",
+        "es": "100 sets",
+        "ar": "100 \u0645\u062c\u0645\u0648\u0639\u0629"
+      }
+    },
+    {
+      "id": "p6",
+      "image": "images/products/p6.jpg",
+      "tag": "hot",
+      "category": "household",
+      "price": 4.20,
+      "price_display": "\u00a34.20",
+      "stock_status": "in_stock",
+      "name": {
+        "en": "BBQ Tools Set - Stainless Steel",
+        "es": "Set de Utensilios para BBQ - Acero Inoxidable",
+        "ar": "\u0645\u062c\u0645\u0648\u0639\u0629 \u0623\u062f\u0648\u0627\u062a \u0627\u0644\u0634\u0648\u0627\u0621 - \u0641\u0648\u0644\u0627\u0630 \u0645\u0642\u0627\u0648\u0645 \u0644\u0644\u0635\u062f\u0623"
+      },
+      "category_display": {
+        "en": "BBQ & Outdoor",
+        "es": "BBQ y Exterior",
+        "ar": "\u0634\u0648\u0627\u0621 \u0648\u062e\u0627\u0631\u062c\u064a"
+      },
+      "price_unit": {
+        "en": "per set",
+        "es": "por set",
+        "ar": "\u0644\u0644\u0645\u062c\u0645\u0648\u0639\u0629"
+      },
+      "min_order": {
+        "en": "200 sets",
+        "es": "200 sets",
+        "ar": "200 \u0645\u062c\u0645\u0648\u0639\u0629"
+      }
+    },
+    {
+      "id": "p7",
+      "image": "images/products/p7.jpg",
+      "tag": "new",
+      "category": "diy",
+      "price": 1.80,
+      "price_display": "\u00a31.80",
+      "stock_status": "in_stock",
+      "name": {
+        "en": "Power Tool Accessory Mixed Pack",
+        "es": "Pack Mixto de Accesorios para Herramientas El\u00e9ctricas",
+        "ar": "\u0628\u0627\u0642\u0629 \u0645\u0644\u062d\u0642\u0627\u062a \u0623\u062f\u0648\u0627\u062a \u0627\u0644\u0637\u0627\u0642\u0629 \u0627\u0644\u0645\u062e\u062a\u0644\u0637\u0629"
+      },
+      "category_display": {
+        "en": "DIY",
+        "es": "DIY",
+        "ar": "\u062f\u064a\u0643\u0648\u0631"
+      },
+      "price_unit": {
+        "en": "per unit",
+        "es": "por unidad",
+        "ar": "\u0644\u0644\u0642\u0637\u0639\u0629"
+      },
+      "min_order": {
+        "en": "300 pcs",
+        "es": "300 pcs",
+        "ar": "300 \u0642\u0637\u0639\u0629"
+      }
+    },
+    {
+      "id": "p8",
+      "image": "images/products/p8.jpg",
+      "tag": "best_seller",
+      "category": "furniture",
+      "price": 185,
+      "price_display": "\u00a3185",
+      "stock_status": "limited",
+      "name": {
+        "en": "3-Seater Sofa - Mixed Colours",
+        "es": "Sof\u00e1 de 3 Plazas - Colores Mezclados",
+        "ar": "\u0623\u0631\u064a\u0643\u0629 3 \u0645\u0642\u0627\u0639\u062f - \u0623\u0644\u0648\u0627\u0646 \u0645\u062e\u062a\u0644\u0637\u0629"
+      },
+      "category_display": {
+        "en": "Furniture",
+        "es": "Muebles",
+        "ar": "\u0623\u062b\u0627\u062b"
+      },
+      "price_unit": {
+        "en": "per unit",
+        "es": "por unidad",
+        "ar": "\u0644\u0644\u0642\u0637\u0639\u0629"
+      },
+      "min_order": {
+        "en": "5 pcs",
+        "es": "5 pcs",
+        "ar": "5 \u0642\u0637\u0639"
+      }
+    },
+    {
+      "id": "p9",
+      "image": "images/products/p9.jpg",
+      "tag": "clearance",
+      "category": "toys",
+      "price": 450,
+      "price_display": "\u00a3450",
+      "stock_status": "in_stock",
+      "name": {
+        "en": "Plush Toy Mixed Pallet - 500pcs",
+        "es": "Paleta de Peluches Mixtos - 500pcs",
+        "ar": "\u0645\u0646\u0635\u0629 \u0623\u0644\u0639\u0627\u0628 \u0645\u062d\u0634\u0648\u0629 \u0645\u062e\u062a\u0644\u0637\u0629 - 500 \u0642\u0637\u0639\u0629"
+      },
+      "category_display": {
+        "en": "Toys",
+        "es": "Juguetes",
+        "ar": "\u0623\u0644\u0639\u0627\u0628"
+      },
+      "price_unit": {
+        "en": "per pallet",
+        "es": "por paleta",
+        "ar": "\u0644\u0644\u0645\u0646\u0635\u0629"
+      },
+      "min_order": {
+        "en": "1 Pallet",
+        "es": "1 Paleta",
+        "ar": "\u0645\u0646\u0635\u0629 \u0648\u0627\u062d\u062f\u0629"
+      }
+    },
+    {
+      "id": "p10",
+      "image": "images/products/p10.jpg",
+      "tag": "new",
+      "category": "apparel",
+      "price": 3.20,
+      "price_display": "\u00a33.20",
+      "stock_status": "in_stock",
+      "name": {
+        "en": "Skincare Set - Mixed Brands",
+        "es": "Set de Cuidado de la Piel - Marcas Mezcladas",
+        "ar": "\u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0639\u0646\u0627\u064a\u0629 \u0628\u0627\u0644\u0628\u0634\u0631\u0629 - \u0645\u0627\u0631\u0643\u0627\u062a \u0645\u062e\u062a\u0644\u0637\u0629"
+      },
+      "category_display": {
+        "en": "Beauty",
+        "es": "Belleza",
+        "ar": "\u062a\u062c\u0645\u064a\u0644"
+      },
+      "price_unit": {
+        "en": "per set",
+        "es": "por set",
+        "ar": "\u0644\u0644\u0645\u062c\u0645\u0648\u0639\u0629"
+      },
+      "min_order": {
+        "en": "200 sets",
+        "es": "200 sets",
+        "ar": "200 \u0645\u062c\u0645\u0648\u0639\u0629"
+      }
+    },
+    {
+      "id": "p11",
+      "image": "images/products/p11.jpg",
+      "tag": "best_seller",
+      "category": "sports",
+      "price": 5.80,
+      "price_display": "\u00a35.80",
+      "stock_status": "in_stock",
+      "name": {
+        "en": "Yoga Mat & Fitness Band Bundle",
+        "es": "Pack Esterilla de Yoga y Banda de Fitness",
+        "ar": "\u0628\u0627\u0642\u0629 \u062d\u0635\u064a\u0631\u0629 \u064a\u0648\u062c\u0627 \u0648\u0634\u0631\u064a\u0637 \u0644\u064a\u0627\u0642\u0629"
+      },
+      "category_display": {
+        "en": "Sports",
+        "es": "Deportes",
+        "ar": "\u0631\u064a\u0627\u0636\u0629"
+      },
+      "price_unit": {
+        "en": "per set",
+        "es": "por set",
+        "ar": "\u0644\u0644\u0645\u062c\u0645\u0648\u0639\u0629"
+      },
+      "min_order": {
+        "en": "100 sets",
+        "es": "100 sets",
+        "ar": "100 \u0645\u062c\u0645\u0648\u0639\u0629"
+      }
+    },
+    {
+      "id": "p12",
+      "image": "images/products/p12.jpg",
+      "tag": "70_off",
+      "category": "apparel",
+      "price": 1200,
+      "price_display": "\u00a31,200",
+      "stock_status": "limited",
+      "name": {
+        "en": "Mixed Fashion Returns - 1000pcs",
+        "es": "Devoluciones de Moda Mixtas - 1000pcs",
+        "ar": "\u0645\u0631\u062a\u062c\u0639\u0627\u062a \u0623\u0632\u064a\u0627\u0621 \u0645\u062e\u062a\u0644\u0637\u0629 - 1000 \u0642\u0637\u0639\u0629"
+      },
+      "category_display": {
+        "en": "Apparel",
+        "es": "Ropa",
+        "ar": "\u0623\u0632\u064a\u0627\u0621"
+      },
+      "price_unit": {
+        "en": "per pallet",
+        "es": "por paleta",
+        "ar": "\u0644\u0644\u0645\u0646\u0635\u0629"
+      },
+      "min_order": {
+        "en": "1 Pallet",
+        "es": "1 Paleta",
+        "ar": "\u0645\u0646\u0635\u0629 \u0648\u0627\u062d\u062f\u0629"
+      }
+    }
+  ],
+  "deals": [
+    {
+      "id": "d1",
+      "image": "images/products/refuse-sacks.jpg",
+      "badge": "best_seller",
+      "stock_remaining": 12,
+      "countdown_days": 3,
+      "name": {
+        "en": "Heavy Duty Refuse Sacks",
+        "es": "Bolsas de Basura Reforzadas",
+        "ar": "\u0623\u0643\u064a\u0627\u0633 \u0642\u0645\u0627\u0645\u0629 \u062b\u0642\u064a\u0644\u0629"
+      },
+      "desc": {
+        "en": "Pack of 50 \u00b7 Commercial grade \u00b7 From 1p/unit",
+        "es": "Pack de 50 \u00b7 Calidad comercial \u00b7 Desde 1p/unidad",
+        "ar": "\u0639\u0628\u0648\u0629 50 \u0642\u0637\u0639\u0629 \u00b7 \u062c\u0648\u062f\u0629 \u062a\u062c\u0627\u0631\u064a\u0629 \u00b7 \u0645\u0646 1p/\u0642\u0637\u0639\u0629"
+      }
+    },
+    {
+      "id": "d2",
+      "image": "images/products/pet-bundle.jpg",
+      "badge": null,
+      "stock_remaining": 8,
+      "countdown_days": 2,
+      "name": {
+        "en": "Pet Wholesale Bundle",
+        "es": "Pack al por Mayor para Mascotas",
+        "ar": "\u0628\u0627\u0642\u0629 \u062c\u0645\u0644\u0629 \u0644\u0644\u062d\u064a\u0648\u0627\u0646\u0627\u062a"
+      },
+      "desc": {
+        "en": "Treats \u00b7 Leads \u00b7 Bowls \u00b7 From 12p",
+        "es": "Premios \u00b7 Correas \u00b7 Cuencos \u00b7 Desde 12p",
+        "ar": "\u0645\u0643\u0627\u0641\u0622\u062a \u00b7 \u0645\u0642\u0648\u062f \u00b7 \u0623\u0648\u0639\u064a\u0629 \u00b7 \u0645\u0646 12p"
+      }
+    },
+    {
+      "id": "d3",
+      "image": "images/products/food-clearance.jpg",
+      "badge": "price_crunch",
+      "stock_remaining": 5,
+      "countdown_days": 1,
+      "name": {
+        "en": "Food & Beverage Clearance",
+        "es": "Liquidaci\u00f3n de Alimentos y Bebidas",
+        "ar": "\u062a\u0635\u0641\u064a\u0629 \u0627\u0644\u0637\u0639\u0627\u0645 \u0648\u0627\u0644\u0645\u0634\u0631\u0648\u0628\u0627\u062a"
+      },
+      "desc": {
+        "en": "Up to 70% Off RRP \u00b7 From 15p",
+        "es": "Hasta 70% Descuento \u00b7 Desde 15p",
+        "ar": "\u062e\u0635\u0645 \u062d\u062a\u0649 70% \u00b7 \u0645\u0646 15p"
+      }
+    },
+    {
+      "id": "d4",
+      "image": "images/products/beauty.jpg",
+      "badge": null,
+      "stock_remaining": 3,
+      "countdown_days": 1,
+      "name": {
+        "en": "Beauty & Personal Care",
+        "es": "Belleza y Cuidado Personal",
+        "ar": "\u0627\u0644\u062c\u0645\u0627\u0644 \u0648\u0627\u0644\u0639\u0646\u0627\u064a\u0629 \u0627\u0644\u0634\u062e\u0635\u064a\u0629"
+      },
+      "desc": {
+        "en": "From 45p per unit",
+        "es": "Desde 45p por unidad",
+        "ar": "\u0645\u0646 45p \u0644\u0644\u0642\u0637\u0639\u0629"
+      }
+    },
+    {
+      "id": "d5",
+      "image": "images/products/garden.jpg",
+      "badge": null,
+      "stock_remaining": 9,
+      "countdown_days": 4,
+      "name": {
+        "en": "Garden & Outdoor",
+        "es": "Jard\u00edn y Exterior",
+        "ar": "\u0627\u0644\u062d\u062f\u064a\u0642\u0629 \u0648\u0627\u0644\u062e\u0627\u0631\u062c\u064a\u0629"
+      },
+      "desc": {
+        "en": "Summer essentials in stock",
+        "es": "Esenciales de verano disponibles",
+        "ar": "\u0645\u0633\u062a\u0644\u0632\u0645\u0627\u062a \u0627\u0644\u0635\u064a\u0641 \u0645\u062a\u0648\u0641\u0631\u0629"
+      }
+    },
+    {
+      "id": "d6",
+      "image": "images/products/bbq.jpg",
+      "badge": null,
+      "stock_remaining": 6,
+      "countdown_days": 3,
+      "name": {
+        "en": "BBQ & Outdoor Cooking",
+        "es": "BBQ y Cocina al Aire Libre",
+        "ar": "\u0627\u0644\u0634\u0648\u0627\u0621 \u0648\u0627\u0644\u0637\u0628\u062e \u0627\u0644\u062e\u0627\u0631\u062c\u064a"
+      },
+      "desc": {
+        "en": "Seasonal deals live now",
+        "es": "Ofertas de temporada disponibles",
+        "ar": "\u0639\u0631\u0648\u0636 \u0645\u0648\u0633\u0645\u064a\u0629 \u0645\u062a\u0648\u0641\u0631\u0629 \u0627\u0644\u0622\u0646"
+      }
+    }
+  ]
+}
