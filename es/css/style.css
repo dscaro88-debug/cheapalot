@@ -2645,37 +2645,3 @@ img { max-width: 100%; display: block; }
     .yiwu-stats { grid-template-columns: 1fr; }
     .hero-stats { gap: 10px; }
 }
-
-/* ============= LANGUAGE SWITCHER ============= */
-.header-lang {
-    display: flex;
-    align-items: center;
-}
-
-.header-lang select {
-    padding: 8px 12px;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 4px;
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-    font-size: 13px;
-    cursor: pointer;
-    outline: none;
-    transition: all 0.2s;
-}
-
-.header-lang select:hover {
-    background: rgba(255,255,255,0.2);
-    border-color: rgba(255,255,255,0.5);
-}
-
-.header-lang select option {
-    background: var(--dark);
-    color: #fff;
-    padding: 8px;
-}
-
-/* RTL support for Arabic */
-html[lang="ar"] .header-lang select {
-    font-family: 'Arabic', 'Noto Sans Arabic', sans-serif;
-}

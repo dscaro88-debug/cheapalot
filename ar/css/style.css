@@ -2646,36 +2646,115 @@ img { max-width: 100%; display: block; }
     .hero-stats { gap: 10px; }
 }
 
-/* ============= LANGUAGE SWITCHER ============= */
-.header-lang {
-    display: flex;
-    align-items: center;
+/* ============= RTL SUPPORT FOR ARABIC ============= */
+/* Arabic is Right-to-Left language */
+
+html[lang="ar"] {
+    direction: rtl;
 }
 
-.header-lang select {
-    padding: 8px 12px;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 4px;
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-    font-size: 13px;
-    cursor: pointer;
-    outline: none;
-    transition: all 0.2s;
+html[lang="ar"] body {
+    direction: rtl;
+    text-align: right;
 }
 
-.header-lang select:hover {
-    background: rgba(255,255,255,0.2);
-    border-color: rgba(255,255,255,0.5);
+/* Flip all padding/margin left ↔ right */
+html[lang="ar"] .nav-link {
+    padding: 14px 16px;
 }
 
-.header-lang select option {
-    background: var(--dark);
-    color: #fff;
-    padding: 8px;
+html[lang="ar"] .hero-content {
+    text-align: center;
 }
 
-/* RTL support for Arabic */
-html[lang="ar"] .header-lang select {
-    font-family: 'Arabic', 'Noto Sans Arabic', sans-serif;
+html[lang="ar"] .deal-badge {
+    left: auto;
+    right: 16px;
+}
+
+html[lang="ar"] .contact-icon {
+    margin-right: 0;
+    margin-left: 16px;
+}
+
+html[lang="ar"] .foot-social {
+    direction: ltr; /* Social links stay LTR */
+}
+
+html[lang="ar"] .clock-status::before {
+    margin-right: 0;
+    margin-left: 6px;
+}
+
+/* Hamburger menu should come from left in RTL */
+html[lang="ar"] .nav-toggle {
+    right: auto;
+    left: 16px;
+}
+
+html[lang="ar"] .main-nav {
+    left: auto;
+    right: -280px;
+}
+
+html[lang="ar"] .main-nav.open {
+    right: 0;
+}
+
+html[lang="ar"] .nav-close {
+    right: auto;
+    left: 16px;
+}
+
+html[lang="ar"] body.nav-open {
+    overflow: hidden;
+}
+
+/* Flip sticky bar icons */
+html[lang="ar"] .sticky-label {
+    margin-right: 0;
+    margin-left: 6px;
+}
+
+/* FAQ accordion */
+html[lang="ar"] .faq-q::after {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Form inputs */
+html[lang="ar"] input,
+html[lang="ar"] textarea,
+html[lang="ar"] select {
+    text-align: right;
+}
+
+/* World Clock */
+html[lang="ar"] .clock-zone {
+    direction: ltr; /* Clock times stay LTR */
+}
+
+/* Testimonials */
+html[lang="ar"] .testimonial-stars {
+    direction: ltr; /* Stars stay LTR */
+    display: inline-block;
+}
+
+/* Arabic font */
+@font-face {
+    font-family: 'Arabic';
+    src: local('Noto Sans Arabic');
+    font-weight: normal;
+}
+
+html[lang="ar"] body {
+    font-family: 'Arabic', 'Noto Sans Arabic', 'Arial Unicode MS', sans-serif;
+}
+
+/* Ensure Arabic text displays correctly */
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4 {
+    line-height: 1.6; /* Arabic needs more line height */
 }
