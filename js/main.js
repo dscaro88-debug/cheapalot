@@ -1,6 +1,38 @@
 // CheapALot - Yiwu Sourcing Agent & Wholesale Clearance Platform
 // cheapalot.com | Based in Yiwu · 20+ Years Export · A Lot of Stock. A Lot Cheap.
 
+// Mobile nav toggle (hamburger)
+const navToggle = document.querySelector('.nav-toggle');
+const mainNav   = document.getElementById('mainNav');
+if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('open');
+        navToggle.classList.toggle('active', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    // Close drawer when a nav link is tapped
+    mainNav.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mainNav.classList.remove('open');
+            navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        });
+    });
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (mainNav.classList.contains('open') &&
+            !mainNav.contains(e.target) &&
+            !navToggle.contains(e.target)) {
+            mainNav.classList.remove('open');
+            navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
 // Sticky quick nav bar (appears when hero scrolls out)
 const stickyBar = document.getElementById('sticky-bar');
 window.addEventListener('scroll', () => {
