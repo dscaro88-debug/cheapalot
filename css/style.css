@@ -2309,6 +2309,17 @@ img { max-width: 100%; display: block; }
     font-size: 14px;
     font-weight: 500;
 }
+.foot-founder {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #2a2a2a;
+}
+.foot-founder p {
+    font-size: 13px;
+    color: #ccc;
+    line-height: 1.6;
+}
+.foot-founder strong { color: #fff; }
 .foot-bottom {
     background: #0d0d0d;
     padding: 20px 0;
