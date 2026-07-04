@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Stock List - CheapALot | B2B Wholesale Inventory & Clearance</title>
+    <title>Lista de Stock en Vivo - CheapALot | Inventario Mayorista B2B y Liquidación</title>
+    <link rel="canonical" href="https://cheapalot.com/es/products.html">
+    <link rel="alternate" hreflang="en" href="https://cheapalot.com/products.html">
+    <link rel="alternate" hreflang="es" href="https://cheapalot.com/es/products.html">
+    <link rel="alternate" hreflang="ar" href="https://cheapalot.com/ar/products.html">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -227,12 +231,17 @@
     <div class="top-bar">
         <div class="container top-bar-inner">
             <div class="top-left">
-                <span>📞 +44 7435 712 880</span>
+                <span>📞 +86 135 1694 6001</span>
                 <span class="top-divider">|</span>
-                <span>✉ info@cheapalot.com</span>
+                <span>✉ dscaro88@gmail.com</span>
             </div>
             <div class="top-right">
-                <span class="trade-badge">⚡ Trade to Trade · Min Order £250</span>
+                <span class="lang-switcher">
+                    <a href="/">🇬🇧 EN</a>
+                    <a href="/es/" class="lang-active">🇪🇸 ES</a>
+                    <a href="/ar/">🇸🇦 AR</a>
+                </span>
+                <span class="trade-badge">⚡ Solo Comercio · Pedido Mínimo £250</span>
             </div>
         </div>
     </div>
@@ -244,34 +253,50 @@
                 <div class="logo-mark">£</div>
                 <div class="logo-text">
                     <span class="logo-name">Cheap<span class="logo-accent">ALot</span></span>
-                    <span class="logo-tag">Yiwu Sourcing · Wholesale · Clearance</span>
+                    <span class="logo-tag">Yiwu Sourcing · Mayorista · Liquidación</span>
                 </div>
             </a>
             <div class="header-search">
-                <input type="text" placeholder="Search 20,000+ products...">
-                <button class="search-btn">🔍 SEARCH</button>
+                <input type="text" placeholder="Buscar 20.000+ productos...">
+                <button class="search-btn">🔍 BUSCAR</button>
             </div>
             <div class="header-actions">
-                <a href="#" class="header-link">📋 Account</a>
-                <a href="#" class="header-link cart-link">🛒 Cart <span class="cart-count">0</span></a>
+
+                <div class="header-lang">
+                    <select onchange="if(this.value) window.location.href=this.value">
+                        <option value="">🌐 Idioma</option>
+                        <option value="/">English</option>
+                        <option value="/es/" selected>Español</option>
+                        <option value="/ar/" dir="rtl">العربية</option>
+                    </select>
+                </div>
+
+                <a href="https://wa.me/8613516946001" class="header-wa-btn" target="_blank">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp
+                </a>
+                <a href="../index.html#community" class="header-link">👥 Únete a la Comunidad</a>
             </div>
         </div>
     </header>
 
     <!-- Main Nav -->
-    <nav class="main-nav">
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav">
         <div class="container">
             <ul class="nav-list">
-                <li><a href="index.html" class="nav-link">HOME</a></li>
-                <li><a href="products.html?category=household" class="nav-link">HOUSEHOLD TEXTILES</a></li>
-                <li><a href="products.html?category=diy" class="nav-link">DIY & AUTO</a></li>
-                <li><a href="products.html?category=electrical" class="nav-link">ELECTRICAL</a></li>
-                <li><a href="products.html?category=sports" class="nav-link">SPORTS & LEISURE</a></li>
-                <li><a href="products.html?category=apparel" class="nav-link">FASHION & BEAUTY</a></li>
-                <li><a href="products.html?category=furniture" class="nav-link">FURNITURE & SOFAS</a></li>
-                <li><a href="products.html?category=mixed" class="nav-link">MIXED HOUSEHOLD</a></li>
-                <li><a href="products.html?category=toys" class="nav-link">TOYS & NURSERY</a></li>
-                <li><a href="products.html" class="nav-link nav-all">ALL CATEGORIES ▾</a></li>
+                <li><a href="index.html" class="nav-link">INICIO</a></li>
+                <li><a href="products.html" class="nav-link active">VER STOCK</a></li>
+                <li><a href="index.html#services" class="nav-link">AGENTE DE COMPRAS</a></li>
+                <li><a href="index.html#sell-stock" class="nav-link">VENDE TU STOCK</a></li>
+                <li><a href="index.html#services" class="nav-link">NUESTROS SERVICIOS</a></li>
+                <li><a href="index.html#yiwu" class="nav-link">SOBRE YIWU</a></li>
+                <li><a href="index.html#about-us" class="nav-link">SOBRE NOSOTROS</a></li>
+                <li><a href="index.html#blog" class="nav-link">BLOG</a></li>
+                <li><a href="index.html#community" class="nav-link">COMUNIDAD</a></li>
+                <li><a href="index.html#contact" class="nav-link">CONTACTO</a></li>
             </ul>
         </div>
     </nav>
@@ -280,10 +305,10 @@
     <div class="page-hero">
         <div class="container">
             <div class="breadcrumbs">
-                <a href="index.html">Home</a> / Live Stock List
+                <a href="index.html">Inicio</a> / Lista de Stock en Vivo
             </div>
-            <h1>Live Stock List</h1>
-            <p>Browse 20,000+ wholesale products available for immediate dispatch</p>
+            <h1>Lista de Stock en Vivo</h1>
+            <p>Explore más de 20.000 productos al por mayor disponibles para envío inmediato</p>
         </div>
     </div>
 
@@ -291,61 +316,61 @@
     <div class="container product-layout">
         <!-- Filter Sidebar -->
         <aside class="filter-sidebar">
-            <h3>Filters</h3>
+            <h3>Filtros</h3>
 
             <div class="filter-group">
-                <h4>Category</h4>
-                <label><input type="checkbox" checked> Household Textiles <span class="count">(1,240)</span></label>
-                <label><input type="checkbox"> Electrical <span class="count">(2,580)</span></label>
-                <label><input type="checkbox"> Apparel <span class="count">(3,820)</span></label>
-                <label><input type="checkbox"> DIY & Auto <span class="count">(980)</span></label>
-                <label><input type="checkbox"> Furniture & Sofas <span class="count">(450)</span></label>
-                <label><input type="checkbox"> Toys & Nursery <span class="count">(1,500)</span></label>
-                <label><input type="checkbox"> Sports & Leisure <span class="count">(720)</span></label>
-                <label><input type="checkbox"> Mixed Household <span class="count">(1,200)</span></label>
+                <h4>Categoría</h4>
+                <label><input type="checkbox" checked> Textiles del Hogar <span class="count">(1.240)</span></label>
+                <label><input type="checkbox"> Eléctrico <span class="count">(2.580)</span></label>
+                <label><input type="checkbox"> Ropa <span class="count">(3.820)</span></label>
+                <label><input type="checkbox"> DIY y Auto <span class="count">(980)</span></label>
+                <label><input type="checkbox"> Muebles y Sofás <span class="count">(450)</span></label>
+                <label><input type="checkbox"> Juguetes y Bebé <span class="count">(1.500)</span></label>
+                <label><input type="checkbox"> Deportes y Ocio <span class="count">(720)</span></label>
+                <label><input type="checkbox"> Hogar Mixto <span class="count">(1.200)</span></label>
             </div>
 
             <div class="filter-group">
-                <h4>Stock Condition</h4>
-                <label><input type="checkbox" checked> New / Unused</label>
-                <label><input type="checkbox"> Customer Returns</label>
-                <label><input type="checkbox"> Like New</label>
-                <label><input type="checkbox"> Damaged / Refurb</label>
-                <label><input type="checkbox"> Mixed Pallets</label>
+                <h4>Condición del Stock</h4>
+                <label><input type="checkbox" checked> Nuevo / Sin Usar</label>
+                <label><input type="checkbox"> Devoluciones de Clientes</label>
+                <label><input type="checkbox"> Como Nuevo</label>
+                <label><input type="checkbox"> Dañado / Reacondicionado</label>
+                <label><input type="checkbox"> Paletas Mixtas</label>
             </div>
 
             <div class="filter-group">
-                <h4>Min Quantity</h4>
-                <label><input type="checkbox"> 100+ units</label>
-                <label><input type="checkbox"> 500+ units</label>
-                <label><input type="checkbox"> 1,000+ units</label>
-                <label><input type="checkbox"> Full Pallet</label>
-                <label><input type="checkbox"> Container Load</label>
+                <h4>Cantidad Mínima</h4>
+                <label><input type="checkbox"> 100+ unidades</label>
+                <label><input type="checkbox"> 500+ unidades</label>
+                <label><input type="checkbox"> 1.000+ unidades</label>
+                <label><input type="checkbox"> Paleta Completa</label>
+                <label><input type="checkbox"> Carga de Contenedor</label>
             </div>
 
             <div class="filter-group">
-                <h4>Price Range</h4>
-                <label><input type="checkbox"> Under £1</label>
+                <h4>Rango de Precio</h4>
+                <label><input type="checkbox"> Menos de £1</label>
                 <label><input type="checkbox"> £1 - £5</label>
                 <label><input type="checkbox"> £5 - £20</label>
                 <label><input type="checkbox"> £20 - £50</label>
                 <label><input type="checkbox"> £50+</label>
             </div>
 
-            <a href="products.html" class="btn btn-outline" style="width:100%;justify-content:center">Clear Filters</a>
+            <a href="products.html" class="btn btn-outline" style="width:100%;justify-content:center">Limpiar Filtros</a>
         </aside>
 
         <!-- Products -->
         <main>
             <div class="products-toolbar">
-                <div class="toolbar-info">Showing <strong>1-12</strong> of <strong>12,490</strong> products</div>
+                <div class="toolbar-info">Mostrando <strong>1-12</strong> de <strong>12.490</strong> productos</div>
                 <div class="toolbar-sort">
                     <select>
-                        <option>Sort: Newest First</option>
-                        <option>Price: Low to High</option>
-                        <option>Price: High to Low</option>
-                        <option>Quantity: High to Low</option>
-                        <option>Most Popular</option>
+                        <option>Ordenar: Más Recientes</option>
+                        <option>Precio: De Menor a Mayor</option>
+                        <option>Precio: De Mayor a Menor</option>
+                        <option>Cantidad: De Mayor a Menor</option>
+                        <option>Más Populares</option>
                     </select>
                 </div>
             </div>
@@ -353,235 +378,235 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-img" style="background-image: url('images/products/p1.jpg')">
-                        <span class="product-tag">Best Seller</span>
+                        <span class="product-tag">Más Vendido</span>
                     </div>
                     <div class="product-body">
-                        <div class="product-cat">Household</div>
-                        <h3 class="product-title">Heavy Duty Black Refuse Sacks (50 Pack)</h3>
+                        <div class="product-cat">Hogar</div>
+                        <h3 class="product-title">Bolsas de Basura Negras Reforzadas (Pack 50)</h3>
                         <div class="product-meta">
-                            <span>📦 Min: 500 pcs</span>
-                            <span>✓ In Stock</span>
+                            <span>📦 Mín: 500 pcs</span>
+                            <span>✓ En Stock</span>
                         </div>
-                        <div class="product-price">£0.18<small>per unit · Bulk pricing</small></div>
+                        <div class="product-price">£0.18<small>por unidad · precios al por mayor</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn btn-outline">Ver</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-img" style="background-image: url('images/products/p2.jpg')">
-                        <span class="product-tag green">New</span>
+                        <span class="product-tag green">Nuevo</span>
                     </div>
                     <div class="product-body">
-                        <div class="product-cat">Pet Supplies</div>
-                        <h3 class="product-title">Pet Bowl & Lead Bundle Pack</h3>
+                        <div class="product-cat">Mascotas</div>
+                        <h3 class="product-title">Pack Comedero y Correa para Mascotas</h3>
                         <div class="product-meta">
-                            <span>📦 Min: 200 pcs</span>
-                            <span>✓ In Stock</span>
+                            <span>📦 Mín: 200 pcs</span>
+                            <span>✓ En Stock</span>
                         </div>
-                        <div class="product-price">£2.40<small>per unit</small></div>
+                        <div class="product-price">£2.40<small>por unidad</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn btn-outline">Ver</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-img" style="background-image: url('images/products/p3.jpg')">
-                        <span class="product-tag orange">70% Off</span>
+                        <span class="product-tag orange">70% Descuento</span>
                     </div>
                     <div class="product-body">
-                        <div class="product-cat">Food & Beverage</div>
-                        <h3 class="product-title">Mixed Confectionery Pallet - 200kg</h3>
+                        <div class="product-cat">Alimentación</div>
+                        <h3 class="product-title">Paleta de Golosinas Mixtas - 200kg</h3>
                         <div class="product-meta">
-                            <span>📦 1 Pallet</span>
-                            <span>🔥 Limited</span>
+                            <span>📦 1 Paleta</span>
+                            <span>🔥 Limitado</span>
                         </div>
-                        <div class="product-price">£280<small>per pallet</small></div>
+                        <div class="product-price">£280<small>por paleta</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn btn-outline">Ver</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-img" style="background-image: url('images/products/p4.jpg')">
-                        <span class="product-tag">Clearance</span>
+                        <span class="product-tag">Liquidación</span>
                     </div>
                     <div class="product-body">
-                        <div class="product-cat">Beauty</div>
-                        <h3 class="product-title">Shampoo & Conditioner Mixed Lot</h3>
+                        <div class="product-cat">Belleza</div>
+                        <h3 class="product-title">Lote Mixto de Champú y Acondicionador</h3>
                         <div class="product-meta">
-                            <span>📦 Min: 1,000 pcs</span>
-                            <span>✓ In Stock</span>
+                            <span>📦 Mín: 1.000 pcs</span>
+                            <span>✓ En Stock</span>
                         </div>
-                        <div class="product-price">£0.45<small>per unit</small></div>
+                        <div class="product-price">£0.45<small>por unidad</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn btn-outline">Ver</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-img" style="background-image: url('images/products/p5.jpg')">
-                        <span class="product-tag">Seasonal</span>
+                        <span class="product-tag">Temporada</span>
                     </div>
                     <div class="product-body">
-                        <div class="product-cat">Garden</div>
-                        <h3 class="product-title">Garden Tool & Accessory Bundle</h3>
+                        <div class="product-cat">Jardín</div>
+                        <h3 class="product-title">Pack de Herramientas y Accesorios de Jardín</h3>
                         <div class="product-meta">
-                            <span>📦 Min: 100 sets</span>
-                            <span>✓ In Stock</span>
+                            <span>📦 Mín: 100 sets</span>
+                            <span>✓ En Stock</span>
                         </div>
-                        <div class="product-price">£8.50<small>per set</small></div>
+                        <div class="product-price">£8.50<small>por set</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn btn-outline">Ver</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-img" style="background-image: url('images/products/p6.jpg')">
-                        <span class="product-tag orange">Hot</span>
+                        <span class="product-tag orange">Caliente</span>
                     </div>
                     <div class="product-body">
-                        <div class="product-cat">BBQ & Outdoor</div>
-                        <h3 class="product-title">BBQ Tools Set - Stainless Steel</h3>
+                        <div class="product-cat">BBQ y Exterior</div>
+                        <h3 class="product-title">Set de Utensilios para BBQ - Acero Inoxidable</h3>
                         <div class="product-meta">
-                            <span>📦 Min: 200 sets</span>
-                            <span>✓ In Stock</span>
+                            <span>📦 Mín: 200 sets</span>
+                            <span>✓ En Stock</span>
                         </div>
-                        <div class="product-price">£4.20<small>per set</small></div>
+                        <div class="product-price">£4.20<small>por set</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn btn-outline">Ver</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-img" style="background-image: url('images/products/p7.jpg')">
-                        <span class="product-tag green">New</span>
+                        <span class="product-tag green">Nuevo</span>
                     </div>
                     <div class="product-body">
                         <div class="product-cat">DIY</div>
-                        <h3 class="product-title">Power Tool Accessory Mixed Pack</h3>
+                        <h3 class="product-title">Pack Mixto de Accesorios para Herramientas Eléctricas</h3>
                         <div class="product-meta">
-                            <span>📦 Min: 300 pcs</span>
-                            <span>✓ In Stock</span>
+                            <span>📦 Mín: 300 pcs</span>
+                            <span>✓ En Stock</span>
                         </div>
-                        <div class="product-price">£1.80<small>per unit</small></div>
+                        <div class="product-price">£1.80<small>por unidad</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn btn-outline">Ver</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-img" style="background-image: url('images/products/p8.jpg')">
-                        <span class="product-tag">Best Seller</span>
+                        <span class="product-tag">Más Vendido</span>
                     </div>
                     <div class="product-body">
-                        <div class="product-cat">Furniture</div>
-                        <h3 class="product-title">3-Seater Sofa - Mixed Colours</h3>
+                        <div class="product-cat">Muebles</div>
+                        <h3 class="product-title">Sofá de 3 Plazas - Colores Mezclados</h3>
                         <div class="product-meta">
-                            <span>📦 Min: 5 pcs</span>
-                            <span>🔥 Limited</span>
+                            <span>📦 Mín: 5 pcs</span>
+                            <span>🔥 Limitado</span>
                         </div>
-                        <div class="product-price">£185<small>per unit</small></div>
+                        <div class="product-price">£185<small>por unidad</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn btn-outline">Ver</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-img" style="background-image: url('images/products/p9.jpg')">
-                        <span class="product-tag">Clearance</span>
+                        <span class="product-tag">Liquidación</span>
                     </div>
                     <div class="product-body">
-                        <div class="product-cat">Toys</div>
-                        <h3 class="product-title">Plush Toy Mixed Pallet - 500pcs</h3>
+                        <div class="product-cat">Juguetes</div>
+                        <h3 class="product-title">Paleta de Peluches Mixtos - 500pcs</h3>
                         <div class="product-meta">
-                            <span>📦 1 Pallet</span>
-                            <span>✓ In Stock</span>
+                            <span>📦 1 Paleta</span>
+                            <span>✓ En Stock</span>
                         </div>
-                        <div class="product-price">£450<small>per pallet</small></div>
+                        <div class="product-price">£450<small>por paleta</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn btn-outline">Ver</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-img" style="background-image: url('images/products/p10.jpg')">
-                        <span class="product-tag green">New</span>
+                        <span class="product-tag green">Nuevo</span>
                     </div>
                     <div class="product-body">
-                        <div class="product-cat">Beauty</div>
-                        <h3 class="product-title">Skincare Set - Mixed Brands</h3>
+                        <div class="product-cat">Belleza</div>
+                        <h3 class="product-title">Set de Cuidado de la Piel - Marcas Mezcladas</h3>
                         <div class="product-meta">
-                            <span>📦 Min: 200 sets</span>
-                            <span>✓ In Stock</span>
+                            <span>📦 Mín: 200 sets</span>
+                            <span>✓ En Stock</span>
                         </div>
-                        <div class="product-price">£3.20<small>per set</small></div>
+                        <div class="product-price">£3.20<small>por set</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn btn-outline">Ver</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-img" style="background-image: url('images/products/p11.jpg')">
-                        <span class="product-tag">Best Seller</span>
+                        <span class="product-tag">Más Vendido</span>
                     </div>
                     <div class="product-body">
-                        <div class="product-cat">Sports</div>
-                        <h3 class="product-title">Yoga Mat & Fitness Band Bundle</h3>
+                        <div class="product-cat">Deportes</div>
+                        <h3 class="product-title">Pack Esterilla de Yoga y Banda de Fitness</h3>
                         <div class="product-meta">
-                            <span>📦 Min: 100 sets</span>
-                            <span>✓ In Stock</span>
+                            <span>📦 Mín: 100 sets</span>
+                            <span>✓ En Stock</span>
                         </div>
-                        <div class="product-price">£5.80<small>per set</small></div>
+                        <div class="product-price">£5.80<small>por set</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn btn-outline">Ver</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-img" style="background-image: url('images/products/p12.jpg')">
-                        <span class="product-tag orange">70% Off</span>
+                        <span class="product-tag orange">70% Descuento</span>
                     </div>
                     <div class="product-body">
-                        <div class="product-cat">Apparel</div>
-                        <h3 class="product-title">Mixed Fashion Returns - 1000pcs</h3>
+                        <div class="product-cat">Ropa</div>
+                        <h3 class="product-title">Devoluciones de Moda Mixtas - 1000pcs</h3>
                         <div class="product-meta">
-                            <span>📦 1 Pallet</span>
-                            <span>🔥 Limited</span>
+                            <span>📦 1 Paleta</span>
+                            <span>🔥 Limitado</span>
                         </div>
-                        <div class="product-price">£1,200<small>per pallet</small></div>
+                        <div class="product-price">£1.200<small>por paleta</small></div>
                         <div class="product-actions">
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn btn-outline">Ver</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="pagination">
-                <a href="#">← Previous</a>
+                <a href="#">← Anterior</a>
                 <a href="#" class="active">1</a>
                 <a href="#">2</a>
                 <a href="#">3</a>
@@ -589,7 +614,7 @@
                 <a href="#">5</a>
                 <a href="#">...</a>
                 <a href="#">1041</a>
-                <a href="#">Next →</a>
+                <a href="#">Siguiente →</a>
             </div>
         </main>
     </div>
@@ -599,41 +624,45 @@
         <div class="container footer-inner">
             <div class="foot-col">
                 <h4>CheapALot</h4>
-                <p>Your trusted B2B partner for wholesale, returns, and liquidation stock. Direct from factories to global trade buyers.</p>
+                <p>Su socio B2B de confianza para stock al por mayor, devoluciones y liquidación. Directo de las fábricas a los compradores comerciales globales.</p>
                 <div class="foot-social">
-                    <a href="#">LinkedIn</a> · <a href="#">Facebook</a> · <a href="#">YouTube</a>
+                    <a href="https://wa.me/8613516946001" target="_blank">WhatsApp</a> · <a href="mailto:dscaro88@gmail.com">Email</a> · <a href="#">WeChat</a> · <a href="#">Facebook</a>
+                </div>
+                <div class="foot-founder">
+                    <p><strong>Caro Chen</strong> — CEO y Fundadora</p>
+                    <p>Tel/WA: +86 135 1694 6001 · Email: dscaro88@gmail.com</p>
                 </div>
             </div>
             <div class="foot-col">
-                <h4>Categories</h4>
+                <h4>Categorías</h4>
                 <ul>
-                    <li><a href="#">Household Textiles</a></li>
-                    <li><a href="#">Electronics</a></li>
-                    <li><a href="#">Apparel</a></li>
-                    <li><a href="#">DIY & Auto</a></li>
-                    <li><a href="#">Furniture</a></li>
+                    <li><a href="?category=household">Textiles del Hogar</a></li>
+                    <li><a href="?category=electrical">Electrónica</a></li>
+                    <li><a href="?category=apparel">Ropa</a></li>
+                    <li><a href="?category=diy">DIY y Auto</a></li>
+                    <li><a href="?category=furniture">Muebles</a></li>
                 </ul>
             </div>
             <div class="foot-col">
-                <h4>Information</h4>
+                <h4>Información</h4>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Buying From Us</a></li>
-                    <li><a href="#">Sell Your Stock</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="index.html#about-us">Sobre Nosotros</a></li>
+                    <li><a href="index.html#services">Cómo Comprar</a></li>
+                    <li><a href="index.html#sell-stock">Vender Su Stock</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
                 </ul>
             </div>
             <div class="foot-col">
-                <h4>Contact</h4>
-                <p>📧 info@cheapalot.com</p>
-                <p>📞 +44 7435 712 880</p>
-                <p>📍 London, UK</p>
+                <h4>Contacto</h4>
+                <p>📧 dscaro88@gmail.com</p>
+                <p>📞 +86 135 1694 6001</p>
+                <p>📍 Yiwu, Zhejiang, China</p>
             </div>
         </div>
         <div class="foot-bottom">
             <div class="container">
-                <p>© 2026 CheapALot.com · All Rights Reserved · A Lot of Stock. A Lot Cheap.</p>
-                <p>Trade to Trade Only · Minimum Order £250</p>
+                <p>© 2026 CheapALot.com · Basados en Yiwu, China · 20+ Años de Experiencia en Exportación · Todos los Derechos Reservados</p>
+                <p>Mucho Stock. Muy Barato. · Solo Comercio a Comercio · Pedido Mínimo £250</p>
             </div>
         </div>
     </footer>
