@@ -1,11 +1,10 @@
 {
-  "_comment": "Replace placeholder IDs with your actual Formspree IDs. Get them at https://formspree.io",
-  "_instructions": "1. Sign up at formspree.io  2. Create a new form for each type  3. Copy the form ID from the action URL  4. Replace 'your-form-id' below  5. Run: node build/build-products.js",
+  "_comment": "Formspree form IDs for cheapalot.com - configured 2026-07-07",
   "forms": {
-    "inquiry": "your-form-id",
-    "sourcing": "your-form-id",
-    "sell": "your-form-id",
-    "contact": "your-form-id",
-    "exit_popup": "your-form-id"
+    "inquiry": "mgojqdyy",
+    "sourcing": "xqevjnlz",
+    "sell": "xeebdnza",
+    "contact": "xdarjbdr",
+    "exit_popup": "mqevjndz"
   }
 }
