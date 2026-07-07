@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    <!-- Homepage -->
+    <!-- EN Homepage -->
     <url>
         <loc>https://cheapalot.com/</loc>
-        <lastmod>2026-07-04</lastmod>
+        <lastmod>2026-07-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/"/>
@@ -13,10 +13,10 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/"/>
     </url>
 
-    <!-- Products Page -->
+    <!-- EN Products -->
     <url>
         <loc>https://cheapalot.com/products.html</loc>
-        <lastmod>2026-07-04</lastmod>
+        <lastmod>2026-07-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/products.html"/>
@@ -25,10 +25,10 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/products.html"/>
     </url>
 
-    <!-- About Page -->
+    <!-- EN About -->
     <url>
         <loc>https://cheapalot.com/about.html</loc>
-        <lastmod>2026-07-04</lastmod>
+        <lastmod>2026-07-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/about.html"/>
@@ -37,10 +37,10 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/about.html"/>
     </url>
 
-    <!-- Terms & Conditions Page -->
+    <!-- EN Terms -->
     <url>
         <loc>https://cheapalot.com/terms.html</loc>
-        <lastmod>2026-07-04</lastmod>
+        <lastmod>2026-07-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/terms.html"/>
@@ -49,10 +49,10 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/terms.html"/>
     </url>
 
-    <!-- Sell Your Stock Page -->
+    <!-- EN Sell -->
     <url>
         <loc>https://cheapalot.com/sell.html</loc>
-        <lastmod>2026-07-04</lastmod>
+        <lastmod>2026-07-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/sell.html"/>
@@ -61,10 +61,10 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/sell.html"/>
     </url>
 
-    <!-- Contact Page -->
+    <!-- EN Contact -->
     <url>
         <loc>https://cheapalot.com/contact.html</loc>
-        <lastmod>2026-07-04</lastmod>
+        <lastmod>2026-07-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/contact.html"/>
@@ -73,10 +73,10 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/contact.html"/>
     </url>
 
-    <!-- Arabic Version Homepage -->
+    <!-- ES Homepage -->
     <url>
-        <loc>https://cheapalot.com/ar/</loc>
-        <lastmod>2026-07-04</lastmod>
+        <loc>https://cheapalot.com/es/</loc>
+        <lastmod>2026-07-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/"/>
@@ -85,15 +85,135 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/"/>
     </url>
 
-    <!-- Spanish Version Homepage -->
+    <!-- ES Products -->
     <url>
-        <loc>https://cheapalot.com/es/</loc>
-        <lastmod>2026-07-04</lastmod>
+        <loc>https://cheapalot.com/es/products.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/products.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://cheapalot.com/es/products.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://cheapalot.com/ar/products.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/products.html"/>
+    </url>
+
+    <!-- ES About -->
+    <url>
+        <loc>https://cheapalot.com/es/about.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/about.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://cheapalot.com/es/about.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://cheapalot.com/ar/about.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/about.html"/>
+    </url>
+
+    <!-- ES Terms -->
+    <url>
+        <loc>https://cheapalot.com/es/terms.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/terms.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://cheapalot.com/es/terms.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://cheapalot.com/ar/terms.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/terms.html"/>
+    </url>
+
+    <!-- ES Sell -->
+    <url>
+        <loc>https://cheapalot.com/es/sell.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/sell.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://cheapalot.com/es/sell.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://cheapalot.com/ar/sell.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/sell.html"/>
+    </url>
+
+    <!-- ES Contact -->
+    <url>
+        <loc>https://cheapalot.com/es/contact.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://cheapalot.com/es/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://cheapalot.com/ar/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/contact.html"/>
+    </url>
+
+    <!-- AR Homepage -->
+    <url>
+        <loc>https://cheapalot.com/ar/</loc>
+        <lastmod>2026-07-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://cheapalot.com/es/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://cheapalot.com/ar/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/"/>
+    </url>
+
+    <!-- AR Products -->
+    <url>
+        <loc>https://cheapalot.com/ar/products.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/products.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://cheapalot.com/es/products.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://cheapalot.com/ar/products.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/products.html"/>
+    </url>
+
+    <!-- AR About -->
+    <url>
+        <loc>https://cheapalot.com/ar/about.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/about.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://cheapalot.com/es/about.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://cheapalot.com/ar/about.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/about.html"/>
+    </url>
+
+    <!-- AR Terms -->
+    <url>
+        <loc>https://cheapalot.com/ar/terms.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/terms.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://cheapalot.com/es/terms.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://cheapalot.com/ar/terms.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/terms.html"/>
+    </url>
+
+    <!-- AR Sell -->
+    <url>
+        <loc>https://cheapalot.com/ar/sell.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/sell.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://cheapalot.com/es/sell.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://cheapalot.com/ar/sell.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/sell.html"/>
+    </url>
+
+    <!-- AR Contact -->
+    <url>
+        <loc>https://cheapalot.com/ar/contact.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cheapalot.com/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://cheapalot.com/es/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://cheapalot.com/ar/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://cheapalot.com/contact.html"/>
     </url>
 </urlset>

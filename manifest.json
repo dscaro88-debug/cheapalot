@@ -1,0 +1,21 @@
+{
+  "name": "CheapALot - Wholesale Clearance Stock",
+  "short_name": "CheapALot",
+  "description": "B2B wholesale clearance stock from 1p/unit. Yiwu sourcing agent, factory-direct procurement, export & logistics.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#e63946",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
