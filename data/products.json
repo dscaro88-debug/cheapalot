@@ -16975,6 +16975,43 @@
         "es": "ddd",
         "ar": "ddd"
       }
+    },
+    {
+      "id": "sup_1784018590167",
+      "image": "images/products/custom/sup_1784018590167.jpg",
+      "tag": "new",
+      "category": "home_decor",
+      "price": 3.56,
+      "price_display": "£3.56",
+      "stock_status": "in_stock",
+      "name": {
+        "en": "USD Test Vase",
+        "es": "USD Test Vase",
+        "ar": "USD Test Vase"
+      },
+      "category_display": {
+        "en": "Home Decoration",
+        "es": "Decoración del Hogar",
+        "ar": "ديكور المنزل"
+      },
+      "price_unit": {
+        "en": "per unit",
+        "es": "por unidad",
+        "ar": "للقطعة"
+      },
+      "min_order": {
+        "en": "20 pieces",
+        "es": "20 pieces",
+        "ar": "20 pieces"
+      },
+      "source": "supplier",
+      "supplier": "USD Test Supplier",
+      "original_price_usd": "4.50 USD",
+      "description": {
+        "en": "Test product with USD pricing",
+        "es": "Test product with USD pricing",
+        "ar": "Test product with USD pricing"
+      }
     }
   ],
   "deals": [
