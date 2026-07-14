@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Supplier Upload — CheapALot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f5f5f5; color: #1a1a1a; min-height: 100vh; }
+        .header { background: #1a1a1a; color: #fff; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .header h1 { font-family: 'Oswald', sans-serif; font-size: 22px; }
+        .header a { color: #e31837; text-decoration: none; font-size: 14px; }
+        .container { max-width: 640px; margin: 0 auto; padding: 24px 16px; }
+
+        /* Gate */
+        .gate-box { max-width: 400px; margin: 60px auto; padding: 40px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .gate-box h2 { text-align: center; font-family: 'Oswald', sans-serif; font-size: 24px; margin-bottom: 8px; }
+        .gate-box p { text-align: center; color: #666; margin-bottom: 24px; font-size: 14px; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #333; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 10px 14px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; font-family: inherit;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #e31837; }
+        .form-group textarea { resize: vertical; min-height: 80px; }
+        .btn { width: 100%; padding: 12px; background: #e31837; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+        .btn:hover { background: #c01530; }
+        .btn:disabled { background: #ccc; cursor: not-allowed; }
+
+        /* Upload form */
+        .upload-form { display: none; }
+        .form-section { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .form-section h3 { font-family: 'Oswald', sans-serif; font-size: 18px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f0f0f0; }
+        .form-row { display: flex; gap: 12px; }
+        .form-row .form-group { flex: 1; }
+        .image-preview { margin-top: 12px; display: none; }
+        .image-preview img { max-width: 200px; max-height: 200px; border-radius: 8px; border: 2px solid #e0e0e0; }
+        .file-drop { border: 2px dashed #ccc; border-radius: 8px; padding: 24px; text-align: center; cursor: pointer; transition: border-color 0.2s; }
+        .file-drop:hover { border-color: #e31837; }
+        .file-drop.has-file { border-color: #4CAF50; border-style: solid; }
+        .file-drop input { display: none; }
+        .file-drop .hint { font-size: 13px; color: #999; margin-top: 4px; }
+
+        .alert { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; }
+        .alert-success { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+        .alert-error { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
+        .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid #fff; border-top-color: transparent; border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 8px; vertical-align: middle; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .supplier-info { background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; font-size: 13px; color: #856404; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CheapALot — Supplier Upload</h1>
+        <a href="/">← Back to Site</a>
+    </div>
+
+    <div class="container">
+        <!-- Gate -->
+        <div id="gateScreen" class="gate-box">
+            <h2>Supplier Portal</h2>
+            <p>Enter your access code to upload products</p>
+            <div class="form-group">
+                <label>Access Code</label>
+                <input type="password" id="accessCode" placeholder="Enter access code" onkeypress="if(event.key==='Enter')checkAccess()">
+            </div>
+            <button class="btn" onclick="checkAccess()">Enter</button>
+        </div>
+
+        <!-- Upload Form -->
+        <div id="uploadForm" class="upload-form">
+            <div class="supplier-info">
+                <strong>Welcome!</strong> Fill in your product details and upload an image. Your product will appear on CheapALot within 1-2 minutes after submission.
+            </div>
+
+            <div id="alertBox"></div>
+
+            <div class="form-section">
+                <h3>Product Information</h3>
+                <div class="form-group">
+                    <label>Supplier / Company Name *</label>
+                    <input type="text" id="supplierName" placeholder="e.g. Yiwu ABC Trading Co.">
+                </div>
+                <div class="form-group">
+                    <label>Product Name (English) *</label>
+                    <input type="text" id="productName" placeholder="e.g. LED Strip Light 5m RGB">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Category *</label>
+                        <select id="category">
+                            <option value="toys">Toys & Hobbies</option>
+                            <option value="household">Household & Daily Use</option>
+                            <option value="apparel">Apparel & Accessories</option>
+                            <option value="jewelry">Jewelry & Accessories</option>
+                            <option value="crafts">Arts & Crafts</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="sports">Sports & Outdoor</option>
+                            <option value="home_decor">Home Decoration</option>
+                            <option value="stationery">Stationery & Office</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Price (CNY) *</label>
+                        <input type="text" id="priceCny" placeholder="e.g. 3.50">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Min Order Qty *</label>
+                        <input type="text" id="minOrder" placeholder="e.g. 100 pcs">
+                    </div>
+                    <div class="form-group">
+                        <label>Stock Status</label>
+                        <select id="stockStatus">
+                            <option value="in_stock">In Stock</option>
+                            <option value="limited">Limited Stock</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Description (optional)</label>
+                    <textarea id="description" placeholder="Brief product description..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Product Image</h3>
+                <div class="file-drop" id="fileDrop" onclick="document.getElementById('imageFile').click()">
+                    <div id="dropText">📷 Click to select image</div>
+                    <div class="hint">JPG/PNG/WebP · Max 5MB · Will be auto-compressed</div>
+                    <input type="file" id="imageFile" accept="image/*" onchange="handleImageSelect(event)">
+                </div>
+                <div class="image-preview" id="imagePreview">
+                    <img id="previewImg" src="" alt="Preview">
+                </div>
+            </div>
+
+            <button class="btn" id="submitBtn" onclick="submitProduct()">
+                Submit Product
+            </button>
+        </div>
+    </div>
+
+    <script>
+        var ACCESS_CODE = ''; // Will be verified server-side
+        var compressedImage = null;
+
+        function checkAccess() {
+            var code = document.getElementById('accessCode').value.trim();
+            if (!code) return;
+            // Verify against server
+            fetch('/api/upload', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action: 'verify', code: code })
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.ok) {
+                    ACCESS_CODE = code;
+                    document.getElementById('gateScreen').style.display = 'none';
+                    document.getElementById('uploadForm').style.display = 'block';
+                } else {
+                    alert('Invalid access code');
+                }
+            })
+            .catch(function() {
+                // If API not available, use client-side check as fallback
+                alert('Cannot verify access code. Please try again.');
+            });
+        }
+
+        function handleImageSelect(event) {
+            var file = event.target.files[0];
+            if (!file) return;
+
+            if (file.size > 5 * 1024 * 1024) {
+                alert('Image too large. Max 5MB.');
+                return;
+            }
+
+            document.getElementById('dropText').textContent = '⏳ Compressing...';
+
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var img = new Image();
+                img.onload = function() {
+                    // Compress: max 800x800, JPEG quality 0.8
+                    var canvas = document.createElement('canvas');
+                    var maxDim = 800;
+                    var w = img.width, h = img.height;
+                    if (w > h) {
+                        if (w > maxDim) { h = h * maxDim / w; w = maxDim; }
+                    } else {
+                        if (h > maxDim) { w = w * maxDim / h; h = maxDim; }
+                    }
+                    canvas.width = w;
+                    canvas.height = h;
+                    var ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, w, h);
+                    compressedImage = canvas.toDataURL('image/jpeg', 0.8);
+
+                    // Show preview
+                    document.getElementById('previewImg').src = compressedImage;
+                    document.getElementById('imagePreview').style.display = 'block';
+                    document.getElementById('dropText').textContent = '✅ Image ready (' + Math.round(compressedImage.length / 1024) + 'KB)';
+                    document.getElementById('fileDrop').classList.add('has-file');
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function showAlert(type, msg) {
+            var box = document.getElementById('alertBox');
+            box.innerHTML = '<div class="alert alert-' + type + '">' + msg + '</div>';
+        }
+
+        function submitProduct() {
+            var name = document.getElementById('productName').value.trim();
+            var supplier = document.getElementById('supplierName').value.trim();
+            var category = document.getElementById('category').value;
+            var priceCny = document.getElementById('priceCny').value.trim();
+            var minOrder = document.getElementById('minOrder').value.trim();
+            var stockStatus = document.getElementById('stockStatus').value;
+            var description = document.getElementById('description').value.trim();
+
+            if (!name || !supplier || !priceCny || !minOrder) {
+                showAlert('error', 'Please fill all required fields (*)');
+                return;
+            }
+            if (!compressedImage) {
+                showAlert('error', 'Please select a product image');
+                return;
+            }
+
+            var btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span>Uploading...';
+
+            fetch('/api/upload', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action: 'upload',
+                    code: ACCESS_CODE,
+                    supplierName: supplier,
+                    productName: name,
+                    category: category,
+                    priceCny: priceCny,
+                    minOrder: minOrder,
+                    stockStatus: stockStatus,
+                    description: description,
+                    image: compressedImage
+                })
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                btn.disabled = false;
+                btn.innerHTML = 'Submit Product';
+                if (data.ok) {
+                    showAlert('success', '✅ Product uploaded! It will appear on CheapALot within 1-2 minutes.');
+                    // Reset form
+                    document.getElementById('productName').value = '';
+                    document.getElementById('priceCny').value = '';
+                    document.getElementById('minOrder').value = '';
+                    document.getElementById('description').value = '';
+                    document.getElementById('imageFile').value = '';
+                    document.getElementById('imagePreview').style.display = 'none';
+                    document.getElementById('dropText').textContent = '📷 Click to select image';
+                    document.getElementById('fileDrop').classList.remove('has-file');
+                    compressedImage = null;
+                } else {
+                    showAlert('error', data.error || 'Upload failed. Please try again.');
+                }
+            })
+            .catch(function(err) {
+                btn.disabled = false;
+                btn.innerHTML = 'Submit Product';
+                showAlert('error', 'Network error. Please try again.');
+            });
+        }
+    </script>
+</body>
+</html>
