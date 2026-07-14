@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | CheapALot.com</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="https://cheapalot.com/admin.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/portal.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="portal-header">
+    <div class="container portal-header-inner">
+      <a href="index.html" class="portal-logo">
+        <span class="logo-mark">C</span>
+        <span class="logo-text">
+          <span class="logo-name">Cheap<span class="logo-accent">ALot</span></span>
+          <span class="logo-tag">Admin Panel</span>
+        </span>
+      </a>
+      <nav class="portal-nav" id="adminNav">
+        <a href="supplier.html">Supplier Portal</a>
+        <button onclick="logout()" class="btn-logout">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Alerts -->
+  <div id="alertContainer" class="portal-alerts"></div>
+
+  <!-- Auth Section -->
+  <section id="adminAuthSection" class="portal-section">
+    <div class="container">
+      <div class="auth-card">
+        <div class="auth-form-wrap active" style="display:block;">
+          <h2>Admin Login</h2>
+          <p class="auth-subtitle">Sign in with your admin account</p>
+          <form id="adminLoginForm">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="adminEmail" placeholder="admin@cheapalot.com" required>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" id="adminPassword" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Sign In as Admin</button>
+          </form>
+          <p class="auth-foot">
+            <a href="supplier.html">Supplier Portal</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin Dashboard -->
+  <section id="adminDashboard" class="admin-section" style="display:none;">
+    <div class="container">
+      <h1 class="admin-title">Admin Panel</h1>
+      <p class="admin-subtitle">Review supplier products and sync to website</p>
+
+      <!-- Admin Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <strong id="adminStatTotal">0</strong>
+          <span>All Products</span>
+        </div>
+        <div class="stat-card">
+          <strong id="adminStatPending">0</strong>
+          <span>Pending Review</span>
+        </div>
+        <div class="stat-card">
+          <strong id="adminStatApproved">0</strong>
+          <span>Approved</span>
+        </div>
+        <div class="stat-card">
+          <strong id="adminStatSuppliers">0</strong>
+          <span>Suppliers</span>
+        </div>
+      </div>
+
+      <!-- Sync Bar -->
+      <div class="sync-bar">
+        <div class="sync-info">
+          Approved products: <strong id="syncCount">0</strong> ready to publish
+        </div>
+        <div style="display:flex;gap:10px;">
+          <button class="btn btn-primary" onclick="syncToWebsite()">Sync to Website</button>
+          <button class="btn btn-secondary" onclick="loadAllData()">Refresh</button>
+        </div>
+      </div>
+
+      <!-- Admin Tabs -->
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-filter="pending" onclick="setFilter('pending')">
+          Pending <span class="tab-count" id="countPending">0</span>
+        </button>
+        <button class="admin-tab" data-filter="approved" onclick="setFilter('approved')">
+          Approved <span class="tab-count" id="countApproved">0</span>
+        </button>
+        <button class="admin-tab" data-filter="rejected" onclick="setFilter('rejected')">
+          Rejected <span class="tab-count" id="countRejected">0</span>
+        </button>
+        <button class="admin-tab" data-filter="all" onclick="setFilter('all')">
+          All <span class="tab-count" id="countAll">0</span>
+        </button>
+        <button class="admin-tab" data-filter="suppliers" onclick="setFilter('suppliers')">
+          Suppliers <span class="tab-count" id="countSuppliers">0</span>
+        </button>
+      </div>
+
+      <!-- Products Table -->
+      <div id="productsView" class="products-table-wrap">
+        <h3 id="viewTitle">Pending Review</h3>
+        <div class="products-table-scroll">
+          <table class="portal-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Supplier</th>
+                <th>Category</th>
+                <th>Price (CNY)</th>
+                <th>MOQ</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="adminTableBody"></tbody>
+          </table>
+        </div>
+        <div id="adminNoData" class="no-products-msg" style="display:none;">
+          <p>No products to display</p>
+        </div>
+      </div>
+
+      <!-- Suppliers View -->
+      <div id="suppliersView" class="products-table-wrap" style="display:none;">
+        <h3>Registered Suppliers</h3>
+        <div class="products-table-scroll">
+          <table class="portal-table">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>City</th>
+                <th>Products</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="suppliersTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="portal-footer">
+    <div class="container">
+      <p>&copy; 2026 CheapALot.com — <a href="index.html">Back to website</a></p>
+    </div>
+  </footer>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="js/admin-panel.js"></script>
+</body>
+</html>
