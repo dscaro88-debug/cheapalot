@@ -105,8 +105,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Price (CNY) *</label>
-                        <input type="text" id="priceCny" placeholder="e.g. 3.50">
+                        <label>Price (USD) *</label>
+                        <input type="text" id="priceUsd" placeholder="e.g. 3.50">
                     </div>
                 </div>
                 <div class="form-row">
@@ -225,12 +225,12 @@
             var name = document.getElementById('productName').value.trim();
             var supplier = document.getElementById('supplierName').value.trim();
             var category = document.getElementById('category').value;
-            var priceCny = document.getElementById('priceCny').value.trim();
+            var priceUsd = document.getElementById('priceUsd').value.trim();
             var minOrder = document.getElementById('minOrder').value.trim();
             var stockStatus = document.getElementById('stockStatus').value;
             var description = document.getElementById('description').value.trim();
 
-            if (!name || !supplier || !priceCny || !minOrder) {
+            if (!name || !supplier || !priceUsd || !minOrder) {
                 showAlert('error', 'Please fill all required fields (*)');
                 return;
             }
@@ -252,7 +252,7 @@
                     supplierName: supplier,
                     productName: name,
                     category: category,
-                    priceCny: priceCny,
+                    priceUsd: priceUsd,
                     minOrder: minOrder,
                     stockStatus: stockStatus,
                     description: description,
@@ -267,7 +267,7 @@
                     showAlert('success', '✅ Product uploaded! It will appear on CheapALot within 1-2 minutes.');
                     // Reset form
                     document.getElementById('productName').value = '';
-                    document.getElementById('priceCny').value = '';
+                    document.getElementById('priceUsd').value = '';
                     document.getElementById('minOrder').value = '';
                     document.getElementById('description').value = '';
                     document.getElementById('imageFile').value = '';

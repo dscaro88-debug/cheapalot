@@ -18,7 +18,7 @@ const CATEGORY_MAP = {
     other: { en: 'Other', es: 'Otros', ar: 'أخرى' }
 };
 
-const CNY_TO_GBP = 0.1075;
+const USD_TO_GBP = 0.79;
 
 function ghHeaders(token) {
     return {
@@ -98,26 +98,26 @@ module.exports = async (req, res) => {
     }
 
     // Validate fields
-    const { supplierName, productName, category, priceCny, minOrder, stockStatus, description, image } = body;
-    if (!supplierName || !productName || !priceCny || !minOrder || !image) {
+    const { supplierName, productName, category, priceUsd, minOrder, stockStatus, description, image } = body;
+    if (!supplierName || !productName || !priceUsd || !minOrder || !image) {
         return res.status(400).json({ ok: false, error: 'Missing required fields' });
     }
 
     try {
         // Parse price (could be "3.5" or "3.5~4.5")
-        const priceMatch = priceCny.match(/([\d.]+)/);
+        const priceMatch = priceUsd.match(/([\d.]+)/);
         if (!priceMatch) throw new Error('Invalid price format');
-        const priceCnyNum = parseFloat(priceMatch[1]);
-        const priceGbp = Math.round(priceCnyNum * CNY_TO_GBP * 100) / 100;
+        const priceUsdNum = parseFloat(priceMatch[1]);
+        const priceGbp = Math.round(priceUsdNum * USD_TO_GBP * 100) / 100;
 
         // Parse price range
-        const rangeMatch = priceCny.match(/([\d.]+)\s*[~-]\s*([\d.]+)/);
+        const rangeMatch = priceUsd.match(/([\d.]+)\s*[~-]\s*([\d.]+)/);
         let priceDisplay, priceNum;
         if (rangeMatch) {
             const low = parseFloat(rangeMatch[1]);
             const high = parseFloat(rangeMatch[2]);
-            const gbpLow = Math.round(low * CNY_TO_GBP * 100) / 100;
-            const gbpHigh = Math.round(high * CNY_TO_GBP * 100) / 100;
+            const gbpLow = Math.round(low * USD_TO_GBP * 100) / 100;
+            const gbpHigh = Math.round(high * USD_TO_GBP * 100) / 100;
             priceDisplay = `£${gbpLow} - £${gbpHigh}`;
             priceNum = gbpLow;
         } else {
@@ -152,7 +152,7 @@ module.exports = async (req, res) => {
             min_order: { en: minOrder, es: minOrder, ar: minOrder },
             source: 'supplier',
             supplier: supplierName,
-            original_price_cny: priceCny + ' CNY'
+            original_price_usd: priceUsd + ' USD'
         };
 
         if (description) {
