@@ -16938,6 +16938,43 @@
       "source": "yiwugo",
       "source_url": "https://www.yiwugo.com/product/detail/931457390.html?loc=59",
       "scraped_at": "2026-07-07T12:42:23.854Z"
+    },
+    {
+      "id": "sup_1784022084822",
+      "image": "images/products/custom/sup_1784022084822.jpg",
+      "tag": "new",
+      "category": "apparel",
+      "price": 0.28,
+      "price_display": "£0.28",
+      "stock_status": "in_stock",
+      "name": {
+        "en": "Women's Sandals  36-40 Size",
+        "es": "Women's Sandals  36-40 Size",
+        "ar": "Women's Sandals  36-40 Size"
+      },
+      "category_display": {
+        "en": "Apparel & Accessories",
+        "es": "Ropa y Accesorios",
+        "ar": "ملابس وإكسسوارات"
+      },
+      "price_unit": {
+        "en": "per unit",
+        "es": "por unidad",
+        "ar": "للقطعة"
+      },
+      "min_order": {
+        "en": "1000",
+        "es": "1000",
+        "ar": "1000"
+      },
+      "source": "supplier",
+      "supplier": "YWLT",
+      "original_price_usd": "0.35/pair USD",
+      "description": {
+        "en": "More Style Size 36-40.",
+        "es": "More Style Size 36-40.",
+        "ar": "More Style Size 36-40."
+      }
     }
   ],
   "deals": [
