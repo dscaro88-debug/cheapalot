@@ -22,6 +22,17 @@ const https = require('https');
 const http = require('http');
 const { execSync } = require('child_process');
 
+// Load .env file if exists (for local development)
+const envPath = path.resolve(__dirname, '..', '.env');
+if (fs.existsSync(envPath)) {
+  fs.readFileSync(envPath, 'utf8').split('\n').forEach(line => {
+    const match = line.match(/^([A-Z_]+)=(.+)$/);
+    if (match && !process.env[match[1]]) {
+      process.env[match[1]] = match[2].trim();
+    }
+  });
+}
+
 // Load config
 const config = require('../js/supabase-config.js');
 
