@@ -1,17 +1,9 @@
 // /api/upload.js — Vercel Serverless Function
 // Handles supplier product uploads: image + product data → GitHub commit → Vercel auto-deploy
 
-const crypto = require('crypto');
-
-const REPO_OWNER = process.env.GITHUB_REPO_OWNER || 'dscaro88-debug';
-const REPO_NAME = process.env.GITHUB_REPO_NAME || 'cheapalot';
-const BRANCH = process.env.GITHUB_BRANCH || 'main';
-const ALLOWED_ORIGINS = new Set([
-    'https://www.cheapalot.com',
-    'https://cheapalot.com'
-]);
-const MAX_IMAGE_BYTES = 1_500_000;
-const MAX_BODY_CHARS = 2_200_000;
+const REPO_OWNER = 'dscaro88-debug';
+const REPO_NAME = 'cheapalot';
+const BRANCH = 'main';
 
 const CATEGORY_MAP = {
     toys: { en: 'Toys & Hobbies', es: 'Juguetes', ar: 'ألعاب' },
@@ -34,19 +26,6 @@ function ghHeaders(token) {
         'Accept': 'application/vnd.github+json',
         'X-GitHub-Api-Version': '2022-11-28'
     };
-}
-
-function sameSecret(input, expected) {
-    if (typeof input !== 'string' || typeof expected !== 'string') return false;
-    const inputBuffer = Buffer.from(input);
-    const expectedBuffer = Buffer.from(expected);
-    if (inputBuffer.length !== expectedBuffer.length) return false;
-    return crypto.timingSafeEqual(inputBuffer, expectedBuffer);
-}
-
-function cleanText(value, maxLength) {
-    if (typeof value !== 'string') return '';
-    return value.replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, maxLength);
 }
 
 async function getFile(token, path) {
@@ -78,23 +57,13 @@ async function putFile(token, path, content, message, sha) {
 }
 
 module.exports = async (req, res) => {
-    const origin = req.headers.origin;
-    if (origin && ALLOWED_ORIGINS.has(origin)) {
-        res.setHeader('Access-Control-Allow-Origin', origin);
-        res.setHeader('Vary', 'Origin');
-    }
+    // CORS
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    res.setHeader('Cache-Control', 'no-store');
 
-    if (req.method === 'OPTIONS') {
-        if (origin && !ALLOWED_ORIGINS.has(origin)) return res.status(403).end();
-        return res.status(204).end();
-    }
+    if (req.method === 'OPTIONS') return res.status(200).end();
     if (req.method !== 'POST') return res.status(405).json({ ok: false, error: 'Method not allowed' });
-    if (origin && !ALLOWED_ORIGINS.has(origin)) {
-        return res.status(403).json({ ok: false, error: 'Origin not allowed' });
-    }
 
     const token = process.env.GITHUB_TOKEN;
     const uploadPassword = process.env.UPLOAD_PASSWORD;
@@ -105,20 +74,14 @@ module.exports = async (req, res) => {
 
     let body;
     try {
-        if (typeof req.body === 'string' && req.body.length > MAX_BODY_CHARS) {
-            return res.status(413).json({ ok: false, error: 'Request too large' });
-        }
         body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
     } catch (e) {
-        return res.status(400).json({ ok: false, error: 'Invalid request' });
-    }
-    if (!body || typeof body !== 'object') {
         return res.status(400).json({ ok: false, error: 'Invalid request' });
     }
 
     // Action: verify access code
     if (body.action === 'verify') {
-        if (sameSecret(body.code, uploadPassword)) {
+        if (body.code === uploadPassword) {
             return res.json({ ok: true });
         }
         return res.status(403).json({ ok: false, error: 'Invalid access code' });
@@ -130,31 +93,14 @@ module.exports = async (req, res) => {
     }
 
     // Verify access code
-    if (!sameSecret(body.code, uploadPassword)) {
+    if (body.code !== uploadPassword) {
         return res.status(403).json({ ok: false, error: 'Invalid access code' });
     }
 
     // Validate fields
-    const supplierName = cleanText(body.supplierName, 120);
-    const productName = cleanText(body.productName, 180);
-    const category = cleanText(body.category, 40);
-    const priceUsd = cleanText(body.priceUsd, 40);
-    const minOrder = cleanText(body.minOrder, 80);
-    const stockStatus = cleanText(body.stockStatus, 30);
-    const description = cleanText(body.description, 1200);
-    const image = typeof body.image === 'string' ? body.image : '';
-
+    const { supplierName, productName, category, priceUsd, minOrder, stockStatus, description, image } = body;
     if (!supplierName || !productName || !priceUsd || !minOrder || !image) {
         return res.status(400).json({ ok: false, error: 'Missing required fields' });
-    }
-    if (!Object.prototype.hasOwnProperty.call(CATEGORY_MAP, category)) {
-        return res.status(400).json({ ok: false, error: 'Invalid category' });
-    }
-    if (stockStatus && !['in_stock', 'limited'].includes(stockStatus)) {
-        return res.status(400).json({ ok: false, error: 'Invalid stock status' });
-    }
-    if (!/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(image)) {
-        return res.status(400).json({ ok: false, error: 'Only compressed JPEG images are accepted' });
     }
 
     try {
@@ -162,9 +108,6 @@ module.exports = async (req, res) => {
         const priceMatch = priceUsd.match(/([\d.]+)/);
         if (!priceMatch) throw new Error('Invalid price format');
         const priceUsdNum = parseFloat(priceMatch[1]);
-        if (!Number.isFinite(priceUsdNum) || priceUsdNum <= 0 || priceUsdNum > 1_000_000) {
-            return res.status(400).json({ ok: false, error: 'Invalid price' });
-        }
         const priceGbp = Math.round(priceUsdNum * USD_TO_GBP * 100) / 100;
 
         // Parse price range
@@ -190,9 +133,6 @@ module.exports = async (req, res) => {
         // Extract base64 image data from data URL
         const base64Data = image.replace(/^data:image\/\w+;base64,/, '');
         const imageBuffer = Buffer.from(base64Data, 'base64');
-        if (!imageBuffer.length || imageBuffer.length > MAX_IMAGE_BYTES) {
-            return res.status(413).json({ ok: false, error: 'Image is too large' });
-        }
 
         // Category display
         const catMap = CATEGORY_MAP[category] || CATEGORY_MAP.other;
@@ -212,9 +152,7 @@ module.exports = async (req, res) => {
             min_order: { en: minOrder, es: minOrder, ar: minOrder },
             source: 'supplier',
             supplier: supplierName,
-            original_price_usd: priceUsd + ' USD',
-            approved: false,
-            review_status: 'pending'
+            original_price_usd: priceUsd + ' USD'
         };
 
         if (description) {
@@ -250,7 +188,7 @@ module.exports = async (req, res) => {
         });
 
     } catch (err) {
-        console.error('Supplier upload failed');
-        return res.status(500).json({ ok: false, error: 'Upload failed. Please contact the administrator.' });
+        console.error('Upload error:', err.message);
+        return res.status(500).json({ ok: false, error: 'Upload failed: ' + err.message });
     }
 };

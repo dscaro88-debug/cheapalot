@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex,nofollow">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <title>Supplier Upload — CheapALot</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -265,7 +264,7 @@
                 btn.disabled = false;
                 btn.innerHTML = 'Submit Product';
                 if (data.ok) {
-                    showAlert('success', '✅ Product submitted for review. It will not appear publicly until approved.');
+                    showAlert('success', '✅ Product uploaded! It will appear on CheapALot within 1-2 minutes.');
                     // Reset form
                     document.getElementById('productName').value = '';
                     document.getElementById('priceUsd').value = '';

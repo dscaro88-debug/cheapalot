@@ -1,13 +1,548 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <title>CheapALot Management Access</title><meta name="robots" content="noindex,nofollow,noarchive">
-  <link rel="stylesheet" href="css/relaunch.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Manage Products | CheapALot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { background: #f5f5f5; }
+        .manage-wrap { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .manage-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .manage-header h1 { font-family: 'Oswald', sans-serif; font-size: 28px; color: var(--red, #e31837); text-transform: uppercase; }
+        .manage-header .badge { background: #e31837; color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+        .login-box { max-width: 400px; margin: 80px auto; padding: 40px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .login-box h2 { text-align: center; margin-bottom: 8px; font-family: 'Oswald', sans-serif; }
+        .login-box p { text-align: center; color: #666; margin-bottom: 24px; font-size: 14px; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 10px 14px; border: 2px solid #e0e0e0; border-radius: 8px;
+            font-size: 14px; transition: border 0.2s; box-sizing: border-box;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #e31837; outline: none;
+        }
+        .form-group textarea { min-height: 80px; resize: vertical; }
+        .btn-login { width: 100%; padding: 12px; background: #e31837; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+        .btn-login:hover { background: #c01530; }
+        .btn-login:disabled { background: #ccc; cursor: not-allowed; }
+        .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; gap: 12px; flex-wrap: wrap; }
+        .toolbar input { padding: 8px 14px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 14px; min-width: 200px; }
+        .btn-add { background: #16a34a; color: #fff; padding: 10px 20px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; }
+        .btn-add:hover { background: #15803d; }
+        .btn-save { background: #e31837; color: #fff; padding: 10px 24px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 15px; }
+        .btn-save:hover { background: #c01530; }
+        .btn-save:disabled { background: #ccc; cursor: not-allowed; }
+        .product-table { width: 100%; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .product-table th { background: #f8f8f8; padding: 12px 16px; text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: #555; }
+        .product-table td { padding: 12px 16px; border-top: 1px solid #eee; font-size: 14px; vertical-align: middle; }
+        .product-table tr:hover { background: #fafafa; }
+        .prod-thumb { width: 50px; height: 50px; border-radius: 8px; background-size: cover; background-position: center; background-color: #f0f0f0; }
+        .status-badge { padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .status-approved { background: #d1fae5; color: #065f46; }
+        .btn-icon { padding: 6px 10px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; margin-right: 4px; }
+        .btn-edit { background: #dbeafe; color: #1e40af; }
+        .btn-edit:hover { background: #bfdbfe; }
+        .btn-del { background: #fee2e2; color: #991b1b; }
+        .btn-del:hover { background: #fecaca; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: flex-start; padding: 40px 20px; overflow-y: auto; }
+        .modal-overlay.show { display: flex; }
+        .modal-box { background: #fff; border-radius: 16px; padding: 32px; max-width: 600px; width: 100%; margin: auto; }
+        .modal-box h2 { margin-bottom: 20px; font-family: 'Oswald', sans-serif; color: #e31837; }
+        .modal-actions { display: flex; gap: 12px; margin-top: 24px; }
+        .modal-actions button { flex: 1; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; font-size: 15px; }
+        .btn-cancel { background: #f0f0f0; color: #333; }
+        .btn-confirm { background: #e31837; color: #fff; }
+        .toast { position: fixed; bottom: 24px; right: 24px; padding: 16px 24px; border-radius: 12px; color: #fff; font-weight: 600; z-index: 2000; opacity: 0; transition: opacity 0.3s; }
+        .toast.show { opacity: 1; }
+        .toast-success { background: #16a34a; }
+        .toast-error { background: #e31837; }
+        .unsaved-badge { background: #f59e0b; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; display: none; }
+        .unsaved-badge.show { display: inline-block; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }
+        .help-text { font-size: 12px; color: #888; margin-top: 4px; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .image-preview { width: 100px; height: 100px; border-radius: 8px; background-size: cover; background-position: center; border: 2px dashed #ddd; margin-top: 8px; }
+    </style>
 </head>
 <body>
-  <header class="site-header"><div class="shell site-header__inner"><a class="brand" href="/"><span class="brand__mark">£</span><span><strong>Cheap<span>ALot</span></strong><small>Management access</small></span></a></div></header>
-  <main><section class="simple-hero"><div class="shell"><p class="eyebrow">Restricted area</p><h1>Browser-based repository tokens are no longer accepted.</h1><p>The former page stored a GitHub access token in browser storage. It has been disabled. Product management must use an authenticated server-side workflow with secrets kept outside browser code.</p></div></section><section class="section"><div class="shell content-grid"><aside><div class="notice"><strong>Do not paste a GitHub token, password or API key into this page.</strong></div></aside><div class="prose"><h2>Safe management boundary</h2><p>Administrators should manage approved product data through the private repository or a future server-authenticated admin tool. Supplier submissions remain separate from publication approval.</p><a class="button button--dark" href="/">Return to CheapALot</a></div></div></section></main>
+    <div class="manage-wrap">
+        <!-- Login Screen -->
+        <div id="loginScreen" class="login-box">
+            <h2>🔐 Admin Panel</h2>
+            <p>Enter your GitHub Personal Access Token to manage products.<br>Token is stored locally in your browser only.</p>
+            <div class="form-group">
+                <label>GitHub Token</label>
+                <input type="password" id="tokenInput" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off">
+                <div class="help-text">Need a token? <a href="https://github.com/settings/tokens/new?scopes=repo&description=CheapALot-Admin" target="_blank">Create one here</a> (select "repo" scope)</div>
+            </div>
+            <button class="btn-login" id="loginBtn" onclick="doLogin()">Login</button>
+        </div>
+
+        <!-- Main Panel (hidden until login) -->
+        <div id="mainPanel" style="display:none;">
+            <div class="manage-header">
+                <div>
+                    <h1>📦 Product Manager</h1>
+                    <span id="productCount" style="color:#888;font-size:13px;"></span>
+                    <span class="unsaved-badge" id="unsavedBadge">Unsaved changes</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <a href="https://cheapalot.com" target="_blank" style="font-size:13px;color:#666;">View Site ↗</a>
+                    <button class="btn-save" id="saveBtn" onclick="saveToGitHub()" disabled>Save & Deploy</button>
+                    <button onclick="logout()" style="background:#f0f0f0;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:13px;">Logout</button>
+                </div>
+            </div>
+
+            <div class="toolbar">
+                <input type="text" id="searchInput" placeholder="🔍 Search products..." oninput="renderTable()">
+                <button class="btn-add" onclick="openAddModal()">+ Add Product</button>
+            </div>
+
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>MOQ</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="productTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Add/Edit Modal -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal-box">
+            <h2 id="modalTitle">Add Product</h2>
+            <input type="hidden" id="editId">
+            <div class="form-group">
+                <label>Product Name (English) *</label>
+                <input type="text" id="fName" placeholder="e.g. LED Strip Lights 5m">
+            </div>
+            <div class="two-col">
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="fCategory"></select>
+                </div>
+                <div class="form-group">
+                    <label>Stock Status</label>
+                    <select id="fStock">
+                        <option value="in_stock">In Stock</option>
+                        <option value="limited">Limited</option>
+                        <option value="out_of_stock">Out of Stock</option>
+                    </select>
+                </div>
+            </div>
+            <div class="two-col">
+                <div class="form-group">
+                    <label>Price (£) *</label>
+                    <input type="number" id="fPrice" step="0.01" placeholder="e.g. 2.50">
+                    <div class="help-text">Price in GBP (£). For CNY price: ÷ 9.3</div>
+                </div>
+                <div class="form-group">
+                    <label>Min Order Qty</label>
+                    <input type="text" id="fMoq" placeholder="e.g. 100 pcs">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Price Unit Description</label>
+                <input type="text" id="fPriceUnit" placeholder="per unit · Bulk pricing" value="per unit">
+            </div>
+            <div class="form-group">
+                <label>Product Tag</label>
+                <select id="fTag">
+                    <option value="">No tag</option>
+                    <option value="best_seller">Best Seller</option>
+                    <option value="new">New</option>
+                    <option value="limited">Limited Stock</option>
+                    <option value="hot">Hot</option>
+                    <option value="sale">Sale</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Product Image</label>
+                <input type="file" id="fImageFile" accept="image/*" onchange="handleImageUpload(event)">
+                <div class="help-text">Upload an image (max 1MB) or paste URL below</div>
+                <input type="text" id="fImageUrl" placeholder="images/products/your-image.jpg" style="margin-top:8px;">
+                <div class="image-preview" id="imgPreview"></div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+                <button class="btn-confirm" onclick="saveProduct()">Save Product</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // ===== Config =====
+        var REPO = 'dscaro88-debug/cheapalot';
+        var FILE_PATH = 'data/products.json';
+        var IMG_DIR = 'images/products/custom/';
+        var CNY_TO_GBP = 0.1075;
+
+        // ===== State =====
+        var TOKEN = localStorage.getItem('gh_token') || '';
+        var PRODUCTS_DATA = null;
+        var FILE_SHA = null;
+        var HAS_CHANGES = false;
+
+        // ===== Init =====
+        if (TOKEN) {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('mainPanel').style.display = 'block';
+            loadData();
+        }
+
+        // ===== GitHub API =====
+        function ghApi(method, path, body) {
+            var url = 'https://api.github.com/repos/' + REPO + '/contents/' + path;
+            var opts = {
+                method: method,
+                headers: {
+                    'Authorization': 'token ' + TOKEN,
+                    'Accept': 'application/vnd.github.v3+json'
+                }
+            };
+            if (body) {
+                opts.headers['Content-Type'] = 'application/json';
+                opts.body = JSON.stringify(body);
+            }
+            return fetch(url, opts).then(function(r) {
+                if (!r.ok) {
+                    return r.json().then(function(err) {
+                        throw new Error(err.message || 'GitHub API error: ' + r.status);
+                    });
+                }
+                return r.json();
+            });
+        }
+
+        function ghRaw(path) {
+            return fetch('https://raw.githubusercontent.com/' + REPO + '/main/' + path)
+                .then(function(r) {
+                    if (!r.ok) throw new Error('Failed to fetch ' + path);
+                    return r.json();
+                });
+        }
+
+        // ===== Login =====
+        function doLogin() {
+            var token = document.getElementById('tokenInput').value.trim();
+            if (!token) { toast('Please enter a token', 'error'); return; }
+
+            // Test token by fetching products.json
+            TOKEN = token;
+            ghRaw(FILE_PATH).then(function(data) {
+                localStorage.setItem('gh_token', TOKEN);
+                PRODUCTS_DATA = data;
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('mainPanel').style.display = 'block';
+                loadData();
+                toast('Login successful!', 'success');
+            }).catch(function(err) {
+                TOKEN = '';
+                toast('Login failed: ' + err.message, 'error');
+            });
+        }
+
+        function logout() {
+            localStorage.removeItem('gh_token');
+            TOKEN = '';
+            location.reload();
+        }
+
+        // ===== Data =====
+        function loadData() {
+            if (PRODUCTS_DATA) { renderTable(); return; }
+            ghRaw(FILE_PATH).then(function(data) {
+                PRODUCTS_DATA = data;
+                // Also get SHA for later updates
+                ghApi('GET', FILE_PATH).then(function(fileInfo) {
+                    FILE_SHA = fileInfo.sha;
+                }).catch(function() {});
+                renderTable();
+            }).catch(function(err) {
+                toast('Failed to load products: ' + err.message, 'error');
+            });
+        }
+
+        // ===== Render =====
+        function renderTable() {
+            var tbody = document.getElementById('productTableBody');
+            var search = (document.getElementById('searchInput').value || '').toLowerCase();
+            var products = PRODUCTS_DATA.products || [];
+
+            var filtered = products.filter(function(p) {
+                var name = (p.name && p.name.en) || '';
+                return name.toLowerCase().indexOf(search) !== -1;
+            });
+
+            document.getElementById('productCount').textContent = filtered.length + ' products' + (search ? ' (filtered)' : '');
+
+            var html = '';
+            filtered.slice(0, 100).forEach(function(p) {
+                var img = p.image || '';
+                var imgBg = img ? 'background-image:url(\'' + img + '\')' : '';
+                var name = (p.name && p.name.en) || '(unnamed)';
+                var cat = (p.category_display && p.category_display.en) || p.category || '-';
+                var price = p.price_display || ('£' + (p.price || 0).toFixed(2));
+                var moq = (p.min_order && p.min_order.en) || '-';
+                var stock = p.stock_status || 'in_stock';
+                var stockLabel = stock === 'in_stock' ? '✓ In Stock' : stock === 'limited' ? '⚡ Limited' : '✗ Out';
+
+                html += '<tr>' +
+                    '<td><div class="prod-thumb" style="' + imgBg + '"></div></td>' +
+                    '<td><strong>' + escHtml(name) + '</strong><br><span style="font-size:12px;color:#999;">' + (p.id || '') + '</span></td>' +
+                    '<td>' + escHtml(cat) + '</td>' +
+                    '<td>' + price + '</td>' +
+                    '<td>' + escHtml(moq) + '</td>' +
+                    '<td>' + stockLabel + '</td>' +
+                    '<td>' +
+                    '  <button class="btn-icon btn-edit" onclick="openEdit(\'' + (p.id || '') + '\')">Edit</button>' +
+                    '  <button class="btn-icon btn-del" onclick="deleteProduct(\'' + (p.id || '') + '\')">Del</button>' +
+                    '</td>' +
+                    '</tr>';
+            });
+
+            if (filtered.length > 100) {
+                html += '<tr><td colspan="7" style="text-align:center;color:#999;padding:20px;">Showing first 100 results. Use search to find specific products.</td></tr>';
+            }
+
+            tbody.innerHTML = html || '<tr><td colspan="7" style="text-align:center;padding:40px;color:#999;">No products found</td></tr>';
+        }
+
+        function escHtml(s) {
+            var d = document.createElement('div');
+            d.textContent = s || '';
+            return d.innerHTML;
+        }
+
+        // ===== Categories =====
+        function loadCategories() {
+            var sel = document.getElementById('fCategory');
+            var cats = PRODUCTS_DATA.categories || [];
+            var html = '';
+            cats.forEach(function(c) {
+                var name = (c.name && c.name.en) || c.id;
+                html += '<option value="' + c.id + '">' + name + '</option>';
+            });
+            sel.innerHTML = html;
+        }
+
+        // ===== Add/Edit =====
+        function openAddModal() {
+            document.getElementById('modalTitle').textContent = 'Add Product';
+            document.getElementById('editId').value = '';
+            document.getElementById('fName').value = '';
+            document.getElementById('fCategory').innerHTML = '';
+            document.getElementById('fStock').value = 'in_stock';
+            document.getElementById('fPrice').value = '';
+            document.getElementById('fMoq').value = '';
+            document.getElementById('fPriceUnit').value = 'per unit';
+            document.getElementById('fTag').value = '';
+            document.getElementById('fImageFile').value = '';
+            document.getElementById('fImageUrl').value = '';
+            document.getElementById('imgPreview').style.backgroundImage = '';
+            loadCategories();
+            document.getElementById('editModal').classList.add('show');
+        }
+
+        function openEdit(id) {
+            var p = (PRODUCTS_DATA.products || []).find(function(x) { return x.id === id; });
+            if (!p) { toast('Product not found', 'error'); return; }
+
+            document.getElementById('modalTitle').textContent = 'Edit Product';
+            document.getElementById('editId').value = id;
+            document.getElementById('fName').value = (p.name && p.name.en) || '';
+            loadCategories();
+            document.getElementById('fCategory').value = p.category || '';
+            document.getElementById('fStock').value = p.stock_status || 'in_stock';
+            document.getElementById('fPrice').value = p.price || '';
+            document.getElementById('fMoq').value = (p.min_order && p.min_order.en) || '';
+            document.getElementById('fPriceUnit').value = (p.price_unit && p.price_unit.en) || 'per unit';
+            document.getElementById('fTag').value = p.tag || '';
+            document.getElementById('fImageUrl').value = p.image || '';
+            document.getElementById('fImageFile').value = '';
+            document.getElementById('imgPreview').style.backgroundImage = p.image ? 'url(\'' + p.image + '\')' : '';
+            document.getElementById('editModal').classList.add('show');
+        }
+
+        function closeModal() {
+            document.getElementById('editModal').classList.remove('show');
+        }
+
+        function saveProduct() {
+            var id = document.getElementById('editId').value;
+            var name = document.getElementById('fName').value.trim();
+            var price = parseFloat(document.getElementById('fPrice').value);
+
+            if (!name) { toast('Product name is required', 'error'); return; }
+            if (isNaN(price) || price < 0) { toast('Valid price is required', 'error'); return; }
+
+            var category = document.getElementById('fCategory').value;
+            var stockStatus = document.getElementById('fStock').value;
+            var moq = document.getElementById('fMoq').value.trim();
+            var priceUnit = document.getElementById('fPriceUnit').value.trim();
+            var tag = document.getElementById('fTag').value;
+            var imageUrl = document.getElementById('fImageUrl').value.trim();
+
+            // Find category display name
+            var catObj = (PRODUCTS_DATA.categories || []).find(function(c) { return c.id === category; });
+            var catName = catObj ? catObj.name : { en: category, es: category, ar: category };
+
+            var product = {
+                id: id || ('cp' + Date.now()),
+                image: imageUrl,
+                tag: tag,
+                category: category,
+                price: price,
+                price_display: '£' + price.toFixed(2),
+                stock_status: stockStatus,
+                name: { en: name, es: name, ar: name },
+                category_display: { en: catName.en, es: catName.es || catName.en, ar: catName.ar || catName.en },
+                price_unit: { en: priceUnit, es: priceUnit, ar: priceUnit },
+                min_order: { en: moq, es: moq, ar: moq }
+            };
+
+            if (id) {
+                // Edit existing
+                var idx = PRODUCTS_DATA.products.findIndex(function(p) { return p.id === id; });
+                if (idx !== -1) {
+                    PRODUCTS_DATA.products[idx] = product;
+                }
+            } else {
+                // Add new
+                PRODUCTS_DATA.products.push(product);
+            }
+
+            PRODUCTS_DATA.meta.total = PRODUCTS_DATA.products.length;
+            PRODUCTS_DATA.meta.updated = new Date().toISOString();
+
+            HAS_CHANGES = true;
+            document.getElementById('unsavedBadge').classList.add('show');
+            document.getElementById('saveBtn').disabled = false;
+
+            closeModal();
+            renderTable();
+            toast(id ? 'Product updated (remember to save)' : 'Product added (remember to save)', 'success');
+        }
+
+        function deleteProduct(id) {
+            if (!confirm('Delete this product? This will be saved when you click "Save & Deploy".')) return;
+            PRODUCTS_DATA.products = PRODUCTS_DATA.products.filter(function(p) { return p.id !== id; });
+            PRODUCTS_DATA.meta.total = PRODUCTS_DATA.products.length;
+            PRODUCTS_DATA.meta.updated = new Date().toISOString();
+            HAS_CHANGES = true;
+            document.getElementById('unsavedBadge').classList.add('show');
+            document.getElementById('saveBtn').disabled = false;
+            renderTable();
+            toast('Product deleted (remember to save)', 'success');
+        }
+
+        // ===== Image Upload =====
+        function handleImageUpload(event) {
+            var file = event.target.files[0];
+            if (!file) return;
+
+            if (file.size > 1024 * 1024) {
+                toast('Image too large (max 1MB). Use a smaller image or paste URL instead.', 'error');
+                event.target.value = '';
+                return;
+            }
+
+            // Show preview
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('imgPreview').style.backgroundImage = 'url(' + e.target.result + ')';
+            };
+            reader.readAsDataURL(file);
+
+            // Upload to GitHub
+            var ext = file.name.split('.').pop().toLowerCase();
+            var fileName = 'img_' + Date.now() + '.' + ext;
+            var filePath = IMG_DIR + fileName;
+
+            var reader2 = new FileReader();
+            reader2.onload = function(e) {
+                // Remove data URL prefix
+                var base64 = e.target.result.split(',')[1];
+
+                toast('Uploading image...', 'success');
+
+                ghApi('PUT', filePath, {
+                    message: 'Upload product image: ' + fileName,
+                    content: base64
+                }).then(function() {
+                    var url = 'images/products/custom/' + fileName;
+                    document.getElementById('fImageUrl').value = url;
+                    toast('Image uploaded!', 'success');
+                }).catch(function(err) {
+                    toast('Image upload failed: ' + err.message, 'error');
+                });
+            };
+            reader2.readAsDataURL(file);
+        }
+
+        // ===== Save to GitHub =====
+        function saveToGitHub() {
+            if (!HAS_CHANGES) return;
+
+            var btn = document.getElementById('saveBtn');
+            btn.disabled = true;
+            btn.textContent = 'Saving...';
+
+            var content = btoa(unescape(encodeURIComponent(JSON.stringify(PRODUCTS_DATA, null, 2))));
+
+            var body = {
+                message: 'Update products via admin panel - ' + new Date().toLocaleString(),
+                content: content
+            };
+
+            // Get latest SHA first
+            ghApi('GET', FILE_PATH).then(function(fileInfo) {
+                body.sha = fileInfo.sha;
+                return ghApi('PUT', FILE_PATH, body);
+            }).then(function() {
+                HAS_CHANGES = false;
+                document.getElementById('unsavedBadge').classList.remove('show');
+                btn.disabled = true;
+                btn.textContent = 'Save & Deploy';
+                toast('✅ Saved! Vercel will deploy in ~1 min. Products will update automatically.', 'success');
+            }).catch(function(err) {
+                btn.disabled = false;
+                btn.textContent = 'Save & Deploy';
+                toast('Save failed: ' + err.message, 'error');
+            });
+        }
+
+        // ===== Toast =====
+        function toast(msg, type) {
+            var t = document.getElementById('toast');
+            t.textContent = msg;
+            t.className = 'toast toast-' + (type || 'success') + ' show';
+            setTimeout(function() { t.classList.remove('show'); }, 4000);
+        }
+
+        // Enter key for login
+        document.getElementById('tokenInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') doLogin();
+        });
+
+        // Close modal on overlay click
+        document.getElementById('editModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
 </body>
 </html>
