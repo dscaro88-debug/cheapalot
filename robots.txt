@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
 Disallow: /api/
+Disallow: /data/
+Disallow: /manage.html
+Disallow: /upload.html
+Disallow: /supplier.html
 
-Sitemap: https://cheapalot.com/sitemap.xml
+Sitemap: https://www.cheapalot.com/sitemap.xml

@@ -1,251 +1,191 @@
-/**
- * products-loader.js — Dynamic product loading from products.json
- * Replaces static HTML cards with dynamic fetch + render
- * Supports: filtering, search, sort, pagination
- */
-(function() {
-    'use strict';
+(function () {
+  'use strict';
 
-    var PRODUCTS = [];
-    var FILTERED = [];
-    var LANG = (document.documentElement.lang || 'en').substring(0, 2);
-    if (LANG !== 'es' && LANG !== 'ar') LANG = 'en';
-    var PAGE = 1;
-    var PER_PAGE = 60;
+  const grid = document.getElementById('productGrid');
+  const count = document.getElementById('catalogCount');
+  const filters = document.getElementById('categoryFilters');
+  const searchForm = document.getElementById('catalogSearch');
+  const searchInput = document.getElementById('productSearch');
 
-    function t(obj, field) {
-        if (!obj) return '';
-        return obj[field] || obj['en'] || '';
+  if (!grid || !count || !filters) return;
+
+  let products = [];
+  let activeCategory = 'all';
+  let query = new URLSearchParams(window.location.search).get('search') || '';
+
+  function textFor(value) {
+    if (!value) return '';
+    return typeof value === 'string' ? value : (value.en || '');
+  }
+
+  function isBuyerReady(product) {
+    const sourceIsCurated = !product.source || (product.source === 'supplier' && product.approved === true);
+    return sourceIsCurated &&
+      Number(product.price) > 0 &&
+      textFor(product.name).trim().length > 2 &&
+      !/[\u3400-\u9fff]/.test(textFor(product.name));
+  }
+
+  function categoryName(product) {
+    return textFor(product.category_display) || product.category || 'Wholesale';
+  }
+
+  function createCard(product) {
+    const card = document.createElement('article');
+    card.className = 'catalog-card';
+
+    const visual = document.createElement('div');
+    visual.className = 'catalog-card__visual';
+    const visualCategory = document.createElement('span');
+    visualCategory.textContent = categoryName(product);
+    const visualReference = document.createElement('strong');
+    visualReference.textContent = product.id.toUpperCase();
+    const visualNote = document.createElement('small');
+    visualNote.textContent = 'Current photos supplied with quote';
+    visual.append(visualCategory, visualReference, visualNote);
+    card.appendChild(visual);
+
+    const body = document.createElement('div');
+    body.className = 'catalog-card__body';
+
+    const meta = document.createElement('div');
+    meta.className = 'catalog-card__meta';
+    const category = document.createElement('span');
+    category.textContent = categoryName(product);
+    const reference = document.createElement('span');
+    reference.textContent = 'Ref ' + product.id;
+    meta.append(category, reference);
+
+    const title = document.createElement('h2');
+    title.textContent = textFor(product.name);
+
+    const price = document.createElement('p');
+    price.className = 'catalog-card__price';
+    price.textContent = product.price_display || ('£' + Number(product.price).toFixed(2));
+    const priceNote = document.createElement('small');
+    priceNote.textContent = ' indicative';
+    price.appendChild(priceNote);
+
+    const moq = document.createElement('p');
+    moq.className = 'catalog-card__moq';
+    moq.textContent = 'Indicative MOQ: ' + (textFor(product.min_order) || 'Confirm by quote');
+
+    const actions = document.createElement('div');
+    actions.className = 'catalog-card__actions';
+    const quote = document.createElement('a');
+    quote.className = 'button button--primary button--compact js-catalog-quote';
+    quote.href = '#catalogInquiry';
+    quote.setAttribute('data-product', textFor(product.name) + ' (' + product.id + ')');
+    quote.textContent = 'Get current quote';
+
+    const whatsapp = document.createElement('a');
+    whatsapp.className = 'catalog-card__wa';
+    whatsapp.href = 'https://wa.me/8613516946001?text=' +
+      encodeURIComponent('Hi CheapALot, please quote ' + textFor(product.name) + ' (ref ' + product.id + ').');
+    whatsapp.target = '_blank';
+    whatsapp.rel = 'noopener';
+    whatsapp.textContent = 'WA';
+    whatsapp.setAttribute('aria-label', 'Ask about ' + textFor(product.name) + ' on WhatsApp');
+
+    actions.append(quote, whatsapp);
+    body.append(meta, title, price, moq, actions);
+    card.appendChild(body);
+    return card;
+  }
+
+  function visibleProducts() {
+    const normalized = query.trim().toLowerCase();
+    return products.filter(function (product) {
+      const categoryMatch = activeCategory === 'all' || product.category === activeCategory;
+      const searchable = (textFor(product.name) + ' ' + categoryName(product)).toLowerCase();
+      return categoryMatch && (!normalized || searchable.includes(normalized));
+    });
+  }
+
+  function render() {
+    const visible = visibleProducts();
+    grid.replaceChildren();
+
+    if (!visible.length) {
+      const empty = document.createElement('div');
+      empty.className = 'catalog-empty';
+      empty.textContent = 'No selected offer matches this search. Send us a sourcing request instead.';
+      grid.appendChild(empty);
+    } else {
+      const fragment = document.createDocumentFragment();
+      visible.forEach(function (product) {
+        fragment.appendChild(createCard(product));
+      });
+      grid.appendChild(fragment);
     }
 
-    function tagLabel(tag) {
-        var map = {
-            'best_seller': { en: 'Best Seller', es: 'Más Vendido', ar: 'الأكثر مبيعاً' },
-            'new': { en: 'New', es: 'Nuevo', ar: 'جديد' },
-            'limited': { en: 'Limited', es: 'Limitado', ar: 'محدود' },
-            'hot': { en: 'Hot', es: 'Popular', ar: 'رائج' },
-            'sale': { en: 'Sale', es: 'Oferta', ar: 'تخفيض' }
-        };
-        var m = map[tag] || map['new'];
-        return m[LANG] || m['en'];
-    }
+    count.textContent = visible.length + ' curated trade offer' + (visible.length === 1 ? '' : 's');
+  }
 
-    function tagClass(tag) {
-        var map = { 'best_seller': '', 'new': 'green', 'limited': 'orange', 'hot': 'red', 'sale': 'orange' };
-        return map[tag] || '';
-    }
+  function buildFilters() {
+    const names = new Map();
+    products.forEach(function (product) {
+      if (!names.has(product.category)) names.set(product.category, categoryName(product));
+    });
 
-    function stockLabel(status) {
-        var map = {
-            'in_stock': { en: '✓ In Stock', es: '✓ En Stock', ar: '✓ متوفر' },
-            'limited': { en: '⚡ Limited', es: '⚡ Limitado', ar: '⚡ محدود' },
-            'out_of_stock': { en: '✗ Sold Out', es: '✗ Agotado', ar: '✗ نفذ' }
-        };
-        var m = map[status] || map['in_stock'];
-        return m[LANG] || m['en'];
-    }
+    const options = [['all', 'All selected offers']].concat(Array.from(names.entries()));
+    const fragment = document.createDocumentFragment();
+    options.forEach(function (option) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'filter-chip' + (option[0] === activeCategory ? ' is-active' : '');
+      button.textContent = option[1];
+      button.setAttribute('data-category', option[0]);
+      fragment.appendChild(button);
+    });
+    filters.replaceChildren(fragment);
+  }
 
-    function renderCard(p) {
-        var name = t(p.name, LANG);
-        var cat = t(p.category_display, LANG);
-        var priceUnit = t(p.price_unit, LANG);
-        var minOrder = t(p.min_order, LANG);
-        var priceDisp = p.price_display || ('£' + p.price.toFixed(2));
+  filters.addEventListener('click', function (event) {
+    const button = event.target.closest('[data-category]');
+    if (!button) return;
+    activeCategory = button.getAttribute('data-category') || 'all';
+    filters.querySelectorAll('.filter-chip').forEach(function (chip) {
+      chip.classList.toggle('is-active', chip === button);
+    });
+    render();
+  });
 
-        var tagHtml = p.tag ? '<span class="product-tag ' + tagClass(p.tag) + '">' + tagLabel(p.tag) + '</span>' : '';
-        var imgStyle = p.image ? 'background-image: url(\'' + p.image + '\')' : 'background-image: url(\'images/placeholder.jpg\')';
+  grid.addEventListener('click', function (event) {
+    const link = event.target.closest('.js-catalog-quote');
+    if (!link) return;
+    const field = document.getElementById('catalogProduct');
+    if (field) field.value = link.getAttribute('data-product') || '';
+  });
 
-        return '<div class="product-card" data-id="' + p.id + '" data-category="' + (p.category || '') + '" data-price="' + p.price + '" data-stock="' + (p.stock_status || 'in_stock') + '">' +
-            '  <div class="product-img" style="' + imgStyle + '">' + tagHtml + '</div>' +
-            '  <div class="product-body">' +
-            '    <div class="product-cat">' + cat + '</div>' +
-            '    <h3 class="product-title">' + name + '</h3>' +
-            '    <div class="product-meta">' +
-            '      <span>📦 Min: ' + minOrder + '</span>' +
-            '      <span>' + stockLabel(p.stock_status) + '</span>' +
-            '    </div>' +
-            '    <div class="product-price">' + priceDisp + '<small>' + priceUnit + '</small></div>' +
-            '    <div class="product-actions">' +
-            '      <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry(\'' + name.replace(/'/g, "\\'") + '\', \'' + priceDisp + '\')">' +
-            (LANG === 'es' ? 'Cotizar' : LANG === 'ar' ? 'استفسار' : 'Add to Cart') +
-            '      </a>' +
-            '      <a href="#inquiry" class="btn btn-outline">' +
-            (LANG === 'es' ? 'Ver' : LANG === 'ar' ? 'عرض' : 'View') +
-            '      </a>' +
-            '    </div>' +
-            '  </div>' +
-            '</div>';
-    }
+  if (searchForm && searchInput) {
+    searchInput.value = query;
+    searchForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      query = searchInput.value;
+      render();
+    });
+    searchInput.addEventListener('input', function () {
+      query = searchInput.value;
+      render();
+    });
+  }
 
-    function render() {
-        var grid = document.getElementById('productGrid');
-        if (!grid) return;
-
-        var start = (PAGE - 1) * PER_PAGE;
-        var end = start + PER_PAGE;
-        var html = '';
-        for (var i = start; i < Math.min(end, FILTERED.length); i++) {
-            html += renderCard(FILTERED[i]);
-        }
-
-        if (FILTERED.length === 0) {
-            html = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:#999;">' +
-                (LANG === 'es' ? 'No se encontraron productos' : LANG === 'ar' ? 'لم يتم العثور على منتجات' : 'No products found') +
-                '</div>';
-        }
-
-        grid.innerHTML = html;
-
-        // Update info
-        var info = document.querySelector('.toolbar-info');
-        if (info) {
-            var showing = Math.min(end, FILTERED.length);
-            info.innerHTML = (LANG === 'es' ? 'Mostrando' : LANG === 'ar' ? 'عرض' : 'Showing') +
-                ' <strong>' + (start + 1) + '-' + showing + '</strong> ' +
-                (LANG === 'es' ? 'de' : LANG === 'ar' ? 'من' : 'of') +
-                ' <strong>' + FILTERED.length + '</strong> ' +
-                (LANG === 'es' ? 'productos' : LANG === 'ar' ? 'منتج' : 'products');
-        }
-
-        renderPagination();
-    }
-
-    function renderPagination() {
-        var pages = Math.ceil(FILTERED.length / PER_PAGE);
-        var container = document.getElementById('pagination');
-        if (!container) return;
-
-        var html = '';
-        for (var i = 1; i <= Math.min(pages, 10); i++) {
-            var cls = i === PAGE ? 'active' : '';
-            html += '<button class="page-btn ' + cls + '" onclick="productsLoader.goPage(' + i + ')">' + i + '</button>';
-        }
-        if (pages > 10) {
-            html += '<span>...</span>';
-            html += '<button class="page-btn" onclick="productsLoader.goPage(' + pages + ')">' + pages + '</button>';
-        }
-        container.innerHTML = html;
-    }
-
-    function applyFilters() {
-        FILTERED = PRODUCTS.slice();
-
-        // Category filter
-        var checkedCats = [];
-        document.querySelectorAll('.filter-group input[type="checkbox"][data-category]').forEach(function(cb) {
-            if (cb.checked) checkedCats.push(cb.dataset.category);
-        });
-        if (checkedCats.length > 0) {
-            FILTERED = FILTERED.filter(function(p) {
-                return checkedCats.indexOf(p.category) !== -1;
-            });
-        }
-
-        // Search filter
-        var params = new URLSearchParams(window.location.search);
-        var search = params.get('search');
-        if (search) {
-            var q = search.toLowerCase();
-            FILTERED = FILTERED.filter(function(p) {
-                var name = t(p.name, LANG).toLowerCase();
-                var cat = t(p.category_display, LANG).toLowerCase();
-                return name.indexOf(q) !== -1 || cat.indexOf(q) !== -1;
-            });
-        }
-
-        // Sort
-        var sortSel = document.querySelector('.toolbar-sort select');
-        if (sortSel) {
-            var sortVal = sortSel.value;
-            if (sortVal.indexOf('Price: Low') !== -1) {
-                FILTERED.sort(function(a, b) { return a.price - b.price; });
-            } else if (sortVal.indexOf('Price: High') !== -1) {
-                FILTERED.sort(function(a, b) { return b.price - a.price; });
-            }
-        }
-
-        PAGE = 1;
-        render();
-    }
-
-    function goPage(n) {
-        PAGE = n;
-        render();
-        var grid = document.getElementById('productGrid');
-        if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    function buildCategoryFilters() {
-        var container = document.getElementById('categoryFilters');
-        if (!container || !PRODUCTS.length) return;
-
-        var cats = {};
-        PRODUCTS.forEach(function(p) {
-            if (p.category) {
-                if (!cats[p.category]) cats[p.category] = 0;
-                cats[p.category]++;
-            }
-        });
-
-        var html = '';
-        Object.keys(cats).sort().forEach(function(catId) {
-            var catName = catId;
-            // Find category name from products.json categories array
-            if (window.PRODUCT_CATEGORIES && window.PRODUCT_CATEGORIES[catId]) {
-                catName = t(window.PRODUCT_CATEGORIES[catId], LANG);
-            }
-            html += '<label><input type="checkbox" data-category="' + catId + '"> ' + catName + ' <span class="count">(' + cats[catId] + ')</span></label>';
-        });
-        container.innerHTML = html;
-
-        // Add event listeners
-        container.querySelectorAll('input[type="checkbox"]').forEach(function(cb) {
-            cb.addEventListener('change', applyFilters);
-        });
-    }
-
-    function init() {
-        var grid = document.getElementById('productGrid');
-        if (!grid) return;
-
-        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;">Loading products...</div>';
-
-        // Determine JSON path based on language
-        var jsonPath = 'data/products.json';
-        if (LANG === 'es') jsonPath = '../data/products.json';
-        if (LANG === 'ar') jsonPath = '../data/products.json';
-
-        fetch(jsonPath)
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                PRODUCTS = data.products || [];
-                if (data.categories) {
-                    var catMap = {};
-                    data.categories.forEach(function(c) {
-                        catMap[c.id] = c.name;
-                    });
-                    window.PRODUCT_CATEGORIES = catMap;
-                }
-                buildCategoryFilters();
-                applyFilters();
-            })
-            .catch(function(err) {
-                grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px;color:#c00;">Failed to load products. Please refresh.</div>';
-            });
-    }
-
-    // Public API
-    window.productsLoader = {
-        goPage: goPage,
-        applyFilters: applyFilters
-    };
-
-    // Sort dropdown listener
-    document.addEventListener('DOMContentLoaded', function() {
-        var sortSel = document.querySelector('.toolbar-sort select');
-        if (sortSel) {
-            sortSel.addEventListener('change', applyFilters);
-        }
-        init();
+  fetch('data/products.json')
+    .then(function (response) {
+      if (!response.ok) throw new Error('Catalogue unavailable');
+      return response.json();
+    })
+    .then(function (data) {
+      products = (data.products || []).filter(isBuyerReady);
+      buildFilters();
+      render();
+    })
+    .catch(function () {
+      count.textContent = 'Catalogue temporarily unavailable';
+      const empty = document.createElement('div');
+      empty.className = 'catalog-empty';
+      empty.textContent = 'Please request a sourcing quote or contact us on WhatsApp.';
+      grid.replaceChildren(empty);
     });
 })();
