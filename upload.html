@@ -73,7 +73,7 @@
         <!-- Upload Form -->
         <div id="uploadForm" class="upload-form">
             <div class="supplier-info">
-                <strong>Welcome!</strong> Fill in your product details and upload an image. Your product will appear on CheapALot within 1-2 minutes after submission.
+                <strong>Welcome!</strong> Fill in your product details and upload an image. Submitted products must be reviewed before publication.
             </div>
 
             <div id="alertBox"></div>
@@ -218,7 +218,10 @@
 
         function showAlert(type, msg) {
             var box = document.getElementById('alertBox');
-            box.innerHTML = '<div class="alert alert-' + type + '">' + msg + '</div>';
+            var alert = document.createElement('div');
+            alert.className = 'alert alert-' + (type === 'success' ? 'success' : 'error');
+            alert.textContent = msg;
+            box.replaceChildren(alert);
         }
 
         function submitProduct() {
@@ -264,7 +267,7 @@
                 btn.disabled = false;
                 btn.innerHTML = 'Submit Product';
                 if (data.ok) {
-                    showAlert('success', '✅ Product uploaded! It will appear on CheapALot within 1-2 minutes.');
+                    showAlert('success', '✅ Product submitted for review. Publication is not automatic.');
                     // Reset form
                     document.getElementById('productName').value = '';
                     document.getElementById('priceUsd').value = '';

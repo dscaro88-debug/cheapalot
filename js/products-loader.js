@@ -18,6 +18,25 @@
         return obj[field] || obj['en'] || '';
     }
 
+    function escapeHtml(value) {
+        return String(value == null ? '' : value).replace(/[&<>"']/g, function(char) {
+            return {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[char];
+        });
+    }
+
+    function safeImagePath(value) {
+        var path = String(value || '');
+        return /^(?:\.\.\/)?images\/[a-zA-Z0-9_./-]+$/.test(path)
+            ? path
+            : 'images/placeholder.jpg';
+    }
+
     function tagLabel(tag) {
         var map = {
             'best_seller': { en: 'Best Seller', es: 'Más Vendido', ar: 'الأكثر مبيعاً' },
@@ -47,30 +66,32 @@
 
     function renderCard(p) {
         var name = t(p.name, LANG);
-        var cat = t(p.category_display, LANG);
-        var priceUnit = t(p.price_unit, LANG);
-        var minOrder = t(p.min_order, LANG);
-        var priceDisp = p.price_display || ('£' + p.price.toFixed(2));
+        var cat = escapeHtml(t(p.category_display, LANG));
+        var priceUnit = escapeHtml(t(p.price_unit, LANG));
+        var minOrder = escapeHtml(t(p.min_order, LANG));
+        var numericPrice = Number(p.price);
+        var priceDisp = escapeHtml(p.price_display || ('£' + (Number.isFinite(numericPrice) ? numericPrice : 0).toFixed(2)));
+        var inquiryUrl = 'index.html?product=' + encodeURIComponent(name) + '#inquiry-form';
 
         var tagHtml = p.tag ? '<span class="product-tag ' + tagClass(p.tag) + '">' + tagLabel(p.tag) + '</span>' : '';
-        var imgStyle = p.image ? 'background-image: url(\'' + p.image + '\')' : 'background-image: url(\'images/placeholder.jpg\')';
+        var imgStyle = 'background-image: url(\'' + safeImagePath(p.image) + '\')';
 
-        return '<div class="product-card" data-id="' + p.id + '" data-category="' + (p.category || '') + '" data-price="' + p.price + '" data-stock="' + (p.stock_status || 'in_stock') + '">' +
+        return '<div class="product-card" data-id="' + escapeHtml(p.id) + '" data-category="' + escapeHtml(p.category || '') + '" data-price="' + escapeHtml(numericPrice) + '" data-stock="' + escapeHtml(p.stock_status || 'in_stock') + '">' +
             '  <div class="product-img" style="' + imgStyle + '">' + tagHtml + '</div>' +
             '  <div class="product-body">' +
             '    <div class="product-cat">' + cat + '</div>' +
-            '    <h3 class="product-title">' + name + '</h3>' +
+            '    <h3 class="product-title">' + escapeHtml(name) + '</h3>' +
             '    <div class="product-meta">' +
             '      <span>📦 Min: ' + minOrder + '</span>' +
             '      <span>' + stockLabel(p.stock_status) + '</span>' +
             '    </div>' +
             '    <div class="product-price">' + priceDisp + '<small>' + priceUnit + '</small></div>' +
             '    <div class="product-actions">' +
-            '      <a href="#inquiry" class="btn btn-primary" onclick="prefillInquiry(\'' + name.replace(/'/g, "\\'") + '\', \'' + priceDisp + '\')">' +
-            (LANG === 'es' ? 'Cotizar' : LANG === 'ar' ? 'استفسار' : 'Add to Cart') +
+            '      <a href="' + inquiryUrl + '" class="btn btn-primary">' +
+            (LANG === 'es' ? 'Cotizar' : LANG === 'ar' ? 'استفسار' : 'Get Quote') +
             '      </a>' +
-            '      <a href="#inquiry" class="btn btn-outline">' +
-            (LANG === 'es' ? 'Ver' : LANG === 'ar' ? 'عرض' : 'View') +
+            '      <a href="' + inquiryUrl + '" class="btn btn-outline">' +
+            (LANG === 'es' ? 'Más Info' : LANG === 'ar' ? 'مزيد من المعلومات' : 'More Info') +
             '      </a>' +
             '    </div>' +
             '  </div>' +
@@ -218,7 +239,9 @@
         fetch(jsonPath)
             .then(function(r) { return r.json(); })
             .then(function(data) {
-                PRODUCTS = data.products || [];
+                PRODUCTS = (data.products || []).filter(function(product) {
+                    return product.source !== 'supplier' || product.approved !== false;
+                });
                 if (data.categories) {
                     var catMap = {};
                     data.categories.forEach(function(c) {

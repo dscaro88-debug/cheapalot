@@ -65,21 +65,42 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Form submission
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', (e) => {
+// Formspree submission — keep the existing UI, but only show success after delivery.
+document.querySelectorAll('form[action^="https://formspree.io/"]').forEach(form => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const btn = form.querySelector('button[type="submit"]');
+        if (!btn || btn.disabled) return;
         const originalText = btn.textContent;
-        btn.textContent = '\u2713 SUBMITTED \u2014 WE\'LL CONTACT YOU WITHIN 24H';
-        btn.style.background = '#2d7a2d';
+        btn.textContent = 'SENDING...';
         btn.disabled = true;
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { Accept: 'application/json' }
+            });
+            if (!response.ok) throw new Error('Form delivery failed');
+
+            btn.textContent = '\u2713 SUBMITTED \u2014 WE\'LL CONTACT YOU SOON';
+            btn.style.background = '#2d7a2d';
+            form.reset();
+
+            if (form.id === 'exitPopupForm') {
+                const popup = document.getElementById('exitPopup');
+                setTimeout(() => popup && popup.classList.remove('active'), 1600);
+            }
+        } catch (error) {
+            btn.textContent = 'SEND FAILED \u2014 TRY WHATSAPP OR EMAIL';
+            btn.style.background = '#9f1d1d';
+        }
+
         setTimeout(() => {
             btn.textContent = originalText;
             btn.style.background = '';
             btn.disabled = false;
-            form.reset();
-        }, 4000);
+        }, 5000);
     });
 });
 
@@ -175,34 +196,17 @@ console.log('%cCheapALot', 'color:#E30613;font-size:28px;font-weight:bold;font-f
 console.log('%cYiwu Sourcing Agent · 20+ Years Export · A Lot of Stock. A Lot Cheap.', 'color:#ffcd00;font-size:14px');
 console.log('%chttps://cheapalot.com', 'color:#E30613;font-size:12px');
 
-// Countdown timers for scarcity tags
-(function initCountdowns() {
-    const countdowns = document.querySelectorAll('.countdown');
-    if (!countdowns.length) return;
-
-    function update() {
-        const now = Date.now();
-        countdowns.forEach(el => {
-            const days = parseInt(el.dataset.deadline || '1', 10);
-            if (!el.dataset.targetTime) {
-                const end = Date.now() + days * 86400000 + Math.floor(Math.random() * 36000000);
-                el.dataset.targetTime = end;
-            }
-            const remaining = parseInt(el.dataset.targetTime, 10) - now;
-            if (remaining <= 0) {
-                el.textContent = 'ENDED';
-                el.style.color = '#9ca3af';
-                return;
-            }
-            const d = Math.floor(remaining / 86400000);
-            const h = Math.floor((remaining % 86400000) / 3600000);
-            const m = Math.floor((remaining % 3600000) / 60000);
-            el.textContent = d + 'd ' + h + 'h ' + m + 'm';
-        });
-    }
-    update();
-    setInterval(update, 60000);
-})();
+// Do not manufacture urgency from a browser timer. Keep the existing stock label styling.
+document.querySelectorAll('.countdown').forEach(el => {
+    const container = el.closest('.scarcity-text, .deal-stock-line');
+    if (!container) return;
+    const language = (document.documentElement.lang || 'en').slice(0, 2);
+    container.textContent = language === 'es'
+        ? 'Disponibilidad actual · Confirmar por cotización'
+        : language === 'ar'
+            ? 'التوفر الحالي · يُؤكد بعرض السعر'
+            : 'Current availability · Confirm by quote';
+});
 
 // "Inquire Now" buttons — pre-fill product name in inquiry form
 document.querySelectorAll('.btn-inquire').forEach(btn => {
@@ -215,42 +219,11 @@ document.querySelectorAll('.btn-inquire').forEach(btn => {
     });
 });
 
-// Inquiry form submission
-const inquiryForm = document.getElementById('quickInquiryForm');
-if (inquiryForm) {
-    inquiryForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = inquiryForm.querySelector('button[type="submit"]');
-        const original = btn.textContent;
-        btn.textContent = '\u2713 SENT \u2014 WE\'LL RESPOND WITHIN 24H';
-        btn.style.background = '#2d7a2d';
-        btn.disabled = true;
-        setTimeout(() => {
-            btn.textContent = original;
-            btn.style.background = '';
-            btn.disabled = false;
-            inquiryForm.reset();
-        }, 5000);
-    });
-}
-
-// Sourcing request form submission
-const sourcingForm = document.getElementById('sourcingRequestForm');
-if (sourcingForm) {
-    sourcingForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = sourcingForm.querySelector('button[type="submit"]');
-        const original = btn.textContent;
-        btn.textContent = '\u2713 SUBMITTED \u2014 WE\'LL CONTACT YOU WITHIN 48H';
-        btn.style.background = '#2d7a2d';
-        btn.disabled = true;
-        setTimeout(() => {
-            btn.textContent = original;
-            btn.style.background = '';
-            btn.disabled = false;
-            sourcingForm.reset();
-        }, 5000);
-    });
+// Preserve product context when a catalogue link opens the homepage inquiry form.
+const requestedProduct = new URLSearchParams(window.location.search).get('product');
+const requestedProductField = document.getElementById('iq-product');
+if (requestedProduct && requestedProductField) {
+    requestedProductField.value = requestedProduct.slice(0, 200);
 }
 
 // Exit intent popup
@@ -278,19 +251,6 @@ if (sourcingForm) {
         if (e.target === popup) popup.classList.remove('active');
     });
 
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button[type="submit"]');
-            btn.textContent = '\u2713 YOU\'RE IN! CHECK YOUR INBOX';
-            btn.style.background = '#2d7a2d';
-            setTimeout(() => {
-                popup.classList.remove('active');
-                form.reset();
-            }, 2000);
-        });
-    }
-
     // Mobile: show on scroll up after scrolling down
     let lastScrollY = window.pageYOffset;
     let scrolledDown = false;
@@ -308,3 +268,55 @@ if (sourcingForm) {
         lastScrollY = currentY;
     }, { passive: true });
 })();
+
+// ─── Product Inquiry Pre-fill ───
+// Called when "Add to Cart" or "View" button is clicked on product cards
+// Pre-fills the inquiry form with product info and scrolls to it
+function prefillInquiry(productName, price) {
+    // Find the inquiry form
+    const inquiryForm = document.getElementById('quickInquiryForm') ||
+                        document.getElementById('inquiry-form');
+    if (!inquiryForm) {
+        // Fallback: find any form with class inquiry-form
+        const form = document.querySelector('.inquiry-form');
+        if (!form) return;
+    }
+
+    // Find the message/product field in the form
+    const form = document.getElementById('quickInquiryForm') || document.querySelector('.inquiry-form');
+    if (!form) return;
+
+    // Look for a textarea or input for product/message
+    let messageField = form.querySelector('textarea') ||
+                       form.querySelector('input[name="iq-product"]') ||
+                       form.querySelector('input[name="message"]') ||
+                       form.querySelector('input[placeholder*="product"]') ||
+                       form.querySelector('input[placeholder*="Product"]');
+
+    // If no message field exists, try to find the notes/message field
+    if (!messageField) {
+        messageField = form.querySelector('input[name="iq-notes"]') ||
+                       form.querySelector('textarea[name="message"]') ||
+                       form.querySelector('input[name="message"]');
+    }
+
+    // Pre-fill the field
+    if (messageField) {
+        const message = `I'm interested in: ${productName} (${price}). Please send me pricing and availability.`;
+        if (messageField.tagName === 'TEXTAREA') {
+            messageField.value = message;
+        } else {
+            messageField.value = productName + ' (' + price + ')';
+        }
+        messageField.focus();
+    }
+
+    // Scroll to the form
+    const formSection = form.closest('section') || form;
+    if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+// Expose globally for inline onclick handlers
+window.prefillInquiry = prefillInquiry;

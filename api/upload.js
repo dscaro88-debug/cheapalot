@@ -58,7 +58,12 @@ async function putFile(token, path, content, message, sha) {
 
 module.exports = async (req, res) => {
     // CORS
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    const allowedOrigins = new Set(['https://cheapalot.com', 'https://www.cheapalot.com']);
+    const origin = req.headers.origin;
+    if (origin && allowedOrigins.has(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+        res.setHeader('Vary', 'Origin');
+    }
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -69,7 +74,7 @@ module.exports = async (req, res) => {
     const uploadPassword = process.env.UPLOAD_PASSWORD;
 
     if (!token || !uploadPassword) {
-        return res.status(500).json({ ok: false, error: 'Server not configured. Ask admin to set GITHUB_TOKEN and UPLOAD_PASSWORD env vars.' });
+        return res.status(500).json({ ok: false, error: 'Upload service unavailable' });
     }
 
     let body;
@@ -80,6 +85,10 @@ module.exports = async (req, res) => {
     }
 
     // Action: verify access code
+    if (!body || typeof body !== 'object') {
+        return res.status(400).json({ ok: false, error: 'Invalid request' });
+    }
+
     if (body.action === 'verify') {
         if (body.code === uploadPassword) {
             return res.json({ ok: true });
@@ -101,6 +110,12 @@ module.exports = async (req, res) => {
     const { supplierName, productName, category, priceUsd, minOrder, stockStatus, description, image } = body;
     if (!supplierName || !productName || !priceUsd || !minOrder || !image) {
         return res.status(400).json({ ok: false, error: 'Missing required fields' });
+    }
+    if (typeof priceUsd !== 'string' || !CATEGORY_MAP[category] || !/^\d+(?:\.\d{1,2})?(?:\s*[~-]\s*\d+(?:\.\d{1,2})?)?$/.test(priceUsd)) {
+        return res.status(400).json({ ok: false, error: 'Invalid product data' });
+    }
+    if (!/^data:image\/(?:jpeg|jpg|png|webp);base64,/.test(image) || image.length > 7 * 1024 * 1024) {
+        return res.status(400).json({ ok: false, error: 'Invalid image' });
     }
 
     try {
@@ -151,6 +166,8 @@ module.exports = async (req, res) => {
             price_unit: { en: 'per unit', es: 'por unidad', ar: 'للقطعة' },
             min_order: { en: minOrder, es: minOrder, ar: minOrder },
             source: 'supplier',
+            approved: false,
+            review_status: 'pending',
             supplier: supplierName,
             original_price_usd: priceUsd + ' USD'
         };
@@ -189,6 +206,6 @@ module.exports = async (req, res) => {
 
     } catch (err) {
         console.error('Upload error:', err.message);
-        return res.status(500).json({ ok: false, error: 'Upload failed: ' + err.message });
+        return res.status(500).json({ ok: false, error: 'Upload failed' });
     }
 };
