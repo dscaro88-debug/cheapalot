@@ -74,7 +74,7 @@ function generateProductCard(product, lang) {
   const tagText = t('tags', lang) && i18nData.ui.tags[product.tag] 
     ? (i18nData.ui.tags[product.tag][lang] || i18nData.ui.tags[product.tag].en) 
     : product.tag;
-  const stockKey = product.stock_status === 'limited' ? 'limited' : 'in_stock';
+  const stockKey = ['limited', 'agent', 'overstock'].includes(product.stock_status) ? product.stock_status : 'in_stock';
   const stockText = i18nData.ui.products_page[stockKey][lang] || i18nData.ui.products_page[stockKey].en;
   const minLabel = i18nData.ui.products_page.min_order_label[lang] || i18nData.ui.products_page.min_order_label.en;
   const addToCartText = i18nData.ui.products_page.add_to_cart[lang] || i18nData.ui.products_page.add_to_cart.en;

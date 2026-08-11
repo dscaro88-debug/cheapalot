@@ -140,6 +140,19 @@ async function gptTranslate(text, targetLang, apiKey) {
 }
 
 /**
+ * 根据来源映射库存状态（三态模型）
+ *  - yiwugo                 → agent     （代理采购，交期 7–15 天，不承诺现货）
+ *  - Wholesale Clearance UK → overstock  （真实清仓尾货，有货）
+ *  - 其他 / 未标注           → limited   （保守标注，需确认）
+ * 根除「全站写死 in_stock」导致的库存询盘洪水。
+ */
+function mapStockStatus(source) {
+  if (source === 'yiwugo') return 'agent';
+  if (source === 'Wholesale Clearance UK') return 'overstock';
+  return 'limited';
+}
+
+/**
  * 将爬取的产品转换为 products.json 格式
  */
 async function normalizeProducts(scrapedProducts, options = {}) {
@@ -199,7 +212,8 @@ async function normalizeProducts(scrapedProducts, options = {}) {
       category: category,
       price: price,
       price_display: priceDisplay,
-      stock_status: 'in_stock',
+      stock_status: mapStockStatus(p.source),
+      scraped_at: p.scrapedAt || p.scraped_at || null,
       name: {
         en: p.title,
         es: nameES || p.title,

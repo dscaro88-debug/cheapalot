@@ -247,7 +247,7 @@ function buildOrganizationSchema() {
         "logo": "${BASE_URL}/images/logo.png",
         "description": "Yiwu-based B2B trade platform offering wholesale clearance stock from 1p/unit, China sourcing agent services, factory-direct procurement, quality control, and export logistics. 20+ years of export experience.",
         "email": "info@cheapalot.com",
-        "telephone": "+447435712880",
+        "telephone": "+8613367494665",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Yiwu",
@@ -256,7 +256,7 @@ function buildOrganizationSchema() {
         },
         "areaServed": ["GB", "EU", "Worldwide"],
         "sameAs": [
-            "https://wa.me/447435712880"
+            "https://wa.me/8613367494665"
         ]
     }
     </script>`;
@@ -364,7 +364,7 @@ function buildServiceSchema(page) {
             "@type": "Organization",
             "name": "CheapALot",
             "url": "${BASE_URL}",
-            "telephone": "+447435712880",
+            "telephone": "+8613367494665",
             "email": "info@cheapalot.com"
         },
         "areaServed": {
@@ -382,7 +382,7 @@ function buildContactPointSchema() {
     {
         "@context": "https://schema.org",
         "@type": "ContactPoint",
-        "telephone": "+447435712880",
+        "telephone": "+8613367494665",
         "email": "info@cheapalot.com",
         "contactType": "customer service",
         "areaServed": ["GB", "EU", "Worldwide"],

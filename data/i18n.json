@@ -87,6 +87,8 @@
       "view": { "en": "View", "es": "Ver", "ar": "\u0639\u0631\u0636" },
       "in_stock": { "en": "\u2713 In Stock", "es": "\u2713 En Stock", "ar": "\u2713 \u0645\u062a\u0648\u0641\u0631" },
       "limited": { "en": "\ud83d\udd25 Limited", "es": "\ud83d\udd25 Limitado", "ar": "\ud83d\udd25 \u0645\u062d\u062f\u0648\u062f" },
+      "agent": { "en": "\ud83d\udce6 Sourcing Agent \u00b7 7\u201315 days", "es": "\ud83d\udce6 Agente \u00b7 7\u201315 d\u00edas", "ar": "\ud83d\udce6 \u0648\u0643\u064a\u0644 \u00b7 \u0667\u2013\u0661\u0665 \u064a\u0648\u0645" },
+      "overstock": { "en": "\u2713 In Stock", "es": "\u2713 En Stock", "ar": "\u2713 \u0645\u062a\u0648\u0641\u0631" },
       "min_order_label": { "en": "\ud83d\udce6 Min:", "es": "\ud83d\udce6 M\u00edn:", "ar": "\ud83d\udce6 \u0627\u0644\u062d\u062f \u0627\u0644\u0623\u062f\u0646\u0649:" },
       "pagination_prev": { "en": "\u2190 Previous", "es": "\u2190 Anterior", "ar": "\u0627\u0644\u0633\u0627\u0628\u0642 \u2192" },
       "pagination_next": { "en": "Next \u2192", "es": "Siguiente \u2192", "ar": "\u2192 \u0627\u0644\u062a\u0627\u0644\u064a" }

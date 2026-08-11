@@ -276,7 +276,7 @@ async function normalizeProducts(scrapedProducts, options = {}) {
       category,
       category_display: categoryDisp,
       min_order: { en: moqEN, es: moqES, ar: moqAR },
-      stock_status: 'in_stock',
+      stock_status: 'agent',
       tag,
       source: 'yiwugo',
       source_url: p.detailUrl,

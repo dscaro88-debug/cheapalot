@@ -32,7 +32,7 @@ Each product must have these fields:
 - price_display: string (e.g. "\u00a30.18", "\u00a32.40", "\u00a3280")
 - price_unit: { en, es, ar } - e.g. "per unit", "per pallet", "per carton"
 - min_order: { en, es, ar } - Minimum order quantity (e.g. "500 pcs", "1 pallet")
-- stock_status: one of: "in_stock", "limited", "sold_out"
+- stock_status: one of: "in_stock", "limited", "sold_out", "agent" (Yiwu sourcing, 7-15 days), "overstock" (real clearance stock)
 - tag: one of: "best_seller", "new", "clearance", "seasonal", "hot", "70_off"
 - image: leave as "PLACEHOLDER" (will be assigned later)
 
@@ -58,7 +58,7 @@ function generateMockProducts() {
       category: "household", price: 0.85, price_display: "£0.85",
       price_unit: { en: "per unit", es: "por unidad", ar: "للقطعة" },
       min_order: { en: "500 pcs", es: "500 pcs", ar: "500 قطعة" },
-      stock_status: "in_stock", tag: "new", image: "PLACEHOLDER"
+      stock_status: "overstock", tag: "new", image: "PLACEHOLDER"
     },
     {
       name: { en: "LED Strip Lights 5m RGB with Remote (Clearance)", es: "Tiras LED RGB 5m con Control Remoto (Liquidación)", ar: "أشرطة LED ملونة 5م مع جهاز تحكم (تخفيضات)" },
@@ -74,7 +74,7 @@ function generateMockProducts() {
       category: "toys", price: 0.65, price_display: "£0.65",
       price_unit: { en: "per unit", es: "por unidad", ar: "للقطعة" },
       min_order: { en: "300 pcs", es: "300 pcs", ar: "300 قطعة" },
-      stock_status: "in_stock", tag: "best_seller", image: "PLACEHOLDER"
+      stock_status: "overstock", tag: "best_seller", image: "PLACEHOLDER"
     }
   ];
 }
@@ -110,7 +110,7 @@ function validateProduct(product) {
   const errors = [];
   const validCategories = ['household', 'electrical', 'apparel', 'diy', 'furniture', 'toys', 'sports', 'mixed'];
   const validTags = ['best_seller', 'new', 'clearance', 'seasonal', 'hot', '70_off'];
-  const validStatus = ['in_stock', 'limited', 'sold_out'];
+  const validStatus = ['in_stock', 'limited', 'sold_out', 'agent', 'overstock'];
 
   if (!product.name || !product.name.en) errors.push('Missing name.en');
   if (!product.name || !product.name.es) errors.push('Missing name.es');

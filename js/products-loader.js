@@ -56,11 +56,13 @@
 
     function stockLabel(status) {
         var map = {
-            'in_stock': { en: '✓ In Stock', es: '✓ En Stock', ar: '✓ متوفر' },
+            'agent': { en: '📦 Sourcing Agent · 7–15 days', es: '📦 Agente · 7–15 días', ar: '📦 وكيل · ٧–١٥ يوم' },
+            'overstock': { en: '✓ In Stock', es: '✓ En Stock', ar: '✓ متوفر' },
             'limited': { en: '⚡ Limited', es: '⚡ Limitado', ar: '⚡ محدود' },
+            'in_stock': { en: '✓ In Stock', es: '✓ En Stock', ar: '✓ متوفر' },
             'out_of_stock': { en: '✗ Sold Out', es: '✗ Agotado', ar: '✗ نفذ' }
         };
-        var m = map[status] || map['in_stock'];
+        var m = map[status] || map['agent'];
         return m[LANG] || m['en'];
     }
 
@@ -76,7 +78,7 @@
         var tagHtml = p.tag ? '<span class="product-tag ' + tagClass(p.tag) + '">' + tagLabel(p.tag) + '</span>' : '';
         var imgStyle = 'background-image: url(\'' + safeImagePath(p.image) + '\')';
 
-        return '<div class="product-card" data-id="' + escapeHtml(p.id) + '" data-category="' + escapeHtml(p.category || '') + '" data-price="' + escapeHtml(numericPrice) + '" data-stock="' + escapeHtml(p.stock_status || 'in_stock') + '">' +
+        return '<div class="product-card" data-id="' + escapeHtml(p.id) + '" data-category="' + escapeHtml(p.category || '') + '" data-price="' + escapeHtml(numericPrice) + '" data-stock="' + escapeHtml(p.stock_status || 'agent') + '">' +
             '  <div class="product-img" style="' + imgStyle + '">' + tagHtml + '</div>' +
             '  <div class="product-body">' +
             '    <div class="product-cat">' + cat + '</div>' +
