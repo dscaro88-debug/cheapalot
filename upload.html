@@ -116,13 +116,18 @@
                     </div>
                     <div class="form-group">
                         <label>Stock Status</label>
-                        <select id="stockStatus">
+                        <select id="stockStatus" onchange="toggleQty()">
                             <option value="in_stock">In Stock</option>
                             <option value="agent">Sourcing Agent (7–15 days)</option>
-                            <option value="overstock">Overstock (Real Stock)</option>
+                            <option value="overstock" selected>Overstock (Real Stock)</option>
                             <option value="limited">Limited Stock</option>
                         </select>
                     </div>
+                </div>
+                <div class="form-group" id="qtyGroup" style="display:none;">
+                    <label>Real Stock Quantity (件) *</label>
+                    <input type="number" id="stockQty" min="1" placeholder="e.g. 5000">
+                    <small style="color:#888;">选 Overstock 时请填真实库存件数，客户可见</small>
                 </div>
                 <div class="form-group">
                     <label>Description (optional)</label>
@@ -151,6 +156,12 @@
     <script>
         var ACCESS_CODE = ''; // Will be verified server-side
         var compressedImage = null;
+
+        function toggleQty() {
+            var ss = document.getElementById('stockStatus').value;
+            document.getElementById('qtyGroup').style.display = (ss === 'overstock') ? 'block' : 'none';
+        }
+        toggleQty();
 
         function checkAccess() {
             var code = document.getElementById('accessCode').value.trim();
@@ -233,10 +244,15 @@
             var priceUsd = document.getElementById('priceUsd').value.trim();
             var minOrder = document.getElementById('minOrder').value.trim();
             var stockStatus = document.getElementById('stockStatus').value;
+            var stockQty = document.getElementById('stockQty').value.trim();
             var description = document.getElementById('description').value.trim();
 
             if (!name || !supplier || !priceUsd || !minOrder) {
                 showAlert('error', 'Please fill all required fields (*)');
+                return;
+            }
+            if (stockStatus === 'overstock' && !stockQty) {
+                showAlert('error', 'Overstock requires Real Stock Quantity');
                 return;
             }
             if (!compressedImage) {
@@ -260,6 +276,7 @@
                     priceUsd: priceUsd,
                     minOrder: minOrder,
                     stockStatus: stockStatus,
+                    stockQty: stockQty,
                     description: description,
                     image: compressedImage
                 })

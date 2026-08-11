@@ -125,4 +125,35 @@ module.exports = {
       'toy|kids': 'toys',
     },
   },
+
+  // ── 站点 5: 1688 清仓尾货 (中国库存源, 实验性) ──
+  // 说明: 1688 反爬较强, 可能需登录态/代理. 若被拦截, 流水线会自动跳过该源, 不影响其他源.
+  '1688-clearance': {
+    name: '1688 清仓尾货',
+    baseUrl: 'https://www.1688.com',
+    startUrl: 'https://www.1688.com/cms/chaoshi/qingcang.html',
+    type: 'dynamic',
+    maxPages: 2,
+    delayMs: 2500,
+    experimental: true,        // 标记为实验性, 失败不影响整体
+    selectors: {
+      productCard: '.offer-list-row, .offer-item, .ic-offer, [class*="offer"]',
+      title: '.offer-title, .title, h2, h3, a[title]',
+      price: '.price, .price-num, [class*="price"]',
+      image: 'img',
+      imageUrlAttr: 'src',
+      imageAltAttr: 'alt',
+      link: 'a',
+      linkAttr: 'href',
+    },
+    categoryMap: {
+      '玩具|公仔|积木': 'toys',
+      '服装|服饰|鞋|包': 'apparel',
+      '家居|家纺|收纳|厨房': 'household',
+      '电子|数码|充电': 'electrical',
+      '工具|五金': 'diy',
+      '运动|户外': 'sports',
+      '家具': 'furniture',
+    },
+  },
 };

@@ -48,14 +48,106 @@ const CATEGORIES = [
 const BASE_URL = 'https://www.yiwugo.com';
 const PRODUCTS_PER_PAGE = 60;
 
+// 清仓 / 尾货 / 库存处理 — 真实库存信号关键词(用于"全网库存爬取")
+const CLEARANCE_KEYWORDS = ['清仓', '尾货', '库存处理', '甩货', '特价清仓'];
+
 /**
  * 启动 Playwright 浏览器
+ * 本地有指定 Chrome 则用; 否则(如 CI)回退到 Playwright 自带 chromium
  */
 async function launchBrowser() {
+  const useLocal = fs.existsSync(CHROME_PATH);
   return await chromium.launch({
     headless: true,
-    executablePath: CHROME_PATH,
+    ...(useLocal ? { executablePath: CHROME_PATH } : {}),
   });
+}
+
+/**
+ * 解析单个义乌购产品卡片 → 归一化对象
+ */
+function parseYiwugoCard($el, catId, catZh, sourceName) {
+  // 产品图片
+  const imgSrc = $el.find('.thumbnail').attr('src') || '';
+  const imageUrl = imgSrc.startsWith('//') ? 'https:' + imgSrc : imgSrc;
+
+  // 产品名
+  const productName = $el.find('.product-name span').last().text().trim();
+
+  // 产品详情页 URL
+  const detailHref = $el.find('.tile-item').first().attr('href') || '';
+  const detailUrl = detailHref ? BASE_URL + detailHref : '';
+
+  // 产品 ID (从 URL 提取)
+  const productIdMatch = detailHref.match(/detail\/(\d+)\.html/);
+  const productId = productIdMatch ? productIdMatch[1] : '';
+
+  // 价格解析
+  const priceEls = $el.find('.price');
+  let priceLow = 0, priceHigh = 0;
+  let priceRaw = '';
+  $el.find('.price .f18, .price .f12').each(function (j, span) {
+    priceRaw += $(span).text().trim();
+  });
+  const startPriceText = $el.find('.start-price').text().replace(/\s/g, '');
+  if (startPriceText) {
+    priceLow = parseFloat(startPriceText) || 0;
+  }
+  const f18Els = $el.find('.price .f18');
+  if (f18Els.length >= 2) {
+    const highText = $(f18Els.get(1)).text().trim();
+    const f12AfterTilde = $el.find('.price .f18').eq(1).next('.f12').text().trim();
+    priceHigh = parseFloat(highText + f12AfterTilde) || priceLow;
+  } else {
+    priceHigh = priceLow;
+  }
+  if (priceLow === 0) {
+    const priceText = $el.find('.price').text().replace(/\s+/g, '');
+    const m = priceText.match(/(\d+\.?\d*)~(\d+\.?\d*)元/);
+    if (m) {
+      priceLow = parseFloat(m[1]);
+      priceHigh = parseFloat(m[2]);
+    }
+  }
+
+  // 起订量 / 成交量
+  const priceText = $el.find('.price').text().replace(/\s+/g, '');
+  const moqMatch = priceText.match(/(\d+)个起购/);
+  const moq = moqMatch ? parseInt(moqMatch[1]) : 1;
+  const soldMatch = priceText.match(/成交(\d+)个/);
+  const sold = soldMatch ? parseInt(soldMatch[1]) : 0;
+
+  // 供应商信息 (保密 - 不显示在网站上)
+  const supplierName = $el.find('.shop_name .name').text().trim();
+  const supplierHref = $el.find('.shop_name .name').attr('href') || '';
+  const supplierUrl = supplierHref ? BASE_URL + supplierHref : '';
+  const supplierYears = $el.find('.year').text().trim();
+  const shopAddress = $el.find('.address-info span').text().trim();
+
+  if (productName && imageUrl) {
+    return {
+      productId,
+      title: productName,
+      priceLow,
+      priceHigh,
+      priceCurrency: 'CNY',
+      moq,
+      sold,
+      imageUrl,
+      detailUrl,
+      supplier: {
+        name: supplierName,
+        url: supplierUrl,
+        years: supplierYears,
+        address: shopAddress,
+      },
+      category: catId,
+      categoryZh: catZh,
+      source: sourceName,
+      scrapedAt: new Date().toISOString(),
+    };
+  }
+  return null;
 }
 
 /**
@@ -74,105 +166,62 @@ async function scrapeCategoryPage(page, category, pageNum) {
   const products = [];
   
   $('.products-box').each((i, el) => {
-    const $el = $(el);
-    
-    // 产品图片
-    const imgSrc = $el.find('.thumbnail').attr('src') || '';
-    const imageUrl = imgSrc.startsWith('//') ? 'https:' + imgSrc : imgSrc;
-    
-    // 产品名
-    const productName = $el.find('.product-name span').last().text().trim();
-    
-    // 产品详情页 URL
-    const detailHref = $el.find('.tile-item').first().attr('href') || '';
-    const detailUrl = detailHref ? BASE_URL + detailHref : '';
-    
-    // 产品 ID (从 URL 提取)
-    const productIdMatch = detailHref.match(/detail\/(\d+)\.html/);
-    const productId = productIdMatch ? productIdMatch[1] : '';
-    
-    // 价格 (从 span 元素精确提取)
-    // HTML 结构: <span class="f18">3</span> <span class="f12">.60</span> ~ <span class="f18">4</span> <span class="f12">.50</span> 元
-    const priceEls = $el.find('.price');
-    let priceLow = 0, priceHigh = 0;
-    
-    // 方法: 提取所有 f18/f12 span 的文本, 拼接后匹配
-    let priceRaw = '';
-    $el.find('.price .f18, .price .f12').each(function(j, span) {
-      priceRaw += $(span).text().trim();
-    });
-    // priceRaw 类似: "3.604.50" (不太好分)
-    // 改用: 先取 start-price 的文本, 再取 ~ 后的文本
-    const startPriceText = $el.find('.start-price').text().replace(/\s/g, '');
-    // start-price 只含起始价: "3.60"
-    if (startPriceText) {
-      priceLow = parseFloat(startPriceText) || 0;
-    }
-    // 取 ~ 后的价格 (查找所有 f18 span, 第二个是高价)
-    const f18Els = $el.find('.price .f18');
-    if (f18Els.length >= 2) {
-      const highText = $(f18Els.get(1)).text().trim();
-      const f12AfterTilde = $el.find('.price .f18').eq(1).next('.f12').text().trim();
-      priceHigh = parseFloat(highText + f12AfterTilde) || priceLow;
-    } else {
-      priceHigh = priceLow;
-    }
-    
-    // 备用: 如果上面解析失败, 尝试从完整文本匹配
-    if (priceLow === 0) {
-      const priceText = $el.find('.price').text().replace(/\s+/g, '');
-      const m = priceText.match(/(\d+\.?\d*)~(\d+\.?\d*)元/);
-      if (m) {
-        priceLow = parseFloat(m[1]);
-        priceHigh = parseFloat(m[2]);
-      }
-    }
-    
-    // 起订量 - 从完整文本提取
-    const priceText = $el.find('.price').text().replace(/\s+/g, '');
-    const moqMatch = priceText.match(/(\d+)个起购/);
-    const moq = moqMatch ? parseInt(moqMatch[1]) : 1;
-    
-    // 成交量
-    const soldMatch = priceText.match(/成交(\d+)个/);
-    const sold = soldMatch ? parseInt(soldMatch[1]) : 0;
-    
-    // 供应商信息 (不显示在网站上，保存到供应商资料)
-    const supplierName = $el.find('.shop_name .name').text().trim();
-    const supplierHref = $el.find('.shop_name .name').attr('href') || '';
-    const supplierUrl = supplierHref ? BASE_URL + supplierHref : '';
-    const supplierYears = $el.find('.year').text().trim();
-    
-    // 商铺地址
-    const shopAddress = $el.find('.address-info span').text().trim();
-    
-    if (productName && imageUrl) {
-      products.push({
-        productId,
-        title: productName,
-        priceLow,
-        priceHigh,
-        priceCurrency: 'CNY',
-        moq,
-        sold,
-        imageUrl,
-        detailUrl,
-        // 供应商信息 (保密 - 不显示在网站上)
-        supplier: {
-          name: supplierName,
-          url: supplierUrl,
-          years: supplierYears,
-          address: shopAddress,
-        },
-        category: category.cheapalotCat,
-        categoryZh: category.nameZh,
-        source: 'yiwugo',
-        scrapedAt: new Date().toISOString(),
-      });
-    }
+    const prod = parseYiwugoCard($(el), category.cheapalotCat, category.nameZh, 'yiwugo');
+    if (prod) products.push(prod);
   });
   
   return products;
+}
+
+/**
+ * 抓取义乌购「清仓 / 尾货 / 库存处理」搜索结果 → 真实库存信号(overstock)
+ * 注: yiwugo 列表页不暴露逐件库存数字, 但供应商主动挂"清仓/尾货"即代表有货要清。
+ */
+async function scrapeYiwugoClearance(options = {}) {
+  const { maxPages = 2, downloadImages = false } = options;
+  const browser = await launchBrowser();
+  const page = await browser.newPage();
+  await page.setExtraHTTPHeaders({ 'Accept-Language': 'zh-CN,zh;q=0.9' });
+
+  const all = [];
+  const suppliers = new Map();
+  try {
+    for (const kw of CLEARANCE_KEYWORDS) {
+      for (let p = 1; p <= maxPages; p++) {
+        const url = `${BASE_URL}/search/?keyword=${encodeURIComponent(kw)}&page=${p}`;
+        console.log(`  [清仓] 搜索 "${kw}" 第${p}页: ${url}`);
+        try {
+          await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
+          await page.waitForTimeout(1500);
+        } catch (e) {
+          console.log(`  [清仓] 页面加载失败, 跳过: ${e.message}`);
+          break;
+        }
+        const html = await page.content();
+        const $ = cheerio.load(html);
+        let found = 0;
+        $('.products-box').each((i, el) => {
+          const prod = parseYiwugoCard($(el), 'mixed', kw + '清仓', 'yiwugo-clearance');
+          if (prod) {
+            all.push(prod);
+            found++;
+            if (prod.supplier.name) {
+              const key = prod.supplier.url || prod.supplier.name;
+              if (!suppliers.has(key)) suppliers.set(key, { name: prod.supplier.name, url: prod.supplier.url, years: prod.supplier.years, address: prod.supplier.address, category: kw, productsCount: 1 });
+              else suppliers.get(key).productsCount++;
+            }
+          }
+        });
+        console.log(`  [清仓] "${kw}" 第${p}页: ${found} 个`);
+        if (found === 0) break;
+        await page.waitForTimeout(1200);
+      }
+    }
+  } finally {
+    await browser.close();
+  }
+  console.log(`\n[清仓] 共爬取 ${all.length} 个清仓/尾货商品`);
+  return { products: all, suppliers: [...suppliers.values()] };
 }
 
 /**
@@ -305,4 +354,4 @@ async function scrapeYiwugo(options = {}) {
   };
 }
 
-module.exports = { scrapeYiwugo, CATEGORIES };
+module.exports = { scrapeYiwugo, scrapeYiwugoClearance, CATEGORIES, CLEARANCE_KEYWORDS };

@@ -147,9 +147,23 @@ async function gptTranslate(text, targetLang, apiKey) {
  * 根除「全站写死 in_stock」导致的库存询盘洪水。
  */
 function mapStockStatus(source) {
-  if (source === 'yiwugo') return 'agent';
-  if (source === 'Wholesale Clearance UK') return 'overstock';
+  if (source === 'yiwugo') return 'agent';            // 代理采购目录(无库存, 只有交期)
+  if (!source) return 'limited';                       // 未知来源保守标注, 需人工确认
+  const s = String(source).toLowerCase();
+  // 所有清仓 / 尾货 / 库存处理类来源 → overstock(真实库存信号)
+  if (s.includes('clearance') || s.includes('wholesale') || s.includes('1688') ||
+      s.includes('尾货') || s.includes('清仓') || s.includes('liquidation') ||
+      s.includes('joblot') || s.includes('pallet') || s.includes('overstock')) return 'overstock';
   return 'limited';
+}
+
+// 清仓/尾货来源的真实库存信号说明(前端展示用)
+function stockSignalOf(source) {
+  const s = String(source || '').toLowerCase();
+  if (s.includes('yiwugo')) return null;               // 代理目录不展示库存信号
+  if (s.includes('1688') || s.includes('清仓') || s.includes('尾货')) return 'clearance_listing_cn';
+  if (s.includes('clearance') || s.includes('wholesale') || s.includes('liquidation') || s.includes('joblot') || s.includes('pallet')) return 'clearance_listing_uk';
+  return 'clearance_listing';
 }
 
 /**
@@ -213,6 +227,8 @@ async function normalizeProducts(scrapedProducts, options = {}) {
       price: price,
       price_display: priceDisplay,
       stock_status: mapStockStatus(p.source),
+      stock_signal: stockSignalOf(p.source),          // 库存信号类型(清仓listing/手动/供应商)
+      verified: mapStockStatus(p.source) !== 'overstock', // 清仓品默认未核实, 需人工/供应商确认
       scraped_at: p.scrapedAt || p.scraped_at || null,
       name: {
         en: p.title,

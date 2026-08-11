@@ -4,5 +4,5 @@
 node_modules/
 .tmp/
 tmp-supplier/
-.github/workflows/
+# .github/workflows/ 必须进仓库(库存自动采集定时任务)
 .env

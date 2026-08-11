@@ -116,6 +116,15 @@
                 </thead>
                 <tbody id="productTableBody"></tbody>
             </table>
+
+            <!-- Pending Supplier Stock (from supplier portal) -->
+            <div class="pending-section" style="margin-top:24px;background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                    <h2 style="font-family:'Oswald',sans-serif;font-size:20px;">📥 Pending Supplier Stock <span id="pendingCount" style="color:#888;font-size:13px;"></span></h2>
+                    <button class="btn-add" onclick="loadPending()">Refresh</button>
+                </div>
+                <div id="pendingList"><p style="color:#888;font-size:14px;">Click Refresh to load submissions from suppliers.</p></div>
+            </div>
         </div>
     </div>
 
@@ -251,6 +260,7 @@
                 document.getElementById('loginScreen').style.display = 'none';
                 document.getElementById('mainPanel').style.display = 'block';
                 loadData();
+                loadPending();
                 toast('Login successful!', 'success');
             }).catch(function(err) {
                 TOKEN = '';
@@ -263,6 +273,53 @@
             TOKEN = '';
             location.reload();
         }
+
+        // ===== Pending Supplier Stock (审批流) =====
+        function loadPending() {
+            if (!TOKEN) return;
+            fetch('/api/pending', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action: 'list', token: TOKEN })
+            }).then(function(r){ return r.json(); }).then(function(data){
+                var box = document.getElementById('pendingList');
+                var cnt = document.getElementById('pendingCount');
+                if (!data.ok) { box.innerHTML = '<p style="color:#c62828;">' + (data.error || 'Failed to load') + '</p>'; return; }
+                var items = data.items || [];
+                cnt.textContent = '(' + items.length + ')';
+                if (items.length === 0) { box.innerHTML = '<p style="color:#888;">No pending submissions.</p>'; return; }
+                box.innerHTML = items.map(function(it){
+                    var img = it.imagePath ? it.imagePath : (it.imageDataUri || '');
+                    return '<div style="display:flex;gap:12px;align-items:center;border:1px solid #eee;border-radius:10px;padding:12px;margin-bottom:10px;">'
+                        + (img ? '<img src="'+img+'" style="width:60px;height:60px;object-fit:cover;border-radius:8px;">' : '<div style="width:60px;height:60px;background:#f0f0f0;border-radius:8px;"></div>')
+                        + '<div style="flex:1;">'
+                        + '<div style="font-weight:600;">'+esc(it.productName)+'</div>'
+                        + '<div style="font-size:13px;color:#666;">'+esc(it.supplierName)+' · '+esc(it.category)+' · $'+esc(it.priceUsd)+(it.stockQty?(' · Qty '+it.stockQty):'')+'</div>'
+                        + '</div>'
+                        + '<button class="btn-add" style="padding:6px 14px;font-size:13px;" onclick="approvePending(\''+it.id+'\')">Approve</button>'
+                        + '<button class="btn-del" style="padding:6px 14px;font-size:13px;border:none;border-radius:8px;cursor:pointer;background:#fee2e2;color:#991b1b;" onclick="rejectPending(\''+it.id+'\')">Reject</button>'
+                        + '</div>';
+                }).join('');
+            }).catch(function(e){ document.getElementById('pendingList').innerHTML = '<p style="color:#c62828;">Error: '+e.message+'</p>'; });
+        }
+
+        function approvePending(id) {
+            fetch('/api/pending', { method:'POST', headers:{'Content-Type':'application/json'},
+                body: JSON.stringify({ action:'approve', token: TOKEN, id: id }) })
+            .then(function(r){ return r.json(); }).then(function(d){
+                if (d.ok) { toast('Approved → published as Overstock', 'success'); loadPending(); }
+                else toast('Approve failed: ' + (d.error||''), 'error');
+            });
+        }
+        function rejectPending(id) {
+            fetch('/api/pending', { method:'POST', headers:{'Content-Type':'application/json'},
+                body: JSON.stringify({ action:'reject', token: TOKEN, id: id }) })
+            .then(function(r){ return r.json(); }).then(function(d){
+                if (d.ok) { toast('Rejected', 'success'); loadPending(); }
+                else toast('Reject failed: ' + (d.error||''), 'error');
+            });
+        }
+        function esc(s){ return String(s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
 
         // ===== Data =====
         function loadData() {
