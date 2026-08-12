@@ -203,7 +203,7 @@
         var CNY_TO_GBP = 0.1075;
 
         // ===== State =====
-        var TOKEN = localStorage.getItem('gh_token') || '';
+        var TOKEN = sessionStorage.getItem('gh_token') || '';
         var PRODUCTS_DATA = null;
         var FILE_SHA = null;
         var HAS_CHANGES = false;
@@ -255,7 +255,7 @@
             // Test token by fetching products.json
             TOKEN = token;
             ghRaw(FILE_PATH).then(function(data) {
-                localStorage.setItem('gh_token', TOKEN);
+                sessionStorage.setItem('gh_token', TOKEN);
                 PRODUCTS_DATA = data;
                 document.getElementById('loginScreen').style.display = 'none';
                 document.getElementById('mainPanel').style.display = 'block';
@@ -269,7 +269,7 @@
         }
 
         function logout() {
-            localStorage.removeItem('gh_token');
+            sessionStorage.removeItem('gh_token');
             TOKEN = '';
             location.reload();
         }
