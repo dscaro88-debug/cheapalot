@@ -39,8 +39,11 @@ module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ ok: false, error: 'Method not allowed' });
 
-  let body;
-  try { body = JSON.parse(req.body || '{}'); } catch { return res.status(400).json({ ok: false, error: 'Invalid JSON' }); }
+  let body = req.body;
+  if (typeof body === 'string') {
+    try { body = JSON.parse(body); } catch { return res.status(400).json({ ok: false, error: 'Invalid JSON' }); }
+  }
+  if (!body || typeof body !== 'object') return res.status(400).json({ ok: false, error: 'Invalid JSON' });
 
   try {
     // ── 校验访问码 ──

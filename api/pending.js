@@ -4,7 +4,7 @@
  *   action=list    { adminToken }                         → { ok, items[] }
  *   action=approve { adminToken, id }                     → 并入 products.json(overstock), 移出待审
  *   action=reject  { adminToken, id }                     → 移出待审
- * 需要环境变量: GITHUB_TOKEN, GITHUB_REPO, ADMIN_TOKEN
+ * 需要环境变量: GITHUB_TOKEN, GITHUB_REPO (用 CARO 的 GitHub PAT 鉴权, 与登录态一致)
  */
 
 const { getFile, putFile, readJson, updateJson } = require('./_github');
@@ -45,8 +45,11 @@ module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ ok: false, error: 'Method not allowed' });
 
-  let body;
-  try { body = JSON.parse(req.body || '{}'); } catch { return res.status(400).json({ ok: false, error: 'Invalid JSON' }); }
+  let body = req.body;
+  if (typeof body === 'string') {
+    try { body = JSON.parse(body); } catch { return res.status(400).json({ ok: false, error: 'Invalid JSON' }); }
+  }
+  if (!body || typeof body !== 'object') return res.status(400).json({ ok: false, error: 'Invalid JSON' });
 
   const ok = await validGitHubToken(body.token);
   if (!ok) return res.status(403).json({ ok: false, error: 'Invalid GitHub token' });
