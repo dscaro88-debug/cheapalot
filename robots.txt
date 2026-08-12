@@ -9,4 +9,4 @@ Disallow: /build/
 Disallow: /tmp-supplier/
 Disallow: /google-verification-placeholder.html
 
-Sitemap: https://cheapalot.com/sitemap.xml
+Sitemap: https://www.cheapalot.com/sitemap.xml

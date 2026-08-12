@@ -10,7 +10,7 @@
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
-const SITE = 'https://cheapalot.com';
+const SITE = 'https://www.cheapalot.com';
 
 // ---- Q&A source (optimized for "how to source from China" type queries) ----
 const QA = [

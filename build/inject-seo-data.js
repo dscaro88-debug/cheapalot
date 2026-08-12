@@ -16,7 +16,7 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const DATA = path.join(ROOT, 'data', 'products.json');
-const SITE = 'https://cheapalot.com';
+const SITE = 'https://www.cheapalot.com';
 
 function stripMarked(html, marker) {
   const re = new RegExp('<!--' + marker + '-->[\\s\\S]*?<!--/' + marker + '-->', 'g');

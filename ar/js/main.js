@@ -194,7 +194,7 @@ document.querySelectorAll('.faq-q').forEach(q => {
 // Console branding
 console.log('%cCheapALot', 'color:#E30613;font-size:28px;font-weight:bold;font-family:Bebas Neue, sans-serif');
 console.log('%cYiwu Sourcing Agent · 20+ Years Export · A Lot of Stock. A Lot Cheap.', 'color:#ffcd00;font-size:14px');
-console.log('%chttps://cheapalot.com', 'color:#E30613;font-size:12px');
+console.log('%chttps://www.cheapalot.com', 'color:#E30613;font-size:12px');
 
 // Do not manufacture urgency from a browser timer. Keep the existing stock label styling.
 document.querySelectorAll('.countdown').forEach(el => {

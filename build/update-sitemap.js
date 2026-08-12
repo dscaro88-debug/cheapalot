@@ -9,7 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
-const SITE = 'https://cheapalot.com';
+const SITE = 'https://www.cheapalot.com';
 const LASTMOD = '2026-08-12';
 
 // page -> { priority, changefreq }

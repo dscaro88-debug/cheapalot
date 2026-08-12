@@ -26,7 +26,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const BASE_URL = 'https://cheapalot.com';
+const BASE_URL = 'https://www.cheapalot.com';
 const SITE_NAME = 'CheapALot';
 const DEFAULT_IMAGE = `${BASE_URL}/images/hero-bg.jpg`;
 const TODAY = new Date().toISOString().split('T')[0];

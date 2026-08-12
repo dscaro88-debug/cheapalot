@@ -21,7 +21,7 @@ const TWITTER_TEMPLATE = (title, desc) => `
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${desc}">
-    <meta name="twitter:image" content="https://cheapalot.com/images/hero-bg.jpg">
+    <meta name="twitter:image" content="https://www.cheapalot.com/images/hero-bg.jpg">
 `;
 
 const MANIFEST_LINK = `

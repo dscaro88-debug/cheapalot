@@ -28,8 +28,8 @@
 ### 2. Sitemap.xml 未同步更新 - 仍包含 DE/PL 引用
 **问题**: 我们移除了语言切换器中的 DE/PL 链接，但 `sitemap.xml` 仍包含：
 ```xml
-<xhtml:link rel="alternate" hreflang="de" href="https://cheapalot.com/de/"/>
-<xhtml:link rel="alternate" hreflang="pl" href="https://cheapalot.com/pl/"/>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.cheapalot.com/de/"/>
+<xhtml:link rel="alternate" hreflang="pl" href="https://www.cheapalot.com/pl/"/>
 ```
 
 **影响**:
@@ -117,7 +117,7 @@
 - 如果 RTL 布局不正确，阿拉伯语用户会看到混乱的页面
 
 **修复建议**: 
-1. 在浏览器中打开 `https://cheapalot.com/ar/` 检查布局
+1. 在浏览器中打开 `https://www.cheapalot.com/ar/` 检查布局
 2. 可能需要添加特定于阿拉伯语的 CSS 调整
 
 ---
