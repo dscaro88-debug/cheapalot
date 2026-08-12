@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
+
+# Non-public / admin areas — excluded from indexing
+Disallow: /manage.html
+Disallow: /upload.html
 Disallow: /api/
+Disallow: /build/
+Disallow: /tmp-supplier/
+Disallow: /google-verification-placeholder.html
 
 Sitemap: https://cheapalot.com/sitemap.xml

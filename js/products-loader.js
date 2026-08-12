@@ -1,7 +1,13 @@
 /**
- * products-loader.js — Dynamic product loading from products.json
- * Replaces static HTML cards with dynamic fetch + render
- * Supports: filtering, search, sort, pagination
+ * products-loader.js — Product loading & filtering
+ *
+ * TWO modes:
+ *  1) STATIC (preferred): products.html ships pre-rendered product cards
+ *     (see build/prerender-products.js). We enhance that existing DOM with
+ *     display-toggle pagination/filtering so every product stays in the HTML
+ *     source — crawlable by Google AND AI search engines (SEO + GEO).
+ *  2) FETCH (fallback): if the grid is empty (e.g. a non-pre-rendered build),
+ *     fetch products.json and render as before.
  */
 (function() {
     'use strict';
@@ -12,6 +18,7 @@
     if (LANG !== 'es' && LANG !== 'ar') LANG = 'en';
     var PAGE = 1;
     var PER_PAGE = 60;
+    var USE_STATIC = false;
 
     function t(obj, field) {
         if (!obj) return '';
@@ -21,11 +28,8 @@
     function escapeHtml(value) {
         return String(value == null ? '' : value).replace(/[&<>"']/g, function(char) {
             return {
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                '"': '&quot;',
-                "'": '&#39;'
+                '&': '&amp;', '<': '&lt;', '>': '&gt;',
+                '"': '&quot;', "'": '&#39;'
             }[char];
         });
     }
@@ -66,6 +70,13 @@
         return m[LANG] || m['en'];
     }
 
+    function getText(el, sel) {
+        var n = el.querySelector(sel);
+        return n ? n.textContent.trim() : '';
+    }
+
+    /* ---------------- FETCH MODE (fallback) ---------------- */
+
     function renderCard(p) {
         var name = t(p.name, LANG);
         var cat = escapeHtml(t(p.category_display, LANG));
@@ -100,7 +111,7 @@
             '</div>';
     }
 
-    function render() {
+    function renderFetch() {
         var grid = document.getElementById('productGrid');
         if (!grid) return;
 
@@ -110,16 +121,13 @@
         for (var i = start; i < Math.min(end, FILTERED.length); i++) {
             html += renderCard(FILTERED[i]);
         }
-
         if (FILTERED.length === 0) {
             html = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:#999;">' +
                 (LANG === 'es' ? 'No se encontraron productos' : LANG === 'ar' ? 'لم يتم العثور على منتجات' : 'No products found') +
                 '</div>';
         }
-
         grid.innerHTML = html;
 
-        // Update info
         var info = document.querySelector('.toolbar-info');
         if (info) {
             var showing = Math.min(end, FILTERED.length);
@@ -129,15 +137,121 @@
                 ' <strong>' + FILTERED.length + '</strong> ' +
                 (LANG === 'es' ? 'productos' : LANG === 'ar' ? 'منتج' : 'products');
         }
-
         renderPagination();
+    }
+
+    function applyFiltersFetch() {
+        FILTERED = PRODUCTS.slice();
+        var checkedCats = [];
+        document.querySelectorAll('.filter-group input[type="checkbox"][data-category]').forEach(function(cb) {
+            if (cb.checked) checkedCats.push(cb.dataset.category);
+        });
+        if (checkedCats.length > 0) {
+            FILTERED = FILTERED.filter(function(p) { return checkedCats.indexOf(p.category) !== -1; });
+        }
+        var params = new URLSearchParams(window.location.search);
+        var search = params.get('search');
+        if (search) {
+            var q = search.toLowerCase();
+            FILTERED = FILTERED.filter(function(p) {
+                var name = t(p.name, LANG).toLowerCase();
+                var cat = t(p.category_display, LANG).toLowerCase();
+                return name.indexOf(q) !== -1 || cat.indexOf(q) !== -1;
+            });
+        }
+        var sortSel = document.querySelector('.toolbar-sort select');
+        if (sortSel) {
+            var sortVal = sortSel.value;
+            if (sortVal.indexOf('Price: Low') !== -1) FILTERED.sort(function(a, b) { return a.price - b.price; });
+            else if (sortVal.indexOf('Price: High') !== -1) FILTERED.sort(function(a, b) { return b.price - a.price; });
+        }
+        PAGE = 1;
+        renderFetch();
+    }
+
+    /* ---------------- STATIC MODE (preferred) ---------------- */
+
+    function buildFromDom(grid) {
+        var cards = grid.querySelectorAll('.product-card');
+        PRODUCTS = [];
+        var catMap = {};
+        cards.forEach(function(el) {
+            var category = el.getAttribute('data-category') || '';
+            var cat = getText(el, '.product-cat');
+            catMap[category] = cat;
+            PRODUCTS.push({
+                el: el,
+                id: el.getAttribute('data-id'),
+                category: category,
+                price: parseFloat(el.getAttribute('data-price')) || 0,
+                stock: el.getAttribute('data-stock') || 'agent',
+                name: getText(el, '.product-title'),
+                cat: cat
+            });
+        });
+        window.PRODUCT_CATEGORIES = catMap;
+        USE_STATIC = true;
+    }
+
+    function renderStatic() {
+        var start = (PAGE - 1) * PER_PAGE;
+        var end = start + PER_PAGE;
+        for (var i = 0; i < FILTERED.length; i++) {
+            FILTERED[i].el.style.display = (i >= start && i < end) ? '' : 'none';
+        }
+        var info = document.querySelector('.toolbar-info');
+        if (info) {
+            var showing = Math.min(end, FILTERED.length);
+            info.innerHTML = (LANG === 'es' ? 'Mostrando' : LANG === 'ar' ? 'عرض' : 'Showing') +
+                ' <strong>' + (start + 1) + '-' + showing + '</strong> ' +
+                (LANG === 'es' ? 'de' : LANG === 'ar' ? 'من' : 'of') +
+                ' <strong>' + FILTERED.length + '</strong> ' +
+                (LANG === 'es' ? 'productos' : LANG === 'ar' ? 'منتج' : 'products');
+        }
+        renderPagination();
+    }
+
+    function applyFiltersStatic() {
+        var checkedCats = [];
+        document.querySelectorAll('.filter-group input[type="checkbox"][data-category]').forEach(function(cb) {
+            if (cb.checked) checkedCats.push(cb.dataset.category);
+        });
+        var params = new URLSearchParams(window.location.search);
+        var search = (params.get('search') || '').toLowerCase();
+        var sortSel = document.querySelector('.toolbar-sort select');
+        var sortVal = sortSel ? sortSel.value : '';
+
+        FILTERED = PRODUCTS.filter(function(p) {
+            if (checkedCats.length && checkedCats.indexOf(p.category) === -1) return false;
+            if (search) {
+                var n = p.name.toLowerCase(), c = p.cat.toLowerCase();
+                if (n.indexOf(search) === -1 && c.indexOf(search) === -1) return false;
+            }
+            return true;
+        });
+        if (sortVal.indexOf('Price: Low') !== -1) FILTERED.sort(function(a, b) { return a.price - b.price; });
+        else if (sortVal.indexOf('Price: High') !== -1) FILTERED.sort(function(a, b) { return b.price - a.price; });
+
+        PAGE = 1;
+        renderStatic();
+    }
+
+    /* ---------------- Shared ---------------- */
+
+    function render() {
+        if (USE_STATIC) return renderStatic();
+        return renderFetch();
+    }
+
+    function applyFilters() {
+        if (USE_STATIC) return applyFiltersStatic();
+        return applyFiltersFetch();
     }
 
     function renderPagination() {
         var pages = Math.ceil(FILTERED.length / PER_PAGE);
         var container = document.getElementById('pagination');
         if (!container) return;
-
         var html = '';
         for (var i = 1; i <= Math.min(pages, 10); i++) {
             var cls = i === PAGE ? 'active' : '';
@@ -150,47 +264,6 @@
         container.innerHTML = html;
     }
 
-    function applyFilters() {
-        FILTERED = PRODUCTS.slice();
-
-        // Category filter
-        var checkedCats = [];
-        document.querySelectorAll('.filter-group input[type="checkbox"][data-category]').forEach(function(cb) {
-            if (cb.checked) checkedCats.push(cb.dataset.category);
-        });
-        if (checkedCats.length > 0) {
-            FILTERED = FILTERED.filter(function(p) {
-                return checkedCats.indexOf(p.category) !== -1;
-            });
-        }
-
-        // Search filter
-        var params = new URLSearchParams(window.location.search);
-        var search = params.get('search');
-        if (search) {
-            var q = search.toLowerCase();
-            FILTERED = FILTERED.filter(function(p) {
-                var name = t(p.name, LANG).toLowerCase();
-                var cat = t(p.category_display, LANG).toLowerCase();
-                return name.indexOf(q) !== -1 || cat.indexOf(q) !== -1;
-            });
-        }
-
-        // Sort
-        var sortSel = document.querySelector('.toolbar-sort select');
-        if (sortSel) {
-            var sortVal = sortSel.value;
-            if (sortVal.indexOf('Price: Low') !== -1) {
-                FILTERED.sort(function(a, b) { return a.price - b.price; });
-            } else if (sortVal.indexOf('Price: High') !== -1) {
-                FILTERED.sort(function(a, b) { return b.price - a.price; });
-            }
-        }
-
-        PAGE = 1;
-        render();
-    }
-
     function goPage(n) {
         PAGE = n;
         render();
@@ -201,7 +274,6 @@
     function buildCategoryFilters() {
         var container = document.getElementById('categoryFilters');
         if (!container || !PRODUCTS.length) return;
-
         var cats = {};
         PRODUCTS.forEach(function(p) {
             if (p.category) {
@@ -209,19 +281,15 @@
                 cats[p.category]++;
             }
         });
-
         var html = '';
         Object.keys(cats).sort().forEach(function(catId) {
             var catName = catId;
-            // Find category name from products.json categories array
             if (window.PRODUCT_CATEGORIES && window.PRODUCT_CATEGORIES[catId]) {
-                catName = t(window.PRODUCT_CATEGORIES[catId], LANG);
+                catName = window.PRODUCT_CATEGORIES[catId];
             }
             html += '<label><input type="checkbox" data-category="' + catId + '"> ' + catName + ' <span class="count">(' + cats[catId] + ')</span></label>';
         });
         container.innerHTML = html;
-
-        // Add event listeners
         container.querySelectorAll('input[type="checkbox"]').forEach(function(cb) {
             cb.addEventListener('change', applyFilters);
         });
@@ -231,9 +299,16 @@
         var grid = document.getElementById('productGrid');
         if (!grid) return;
 
-        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;">Loading products...</div>';
+        // Preferred: enhance pre-rendered static cards
+        if (grid.querySelectorAll('.product-card').length) {
+            buildFromDom(grid);
+            buildCategoryFilters();
+            applyFilters();
+            return;
+        }
 
-        // Determine JSON path based on language
+        // Fallback: fetch + render
+        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;">Loading products...</div>';
         var jsonPath = 'data/products.json';
         if (LANG === 'es') jsonPath = '../data/products.json';
         if (LANG === 'ar') jsonPath = '../data/products.json';
@@ -246,31 +321,22 @@
                 });
                 if (data.categories) {
                     var catMap = {};
-                    data.categories.forEach(function(c) {
-                        catMap[c.id] = c.name;
-                    });
+                    data.categories.forEach(function(c) { catMap[c.id] = c.name; });
                     window.PRODUCT_CATEGORIES = catMap;
                 }
                 buildCategoryFilters();
                 applyFilters();
             })
-            .catch(function(err) {
+            .catch(function() {
                 grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px;color:#c00;">Failed to load products. Please refresh.</div>';
             });
     }
 
-    // Public API
-    window.productsLoader = {
-        goPage: goPage,
-        applyFilters: applyFilters
-    };
+    window.productsLoader = { goPage: goPage, applyFilters: applyFilters };
 
-    // Sort dropdown listener
     document.addEventListener('DOMContentLoaded', function() {
         var sortSel = document.querySelector('.toolbar-sort select');
-        if (sortSel) {
-            sortSel.addEventListener('change', applyFilters);
-        }
+        if (sortSel) sortSel.addEventListener('change', applyFilters);
         init();
     });
 })();
