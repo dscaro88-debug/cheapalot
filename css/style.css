@@ -1993,6 +1993,35 @@ img { max-width: 100%; display: block; }
     color: #6b7280;
     margin-top: 10px;
 }
+/* business-confirm checkbox + free-email warning (lead gating) */
+.form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 14px 0 6px;
+    padding: 12px 14px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+.form-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
+    accent-color: #E30613;
+    flex: 0 0 auto;
+    cursor: pointer;
+}
+.check-label {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #374151;
+    cursor: pointer;
+}
+.check-label a {
+    color: #E30613;
+    text-decoration: underline;
+}
 
 /* ============= INQUIRY FORM ============= */
 .inquiry-form-wrapper {

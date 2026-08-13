@@ -10,13 +10,14 @@ const fs = require('fs');
 const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://www.cheapalot.com';
-const LASTMOD = '2026-08-12';
+const LASTMOD = '2026-08-13';
 
 // page -> { priority, changefreq }
 const PAGES = {
   '':          { p: 1.0, c: 'daily' },
   'products':  { p: 0.9, c: 'daily' },
   'faq':       { p: 0.8, c: 'daily' },
+  'eu-buyers': { p: 0.8, c: 'monthly' },
   'sell':      { p: 0.8, c: 'monthly' },
   'about':     { p: 0.7, c: 'monthly' },
   'contact':   { p: 0.7, c: 'monthly' },

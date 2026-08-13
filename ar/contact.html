@@ -255,27 +255,108 @@
                 <div class="contact-sidebar">
                     <div class="sidebar-card form-card">
                         <h3>📬 أرسل لنا رسالة</h3>
-                        <form class="contact-form" action="https://formspree.io/f/xdarjbdr" method="POST">
+                        <form class="contact-form" action="https://formspree.io/f/xdarjbdr" method="POST" onsubmit="return window.CheapGate && CheapGate.validate(this)">
+                            <p class="form-note">منصة مخصصة للتجارة فقط (B2B). كل استفسار يتم التحقق منه. يرجى تقديم بيانات شركتك لنتمكن من إعطاء الأولوية للمشترين الحقيقيين.</p>
                             <div class="form-group">
-                                <label for="contact-name">إسمك *</label>
+                                <label for="contact-name">الاسم الكامل *</label>
                                 <input type="text" id="contact-name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="contact-company">إسم الشركة *</label>
+                                <label for="contact-company">اسم الشركة *</label>
                                 <input type="text" id="contact-company" name="company" required>
                             </div>
                             <div class="form-group">
-                                <label for="contact-email">بريد إلكتروني *</label>
+                                <label for="contact-country">الدولة / المنطقة *</label>
+                                <select id="contact-country" name="country" required>
+                                    <option value="">اختر دولتك</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="FR">France</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="NL">Netherlands</option>
+                                    <option value="PL">Poland</option>
+                                    <option value="SE">Sweden</option>
+                                    <option value="BE">Belgium</option>
+                                    <option value="IE">Ireland</option>
+                                    <option value="PT">Portugal</option>
+                                    <option value="AT">Austria</option>
+                                    <option value="CZ">Czech Republic</option>
+                                    <option value="RO">Romania</option>
+                                    <option value="GR">Greece</option>
+                                    <option value="DK">Denmark</option>
+                                    <option value="FI">Finland</option>
+                                    <option value="HU">Hungary</option>
+                                    <option value="AE">United Arab Emirates</option>
+                                    <option value="SA">Saudi Arabia</option>
+                                    <option value="QA">Qatar</option>
+                                    <option value="KW">Kuwait</option>
+                                    <option value="OM">Oman</option>
+                                    <option value="BH">Bahrain</option>
+                                    <option value="TR">Turkey</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="MX">Mexico</option>
+                                    <option value="BR">Brazil</option>
+                                    <option value="IN">India</option>
+                                    <option value="PK">Pakistan</option>
+                                    <option value="BD">Bangladesh</option>
+                                    <option value="LK">Sri Lanka</option>
+                                    <option value="CN">China</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="KR">South Korea</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="NZ">New Zealand</option>
+                                    <option value="ZA">South Africa</option>
+                                    <option value="NG">Nigeria</option>
+                                    <option value="EG">Egypt</option>
+                                    <option value="MA">Morocco</option>
+                                    <option value="DZ">Algeria</option>
+                                    <option value="JO">Jordan</option>
+                                    <option value="LB">Lebanon</option>
+                                    <option value="IQ">Iraq</option>
+                                    <option value="IR">Iran</option>
+                                    <option value="AF">Afghanistan</option>
+                                    <option value="ID">Indonesia</option>
+                                    <option value="MY">Malaysia</option>
+                                    <option value="SG">Singapore</option>
+                                    <option value="TH">Thailand</option>
+                                    <option value="VN">Vietnam</option>
+                                    <option value="PH">Philippines</option>
+                                    <option value="CO">Colombia</option>
+                                    <option value="CL">Chile</option>
+                                    <option value="AR">Argentina</option>
+                                    <option value="PE">Peru</option>
+                                    <option value="KE">Kenya</option>
+                                    <option value="TZ">Tanzania</option>
+                                    <option value="GH">Ghana</option>
+                                    <option value="ET">Ethiopia</option>
+                                    <option value="OTHER">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">البريد الإلكتروني للشركة *</label>
                                 <input type="email" id="contact-email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="contact-phone">هاتف</label>
+                                <label for="contact-phone">هاتف / واتساب</label>
                                 <input type="tel" id="contact-phone" name="phone">
                             </div>
                             <div class="form-group">
-                                <label for="contact-subject">الموضوع *</label>
+                                <label for="contact-volume">القيمة التقديرية للطلب الأول</label>
+                                <select id="contact-volume" name="order_value">
+                                    <option value="">اختر نطاقاً</option>
+                                    <option value="below-250">أقل من £250</option>
+                                    <option value="250-1000">£250 – £1,000</option>
+                                    <option value="1000-5000">£1,000 – £5,000</option>
+                                    <option value="5000-20000">£5,000 – £20,000</option>
+                                    <option value="20000-plus">£20,000+</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject">نوع الاستفسار *</label>
                                 <select id="contact-subject" name="subject" required>
-                                    <option value="">إختر موضوعاً</option>
+                                    <option value="">اختر موضوعاً</option>
                                     <option value="stock">استفسار ستوك التصفية</option>
                                     <option value="sourcing">خدمات وكيل مشتريات</option>
                                     <option value="sell">بيع حصتي</option>
@@ -285,9 +366,16 @@
                             </div>
                             <div class="form-group">
                                 <label for="contact-message">الرسالة *</label>
-                                <textarea id="contact-message" name="message" rows="5" placeholder="أخبرنا كيف يمكننا مساعدتك..." required></textarea>
+                                <textarea id="contact-message" name="message" rows="5" placeholder="أخبرنا بما تحتاجه — المنتجات، الكميات، السوق المستهدف..." required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-full">أرسل الرسالة</button>
+                            <div class="form-group form-check">
+                                <label class="check-label">
+                                    <input type="checkbox" name="registered_business" required>
+                                    أؤكد أن استفساري نيابة عن شركة مسجلة / مشترٍ مهني.
+                                </label>
+                            </div>
+                            <input type="text" name="_gotcha" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
+                            <button type="submit" class="btn btn-primary btn-full">إرسال استفسار موثّق</button>
                         </form>
                     </div>
 
@@ -348,5 +436,24 @@
         </div>
     </footer>
 
+    <script>
+    (function(){
+      var FREE = ['gmail.com','yahoo.com','hotmail.com','outlook.com','live.com','icloud.com','aol.com','proton.me','protonmail.com','mail.com','gmx.com','yandex.com','qq.com','163.com','126.com','foxmail.com','naver.com','daum.net'];
+      function dom(e){ var m=(e||'').match(/@(.+)$/); return m?m[1].toLowerCase():''; }
+      window.CheapGate = { validate: function(form){
+        var g = form.querySelector('input[name="_gotcha"]');
+        if(g && g.value){ return false; }
+        var c = form.querySelector('[name="country"]');
+        if(c && !c.value){ alert('يرجى اختيار دولتك / منطقتك.'); c.focus(); return false; }
+        var b = form.querySelector('[name="registered_business"]');
+        if(b && !b.checked){ alert('يرجى تأكيد أنك شركة مسجلة / مشترٍ مهني.'); b.focus(); return false; }
+        var em = form.querySelector('[name="email"]');
+        if(em && FREE.indexOf(dom(em.value))>-1){
+          if(!confirm('أنت تستخدم بريداً مجانياً. البريد الخاص بالشركة يساعدنا في التحقق من المشترين بسرعة. المتابعة على أي حال؟')) return false;
+        }
+        return true;
+      }};
+    })();
+    </script>
 </body>
 </html>

@@ -256,9 +256,10 @@
                 <div class="contact-sidebar">
                     <div class="sidebar-card form-card">
                         <h3>📬 Send Us a Message</h3>
-                        <form class="contact-form" action="https://formspree.io/f/xdarjbdr" method="POST">
+                        <form class="contact-form" action="https://formspree.io/f/xdarjbdr" method="POST" onsubmit="return window.CheapGate && CheapGate.validate(this)">
+                            <p class="form-note">Trade-only platform. Every inquiry is verified. Please provide your company details so we can prioritise genuine B2B buyers.</p>
                             <div class="form-group">
-                                <label for="contact-name">Your Name *</label>
+                                <label for="contact-name">Full Name *</label>
                                 <input type="text" id="contact-name" name="name" required>
                             </div>
                             <div class="form-group">
@@ -266,15 +267,95 @@
                                 <input type="text" id="contact-company" name="company" required>
                             </div>
                             <div class="form-group">
-                                <label for="contact-email">Email *</label>
+                                <label for="contact-country">Country / Region *</label>
+                                <select id="contact-country" name="country" required>
+                                    <option value="">Select your country</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="FR">France</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="NL">Netherlands</option>
+                                    <option value="PL">Poland</option>
+                                    <option value="SE">Sweden</option>
+                                    <option value="BE">Belgium</option>
+                                    <option value="IE">Ireland</option>
+                                    <option value="PT">Portugal</option>
+                                    <option value="AT">Austria</option>
+                                    <option value="CZ">Czech Republic</option>
+                                    <option value="RO">Romania</option>
+                                    <option value="GR">Greece</option>
+                                    <option value="DK">Denmark</option>
+                                    <option value="FI">Finland</option>
+                                    <option value="HU">Hungary</option>
+                                    <option value="AE">United Arab Emirates</option>
+                                    <option value="SA">Saudi Arabia</option>
+                                    <option value="QA">Qatar</option>
+                                    <option value="KW">Kuwait</option>
+                                    <option value="OM">Oman</option>
+                                    <option value="BH">Bahrain</option>
+                                    <option value="TR">Turkey</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="MX">Mexico</option>
+                                    <option value="BR">Brazil</option>
+                                    <option value="IN">India</option>
+                                    <option value="PK">Pakistan</option>
+                                    <option value="BD">Bangladesh</option>
+                                    <option value="LK">Sri Lanka</option>
+                                    <option value="CN">China</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="KR">South Korea</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="NZ">New Zealand</option>
+                                    <option value="ZA">South Africa</option>
+                                    <option value="NG">Nigeria</option>
+                                    <option value="EG">Egypt</option>
+                                    <option value="MA">Morocco</option>
+                                    <option value="DZ">Algeria</option>
+                                    <option value="JO">Jordan</option>
+                                    <option value="LB">Lebanon</option>
+                                    <option value="IQ">Iraq</option>
+                                    <option value="IR">Iran</option>
+                                    <option value="AF">Afghanistan</option>
+                                    <option value="ID">Indonesia</option>
+                                    <option value="MY">Malaysia</option>
+                                    <option value="SG">Singapore</option>
+                                    <option value="TH">Thailand</option>
+                                    <option value="VN">Vietnam</option>
+                                    <option value="PH">Philippines</option>
+                                    <option value="CO">Colombia</option>
+                                    <option value="CL">Chile</option>
+                                    <option value="AR">Argentina</option>
+                                    <option value="PE">Peru</option>
+                                    <option value="KE">Kenya</option>
+                                    <option value="TZ">Tanzania</option>
+                                    <option value="GH">Ghana</option>
+                                    <option value="ET">Ethiopia</option>
+                                    <option value="OTHER">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Business Email *</label>
                                 <input type="email" id="contact-email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="contact-phone">Phone</label>
+                                <label for="contact-phone">Phone / WhatsApp</label>
                                 <input type="tel" id="contact-phone" name="phone">
                             </div>
                             <div class="form-group">
-                                <label for="contact-subject">Subject *</label>
+                                <label for="contact-volume">Estimated First Order Value</label>
+                                <select id="contact-volume" name="order_value">
+                                    <option value="">Select a range</option>
+                                    <option value="below-250">Below £250</option>
+                                    <option value="250-1000">£250 – £1,000</option>
+                                    <option value="1000-5000">£1,000 – £5,000</option>
+                                    <option value="5000-20000">£5,000 – £20,000</option>
+                                    <option value="20000-plus">£20,000+</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject">Inquiry Type *</label>
                                 <select id="contact-subject" name="subject" required>
                                     <option value="">Select a topic</option>
                                     <option value="stock">Clearance Stock Inquiry</option>
@@ -286,9 +367,16 @@
                             </div>
                             <div class="form-group">
                                 <label for="contact-message">Message *</label>
-                                <textarea id="contact-message" name="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                                <textarea id="contact-message" name="message" rows="5" placeholder="Tell us what you need — products, quantities, target market..." required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                            <div class="form-group form-check">
+                                <label class="check-label">
+                                    <input type="checkbox" name="registered_business" required>
+                                    I confirm I am inquiring on behalf of a registered business / professional buyer.
+                                </label>
+                            </div>
+                            <input type="text" name="_gotcha" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
+                            <button type="submit" class="btn btn-primary btn-full">Send Verified Inquiry</button>
                         </form>
                     </div>
 
@@ -349,5 +437,24 @@
         </div>
     </footer>
 
+    <script>
+    (function(){
+      var FREE = ['gmail.com','yahoo.com','hotmail.com','outlook.com','live.com','icloud.com','aol.com','proton.me','protonmail.com','mail.com','gmx.com','yandex.com','qq.com','163.com','126.com','foxmail.com','naver.com','daum.net'];
+      function dom(e){ var m=(e||'').match(/@(.+)$/); return m?m[1].toLowerCase():''; }
+      window.CheapGate = { validate: function(form){
+        var g = form.querySelector('input[name="_gotcha"]');
+        if(g && g.value){ return false; }
+        var c = form.querySelector('[name="country"]');
+        if(c && !c.value){ alert('Please select your country / region.'); c.focus(); return false; }
+        var b = form.querySelector('[name="registered_business"]');
+        if(b && !b.checked){ alert('Please confirm you are a registered business / professional buyer.'); b.focus(); return false; }
+        var em = form.querySelector('[name="email"]');
+        if(em && FREE.indexOf(dom(em.value))>-1){
+          if(!confirm('You are using a free email address. A company email helps us verify B2B buyers faster. Continue anyway?')) return false;
+        }
+        return true;
+      }};
+    })();
+    </script>
 </body>
 </html>
