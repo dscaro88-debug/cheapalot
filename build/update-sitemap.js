@@ -17,7 +17,6 @@ const PAGES = {
   '':          { p: 1.0, c: 'daily' },
   'products':  { p: 0.9, c: 'daily' },
   'faq':       { p: 0.8, c: 'daily' },
-  'eu-buyers': { p: 0.8, c: 'monthly' },
   'sell':      { p: 0.8, c: 'monthly' },
   'about':     { p: 0.7, c: 'monthly' },
   'contact':   { p: 0.7, c: 'monthly' },
