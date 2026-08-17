@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/eu-buyers.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/es/eu-buyers.html",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/eu-buyers.html",
+      "destination": "/ar/",
+      "permanent": true
+    }
+  ]
+}
