@@ -158,6 +158,33 @@
             color: var(--gray-700);
         }
 
+        /* --- Bulk Volume Pricing Notice --- */
+        .pd-bulk-notice {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(90deg, #fff8e1 0%, #fff3c4 100%);
+            border: 1px solid #f0c419;
+            border-left: 4px solid #f0c419;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+        }
+        .pd-bulk-notice svg { flex-shrink: 0; color: #b8860b; }
+        .pd-bulk-notice .bulk-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #5d4e0c;
+            line-height: 1.4;
+        }
+        .pd-bulk-notice .bulk-text strong { color: #b8860b; }
+        .pd-bulk-notice .bulk-text a {
+            color: #b8860b;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        .pd-bulk-notice .bulk-text a:hover { color: #8b6508; }
+
         /* --- Variants --- */
         .pd-section-label {
             font-size: 13px;
@@ -771,6 +798,11 @@
             '        <span class="pd-price">' + p.price_display + '</span>' +
             '        <span class="pd-price-unit">' + p.price_unit.en + '</span>' +
             '        <span class="pd-moq">MOQ: ' + p.moq + ' pcs</span>' +
+            '      </div>' +
+            '      <!-- Bulk Volume Pricing Notice -->' +
+            '      <div class="pd-bulk-notice">' +
+            '        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>' +
+            '        <span class="bulk-text"><strong>Better prices for larger volumes</strong> — <a href="' + waUrl + '" target="_blank">contact us for a custom quote</a> on bulk orders.</span>' +
             '      </div>' +
             '      <!-- Variants -->' +
             '      <div class="pd-section-label">Color / Finish</div>' +
