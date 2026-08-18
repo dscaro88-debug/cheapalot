@@ -1,0 +1,2634 @@
+{
+  "meta": {
+    "source": "cheapalot-stock-watches",
+    "updated": "2026-08-18",
+    "count": 32,
+    "note": "In-stock watch inventory. All items physically in Yiwu warehouse. inspired_by = design reference, not affiliated with any brand."
+  },
+  "products": [
+    {
+      "id": "ds-b001",
+      "sku": "DS-B001",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Tag Heuer Carrera",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Chronograph Sport Watch",
+        "es": "Reloj Men's Chronograph Sport",
+        "ar": "ساعة Men's Chronograph Sport"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 12.5,
+      "price_display": "$12.50",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 50 pcs",
+        "es": "MOQ: 50 pzas",
+        "ar": "الحد الأدنى: 50 قطعة"
+      },
+      "moq": 50,
+      "image": "images/stock/watches/DS-B001.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's chronograph sport watch, inspired by Tag Heuer Carrera. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+        "es": "Reloj men's premium estilo chronograph sport, inspired by Tag Heuer Carrera. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 50 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Chronograph Sport، inspired by Tag Heuer Carrera. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 50 قطعة."
+      }
+    },
+    {
+      "id": "ds-b002",
+      "sku": "DS-B002",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Rolex Submariner",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Diver Automatic Watch",
+        "es": "Reloj Men's Diver Automatic",
+        "ar": "ساعة Men's Diver Automatic"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 18.0,
+      "price_display": "$18.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 50 pcs",
+        "es": "MOQ: 50 pzas",
+        "ar": "الحد الأدنى: 50 قطعة"
+      },
+      "moq": 50,
+      "image": "images/stock/watches/DS-B002.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's diver automatic watch, inspired by Rolex Submariner. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+        "es": "Reloj men's premium estilo diver automatic, inspired by Rolex Submariner. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 50 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Diver Automatic، inspired by Rolex Submariner. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 50 قطعة."
+      }
+    },
+    {
+      "id": "ds-b003",
+      "sku": "DS-B003",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by IWC Pilot",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Pilot Chronograph Watch",
+        "es": "Reloj Men's Pilot Chronograph",
+        "ar": "ساعة Men's Pilot Chronograph"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 14.0,
+      "price_display": "$14.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 50 pcs",
+        "es": "MOQ: 50 pzas",
+        "ar": "الحد الأدنى: 50 قطعة"
+      },
+      "moq": 50,
+      "image": "images/stock/watches/DS-B003.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's pilot chronograph watch, inspired by IWC Pilot. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+        "es": "Reloj men's premium estilo pilot chronograph, inspired by IWC Pilot. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 50 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Pilot Chronograph، inspired by IWC Pilot. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 50 قطعة."
+      }
+    },
+    {
+      "id": "ds-b004",
+      "sku": "DS-B004",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Omega Speedmaster",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Racing Chronograph Watch",
+        "es": "Reloj Men's Racing Chronograph",
+        "ar": "ساعة Men's Racing Chronograph"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 16.5,
+      "price_display": "$16.50",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 50 pcs",
+        "es": "MOQ: 50 pzas",
+        "ar": "الحد الأدنى: 50 قطعة"
+      },
+      "moq": 50,
+      "image": "images/stock/watches/DS-B004.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's racing chronograph watch, inspired by Omega Speedmaster. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+        "es": "Reloj men's premium estilo racing chronograph, inspired by Omega Speedmaster. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 50 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Racing Chronograph، inspired by Omega Speedmaster. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 50 قطعة."
+      }
+    },
+    {
+      "id": "ds-b005",
+      "sku": "DS-B005",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Hamilton Khaki Field",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Field Watch Watch",
+        "es": "Reloj Men's Field Watch",
+        "ar": "ساعة Men's Field Watch"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 9.5,
+      "price_display": "$9.50",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 50 pcs",
+        "es": "MOQ: 50 pzas",
+        "ar": "الحد الأدنى: 50 قطعة"
+      },
+      "moq": 50,
+      "image": "images/stock/watches/DS-B005.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's field watch watch, inspired by Hamilton Khaki Field. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+        "es": "Reloj men's premium estilo field watch, inspired by Hamilton Khaki Field. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 50 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Field Watch، inspired by Hamilton Khaki Field. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 50 قطعة."
+      }
+    },
+    {
+      "id": "ds-b006",
+      "sku": "DS-B006",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Daniel Wellington",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Dress Minimalist Watch",
+        "es": "Reloj Men's Dress Minimalist",
+        "ar": "ساعة Men's Dress Minimalist"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 8.0,
+      "price_display": "$8.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 100 pcs",
+        "es": "MOQ: 100 pzas",
+        "ar": "الحد الأدنى: 100 قطعة"
+      },
+      "moq": 100,
+      "image": "images/stock/watches/DS-B006.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's dress minimalist watch, inspired by Daniel Wellington. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 100 pieces.",
+        "es": "Reloj men's premium estilo dress minimalist, inspired by Daniel Wellington. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 100 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Dress Minimalist، inspired by Daniel Wellington. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 100 قطعة."
+      }
+    },
+    {
+      "id": "ds-b007",
+      "sku": "DS-B007",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Tissot Le Locle",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Skeleton Automatic Watch",
+        "es": "Reloj Men's Skeleton Automatic",
+        "ar": "ساعة Men's Skeleton Automatic"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 22.0,
+      "price_display": "$22.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-B007.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's skeleton automatic watch, inspired by Tissot Le Locle. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj men's premium estilo skeleton automatic, inspired by Tissot Le Locle. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Skeleton Automatic، inspired by Tissot Le Locle. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-b008",
+      "sku": "DS-B008",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Rolex GMT-Master II",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's GMT Dual Time Watch",
+        "es": "Reloj Men's GMT Dual Time",
+        "ar": "ساعة Men's GMT Dual Time"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 19.5,
+      "price_display": "$19.50",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-B008.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's gmt dual time watch, inspired by Rolex GMT-Master II. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj men's premium estilo gmt dual time, inspired by Rolex GMT-Master II. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم GMT Dual Time، inspired by Rolex GMT-Master II. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-b009",
+      "sku": "DS-B009",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Frederique Constant",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Moonphase Dress Watch",
+        "es": "Reloj Men's Moonphase Dress",
+        "ar": "ساعة Men's Moonphase Dress"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 25.0,
+      "price_display": "$25.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-B009.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's moonphase dress watch, inspired by Frederique Constant. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj men's premium estilo moonphase dress, inspired by Frederique Constant. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Moonphase Dress، inspired by Frederique Constant. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-b010",
+      "sku": "DS-B010",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Breitling Avenger",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Aviator Big Dial Watch",
+        "es": "Reloj Men's Aviator Big Dial",
+        "ar": "ساعة Men's Aviator Big Dial"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 17.0,
+      "price_display": "$17.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 50 pcs",
+        "es": "MOQ: 50 pzas",
+        "ar": "الحد الأدنى: 50 قطعة"
+      },
+      "moq": 50,
+      "image": "images/stock/watches/DS-B010.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's aviator big dial watch, inspired by Breitling Avenger. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+        "es": "Reloj men's premium estilo aviator big dial, inspired by Breitling Avenger. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 50 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Aviator Big Dial، inspired by Breitling Avenger. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 50 قطعة."
+      }
+    },
+    {
+      "id": "ds-b011",
+      "sku": "DS-B011",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Rolex Sea-Dweller",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Ceramic Bezel Diver Watch",
+        "es": "Reloj Men's Ceramic Bezel Diver",
+        "ar": "ساعة Men's Ceramic Bezel Diver"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 20.0,
+      "price_display": "$20.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-B011.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's ceramic bezel diver watch, inspired by Rolex Sea-Dweller. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj men's premium estilo ceramic bezel diver, inspired by Rolex Sea-Dweller. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Ceramic Bezel Diver، inspired by Rolex Sea-Dweller. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-b012",
+      "sku": "DS-B012",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Cartier Tank",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Leather Strap Dress Watch",
+        "es": "Reloj Men's Leather Strap Dress",
+        "ar": "ساعة Men's Leather Strap Dress"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 15.0,
+      "price_display": "$15.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 50 pcs",
+        "es": "MOQ: 50 pzas",
+        "ar": "الحد الأدنى: 50 قطعة"
+      },
+      "moq": 50,
+      "image": "images/stock/watches/DS-B012.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's leather strap dress watch, inspired by Cartier Tank. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+        "es": "Reloj men's premium estilo leather strap dress, inspired by Cartier Tank. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 50 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Leather Strap Dress، inspired by Cartier Tank. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 50 قطعة."
+      }
+    },
+    {
+      "id": "ds-b013",
+      "sku": "DS-B013",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Omega Seamaster",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Stainless Sport Watch",
+        "es": "Reloj Men's Stainless Sport",
+        "ar": "ساعة Men's Stainless Sport"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 18.5,
+      "price_display": "$18.50",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 50 pcs",
+        "es": "MOQ: 50 pzas",
+        "ar": "الحد الأدنى: 50 قطعة"
+      },
+      "moq": 50,
+      "image": "images/stock/watches/DS-B013.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's stainless sport watch, inspired by Omega Seamaster. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+        "es": "Reloj men's premium estilo stainless sport, inspired by Omega Seamaster. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 50 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Stainless Sport، inspired by Omega Seamaster. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 50 قطعة."
+      }
+    },
+    {
+      "id": "ds-b014",
+      "sku": "DS-B014",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Cartier Santos",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Square Case Minimal Watch",
+        "es": "Reloj Men's Square Case Minimal",
+        "ar": "ساعة Men's Square Case Minimal"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 16.0,
+      "price_display": "$16.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 50 pcs",
+        "es": "MOQ: 50 pzas",
+        "ar": "الحد الأدنى: 50 قطعة"
+      },
+      "moq": 50,
+      "image": "images/stock/watches/DS-B014.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's square case minimal watch, inspired by Cartier Santos. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+        "es": "Reloj men's premium estilo square case minimal, inspired by Cartier Santos. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 50 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Square Case Minimal، inspired by Cartier Santos. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 50 قطعة."
+      }
+    },
+    {
+      "id": "ds-b015",
+      "sku": "DS-B015",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Tudor Black Bay",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Blue Dial Chronograph Watch",
+        "es": "Reloj Men's Blue Dial Chronograph",
+        "ar": "ساعة Men's Blue Dial Chronograph"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 21.0,
+      "price_display": "$21.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-B015.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's blue dial chronograph watch, inspired by Tudor Black Bay. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj men's premium estilo blue dial chronograph, inspired by Tudor Black Bay. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Blue Dial Chronograph، inspired by Tudor Black Bay. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-b016",
+      "sku": "DS-B016",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Rolex Day-Date",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Gold Plated Luxury Watch",
+        "es": "Reloj Men's Gold Plated Luxury",
+        "ar": "ساعة Men's Gold Plated Luxury"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 28.0,
+      "price_display": "$28.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-B016.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's gold plated luxury watch, inspired by Rolex Day-Date. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj men's premium estilo gold plated luxury, inspired by Rolex Day-Date. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Gold Plated Luxury، inspired by Rolex Day-Date. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-b017",
+      "sku": "DS-B017",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Hublot Big Bang",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Black IP Sport Watch",
+        "es": "Reloj Men's Black IP Sport",
+        "ar": "ساعة Men's Black IP Sport"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 24.0,
+      "price_display": "$24.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-B017.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's black ip sport watch, inspired by Hublot Big Bang. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj men's premium estilo black ip sport, inspired by Hublot Big Bang. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Black IP Sport، inspired by Hublot Big Bang. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-b018",
+      "sku": "DS-B018",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Rolex Datejust",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Two-Tone Classic Watch",
+        "es": "Reloj Men's Two-Tone Classic",
+        "ar": "ساعة Men's Two-Tone Classic"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 26.0,
+      "price_display": "$26.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-B018.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's two-tone classic watch, inspired by Rolex Datejust. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj men's premium estilo two-tone classic, inspired by Rolex Datejust. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Two-Tone Classic، inspired by Rolex Datejust. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-b019",
+      "sku": "DS-B019",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Orient Star",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Power Reserve Dress Watch",
+        "es": "Reloj Men's Power Reserve Dress",
+        "ar": "ساعة Men's Power Reserve Dress"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 19.0,
+      "price_display": "$19.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-B019.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's power reserve dress watch, inspired by Orient Star. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj men's premium estilo power reserve dress, inspired by Orient Star. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Power Reserve Dress، inspired by Orient Star. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-b020",
+      "sku": "DS-B020",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Tissot Heritage",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Open Heart Automatic Watch",
+        "es": "Reloj Men's Open Heart Automatic",
+        "ar": "ساعة Men's Open Heart Automatic"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 23.0,
+      "price_display": "$23.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-B020.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's open heart automatic watch, inspired by Tissot Heritage. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj men's premium estilo open heart automatic, inspired by Tissot Heritage. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Open Heart Automatic، inspired by Tissot Heritage. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-b021",
+      "sku": "DS-B021",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Seiko SKX",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Retro Diver Watch",
+        "es": "Reloj Men's Retro Diver",
+        "ar": "ساعة Men's Retro Diver"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 11.0,
+      "price_display": "$11.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 50 pcs",
+        "es": "MOQ: 50 pzas",
+        "ar": "الحد الأدنى: 50 قطعة"
+      },
+      "moq": 50,
+      "image": "images/stock/watches/DS-B021.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's retro diver watch, inspired by Seiko SKX. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+        "es": "Reloj men's premium estilo retro diver, inspired by Seiko SKX. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 50 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Retro Diver، inspired by Seiko SKX. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 50 قطعة."
+      }
+    },
+    {
+      "id": "ds-b022",
+      "sku": "DS-B022",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Longines Master",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Slim Profile Dress Watch",
+        "es": "Reloj Men's Slim Profile Dress",
+        "ar": "ساعة Men's Slim Profile Dress"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 17.5,
+      "price_display": "$17.50",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 50 pcs",
+        "es": "MOQ: 50 pzas",
+        "ar": "الحد الأدنى: 50 قطعة"
+      },
+      "moq": 50,
+      "image": "images/stock/watches/DS-B022.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's slim profile dress watch, inspired by Longines Master. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+        "es": "Reloj men's premium estilo slim profile dress, inspired by Longines Master. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 50 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Slim Profile Dress، inspired by Longines Master. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 50 قطعة."
+      }
+    },
+    {
+      "id": "ds-b023",
+      "sku": "DS-B023",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Casio Edifice",
+      "watch_type": "Quartz Chronograph",
+      "gender": "M",
+      "name": {
+        "en": "Men's Multi-Function Sport Watch",
+        "es": "Reloj Men's Multi-Function Sport",
+        "ar": "ساعة Men's Multi-Function Sport"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 10.0,
+      "price_display": "$10.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 100 pcs",
+        "es": "MOQ: 100 pzas",
+        "ar": "الحد الأدنى: 100 قطعة"
+      },
+      "moq": 100,
+      "image": "images/stock/watches/DS-B023.webp",
+      "variants": [
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Quartz Chronograph",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "42mm",
+          "Strap": "Stainless Steel Bracelet",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Quartz Chronograph",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "42mm",
+          "Correa": "Brazalete de acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Quartz Chronograph",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "42mm",
+          "السوار": "سوار ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium men's multi-function sport watch, inspired by Casio Edifice. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 100 pieces.",
+        "es": "Reloj men's premium estilo multi-function sport, inspired by Casio Edifice. Fabricado en acero inoxidable 316L, cristal mineral y movimiento quartz chronograph. Venta mayorista B2B. Pedido mínimo 100 piezas.",
+        "ar": "ساعة Men's فاخرة بتصميم Multi-Function Sport، inspired by Casio Edifice. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Quartz Chronograph. بيع بالجملة B2B. الحد الأدنى للطلب 100 قطعة."
+      }
+    },
+    {
+      "id": "ds-w001",
+      "sku": "DS-W001",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Rolex Lady-Datejust",
+      "watch_type": "Mechanical Automatic",
+      "gender": "F",
+      "name": {
+        "en": "Women's Diamond Bezel Elegant Watch",
+        "es": "Reloj Women's Diamond Bezel Elegant",
+        "ar": "ساعة Women's Diamond Bezel Elegant"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 32.0,
+      "price_display": "$32.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-W001.webp",
+      "variants": [
+        {
+          "label": "Rose Gold",
+          "value": "rose-gold"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Mechanical Automatic",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "32mm",
+          "Strap": "Leather / Steel",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Mechanical Automatic",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "32mm",
+          "Correa": "Cuero / Acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Mechanical Automatic",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "32mm",
+          "السوار": "جلد / ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium women's diamond bezel elegant watch, inspired by Rolex Lady-Datejust. Crafted with 316L stainless steel, mineral crystal glass, and precise mechanical automatic movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj women's premium estilo diamond bezel elegant, inspired by Rolex Lady-Datejust. Fabricado en acero inoxidable 316L, cristal mineral y movimiento mechanical automatic. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Women's فاخرة بتصميم Diamond Bezel Elegant، inspired by Rolex Lady-Datejust. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Mechanical Automatic. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-w002",
+      "sku": "DS-W002",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Daniel Wellington Petite",
+      "watch_type": "Mechanical Automatic",
+      "gender": "F",
+      "name": {
+        "en": "Women's Rose Gold Minimalist Watch",
+        "es": "Reloj Women's Rose Gold Minimalist",
+        "ar": "ساعة Women's Rose Gold Minimalist"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 14.0,
+      "price_display": "$14.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 50 pcs",
+        "es": "MOQ: 50 pzas",
+        "ar": "الحد الأدنى: 50 قطعة"
+      },
+      "moq": 50,
+      "image": "images/stock/watches/DS-W002.webp",
+      "variants": [
+        {
+          "label": "Rose Gold",
+          "value": "rose-gold"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Mechanical Automatic",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "32mm",
+          "Strap": "Leather / Steel",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Mechanical Automatic",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "32mm",
+          "Correa": "Cuero / Acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Mechanical Automatic",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "32mm",
+          "السوار": "جلد / ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium women's rose gold minimalist watch, inspired by Daniel Wellington Petite. Crafted with 316L stainless steel, mineral crystal glass, and precise mechanical automatic movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+        "es": "Reloj women's premium estilo rose gold minimalist, inspired by Daniel Wellington Petite. Fabricado en acero inoxidable 316L, cristal mineral y movimiento mechanical automatic. Venta mayorista B2B. Pedido mínimo 50 piezas.",
+        "ar": "ساعة Women's فاخرة بتصميم Rose Gold Minimalist، inspired by Daniel Wellington Petite. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Mechanical Automatic. بيع بالجملة B2B. الحد الأدنى للطلب 50 قطعة."
+      }
+    },
+    {
+      "id": "ds-w003",
+      "sku": "DS-W003",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Chanel Premiere",
+      "watch_type": "Mechanical Automatic",
+      "gender": "F",
+      "name": {
+        "en": "Women's Mother of Pearl Dial Watch",
+        "es": "Reloj Women's Mother of Pearl Dial",
+        "ar": "ساعة Women's Mother of Pearl Dial"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 35.0,
+      "price_display": "$35.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-W003.webp",
+      "variants": [
+        {
+          "label": "Rose Gold",
+          "value": "rose-gold"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Mechanical Automatic",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "32mm",
+          "Strap": "Leather / Steel",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Mechanical Automatic",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "32mm",
+          "Correa": "Cuero / Acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Mechanical Automatic",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "32mm",
+          "السوار": "جلد / ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium women's mother of pearl dial watch, inspired by Chanel Premiere. Crafted with 316L stainless steel, mineral crystal glass, and precise mechanical automatic movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj women's premium estilo mother of pearl dial, inspired by Chanel Premiere. Fabricado en acero inoxidable 316L, cristal mineral y movimiento mechanical automatic. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Women's فاخرة بتصميم Mother of Pearl Dial، inspired by Chanel Premiere. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Mechanical Automatic. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-w004",
+      "sku": "DS-W004",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Cartier Tank Solo",
+      "watch_type": "Mechanical Automatic",
+      "gender": "F",
+      "name": {
+        "en": "Women's Slim Leather Strap Watch",
+        "es": "Reloj Women's Slim Leather Strap",
+        "ar": "ساعة Women's Slim Leather Strap"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 28.0,
+      "price_display": "$28.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-W004.webp",
+      "variants": [
+        {
+          "label": "Rose Gold",
+          "value": "rose-gold"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Mechanical Automatic",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "32mm",
+          "Strap": "Leather / Steel",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Mechanical Automatic",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "32mm",
+          "Correa": "Cuero / Acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Mechanical Automatic",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "32mm",
+          "السوار": "جلد / ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium women's slim leather strap watch, inspired by Cartier Tank Solo. Crafted with 316L stainless steel, mineral crystal glass, and precise mechanical automatic movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj women's premium estilo slim leather strap, inspired by Cartier Tank Solo. Fabricado en acero inoxidable 316L, cristal mineral y movimiento mechanical automatic. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Women's فاخرة بتصميم Slim Leather Strap، inspired by Cartier Tank Solo. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Mechanical Automatic. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-w005",
+      "sku": "DS-W005",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Rolex Pearlmaster",
+      "watch_type": "Mechanical Automatic",
+      "gender": "F",
+      "name": {
+        "en": "Women's Automatic Skeleton Watch",
+        "es": "Reloj Women's Automatic Skeleton",
+        "ar": "ساعة Women's Automatic Skeleton"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 42.0,
+      "price_display": "$42.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 20 pcs",
+        "es": "MOQ: 20 pzas",
+        "ar": "الحد الأدنى: 20 قطعة"
+      },
+      "moq": 20,
+      "image": "images/stock/watches/DS-W005.webp",
+      "variants": [
+        {
+          "label": "Rose Gold",
+          "value": "rose-gold"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Mechanical Automatic",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "32mm",
+          "Strap": "Leather / Steel",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Mechanical Automatic",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "32mm",
+          "Correa": "Cuero / Acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Mechanical Automatic",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "32mm",
+          "السوار": "جلد / ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium women's automatic skeleton watch, inspired by Rolex Pearlmaster. Crafted with 316L stainless steel, mineral crystal glass, and precise mechanical automatic movement. B2B wholesale — ready for distribution. Minimum order 20 pieces.",
+        "es": "Reloj women's premium estilo automatic skeleton, inspired by Rolex Pearlmaster. Fabricado en acero inoxidable 316L, cristal mineral y movimiento mechanical automatic. Venta mayorista B2B. Pedido mínimo 20 piezas.",
+        "ar": "ساعة Women's فاخرة بتصميم Automatic Skeleton، inspired by Rolex Pearlmaster. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Mechanical Automatic. بيع بالجملة B2B. الحد الأدنى للطلب 20 قطعة."
+      }
+    },
+    {
+      "id": "ds-w006",
+      "sku": "DS-W006",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Michael Kors",
+      "watch_type": "Mechanical Automatic",
+      "gender": "F",
+      "name": {
+        "en": "Women's Crystal Studded Watch",
+        "es": "Reloj Women's Crystal Studded",
+        "ar": "ساعة Women's Crystal Studded"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 16.0,
+      "price_display": "$16.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 50 pcs",
+        "es": "MOQ: 50 pzas",
+        "ar": "الحد الأدنى: 50 قطعة"
+      },
+      "moq": 50,
+      "image": "images/stock/watches/DS-W006.webp",
+      "variants": [
+        {
+          "label": "Rose Gold",
+          "value": "rose-gold"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Mechanical Automatic",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "32mm",
+          "Strap": "Leather / Steel",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Mechanical Automatic",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "32mm",
+          "Correa": "Cuero / Acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Mechanical Automatic",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "32mm",
+          "السوار": "جلد / ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium women's crystal studded watch, inspired by Michael Kors. Crafted with 316L stainless steel, mineral crystal glass, and precise mechanical automatic movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+        "es": "Reloj women's premium estilo crystal studded, inspired by Michael Kors. Fabricado en acero inoxidable 316L, cristal mineral y movimiento mechanical automatic. Venta mayorista B2B. Pedido mínimo 50 piezas.",
+        "ar": "ساعة Women's فاخرة بتصميم Crystal Studded، inspired by Michael Kors. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Mechanical Automatic. بيع بالجملة B2B. الحد الأدنى للطلب 50 قطعة."
+      }
+    },
+    {
+      "id": "ds-w007",
+      "sku": "DS-W007",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Movado Bold",
+      "watch_type": "Mechanical Automatic",
+      "gender": "F",
+      "name": {
+        "en": "Women's Gold Mesh Bracelet Watch",
+        "es": "Reloj Women's Gold Mesh Bracelet",
+        "ar": "ساعة Women's Gold Mesh Bracelet"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 22.0,
+      "price_display": "$22.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-W007.webp",
+      "variants": [
+        {
+          "label": "Rose Gold",
+          "value": "rose-gold"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Mechanical Automatic",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "32mm",
+          "Strap": "Leather / Steel",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Mechanical Automatic",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "32mm",
+          "Correa": "Cuero / Acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Mechanical Automatic",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "32mm",
+          "السوار": "جلد / ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium women's gold mesh bracelet watch, inspired by Movado Bold. Crafted with 316L stainless steel, mineral crystal glass, and precise mechanical automatic movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj women's premium estilo gold mesh bracelet, inspired by Movado Bold. Fabricado en acero inoxidable 316L, cristal mineral y movimiento mechanical automatic. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Women's فاخرة بتصميم Gold Mesh Bracelet، inspired by Movado Bold. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Mechanical Automatic. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-w008",
+      "sku": "DS-W008",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Cartier Must",
+      "watch_type": "Mechanical Automatic",
+      "gender": "F",
+      "name": {
+        "en": "Women's Rectangular Dress Watch",
+        "es": "Reloj Women's Rectangular Dress",
+        "ar": "ساعة Women's Rectangular Dress"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 30.0,
+      "price_display": "$30.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 30 pcs",
+        "es": "MOQ: 30 pzas",
+        "ar": "الحد الأدنى: 30 قطعة"
+      },
+      "moq": 30,
+      "image": "images/stock/watches/DS-W008.webp",
+      "variants": [
+        {
+          "label": "Rose Gold",
+          "value": "rose-gold"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Mechanical Automatic",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "32mm",
+          "Strap": "Leather / Steel",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Mechanical Automatic",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "32mm",
+          "Correa": "Cuero / Acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Mechanical Automatic",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "32mm",
+          "السوار": "جلد / ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium women's rectangular dress watch, inspired by Cartier Must. Crafted with 316L stainless steel, mineral crystal glass, and precise mechanical automatic movement. B2B wholesale — ready for distribution. Minimum order 30 pieces.",
+        "es": "Reloj women's premium estilo rectangular dress, inspired by Cartier Must. Fabricado en acero inoxidable 316L, cristal mineral y movimiento mechanical automatic. Venta mayorista B2B. Pedido mínimo 30 piezas.",
+        "ar": "ساعة Women's فاخرة بتصميم Rectangular Dress، inspired by Cartier Must. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Mechanical Automatic. بيع بالجملة B2B. الحد الأدنى للطلب 30 قطعة."
+      }
+    },
+    {
+      "id": "ds-w009",
+      "sku": "DS-W009",
+      "category": "watches",
+      "tag": "new",
+      "stock_status": "in_stock",
+      "inspired_by": "inspired by Rolex Oyster Perpetual",
+      "watch_type": "Mechanical Automatic",
+      "gender": "F",
+      "name": {
+        "en": "Women's Pink Dial Luxury Watch",
+        "es": "Reloj Women's Pink Dial Luxury",
+        "ar": "ساعة Women's Pink Dial Luxury"
+      },
+      "category_display": {
+        "en": "Watches",
+        "es": "Relojes",
+        "ar": "ساعات"
+      },
+      "price": 38.0,
+      "price_display": "$38.00",
+      "price_unit": {
+        "en": "/ pc",
+        "es": "/ pza",
+        "ar": "/ قطعة"
+      },
+      "min_order": {
+        "en": "MOQ: 20 pcs",
+        "es": "MOQ: 20 pzas",
+        "ar": "الحد الأدنى: 20 قطعة"
+      },
+      "moq": 20,
+      "image": "images/stock/watches/DS-W009.webp",
+      "variants": [
+        {
+          "label": "Rose Gold",
+          "value": "rose-gold"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Gold",
+          "value": "gold"
+        }
+      ],
+      "specifications": {
+        "en": {
+          "Movement": "Mechanical Automatic",
+          "Case Material": "316L Stainless Steel",
+          "Case Diameter": "32mm",
+          "Strap": "Leather / Steel",
+          "Water Resistance": "3 ATM / 30m",
+          "Glass": "Mineral Crystal",
+          "Warranty": "12 months"
+        },
+        "es": {
+          "Movimiento": "Mechanical Automatic",
+          "Material de la caja": "Acero inoxidable 316L",
+          "Diámetro": "32mm",
+          "Correa": "Cuero / Acero",
+          "Resistencia al agua": "3 ATM / 30m",
+          "Cristal": "Cristal mineral",
+          "Garantía": "12 meses"
+        },
+        "ar": {
+          "الحركة": "Mechanical Automatic",
+          "مادة العلبة": "ستانلس ستيل 316L",
+          "القطر": "32mm",
+          "السوار": "جلد / ستيل",
+          "مقاومة الماء": "3 ATM / 30m",
+          "الزجاج": "كريستال معدني",
+          "الضمان": "12 شهر"
+        }
+      },
+      "description": {
+        "en": "Premium women's pink dial luxury watch, inspired by Rolex Oyster Perpetual. Crafted with 316L stainless steel, mineral crystal glass, and precise mechanical automatic movement. B2B wholesale — ready for distribution. Minimum order 20 pieces.",
+        "es": "Reloj women's premium estilo pink dial luxury, inspired by Rolex Oyster Perpetual. Fabricado en acero inoxidable 316L, cristal mineral y movimiento mechanical automatic. Venta mayorista B2B. Pedido mínimo 20 piezas.",
+        "ar": "ساعة Women's فاخرة بتصميم Pink Dial Luxury، inspired by Rolex Oyster Perpetual. مصنوعة من ستيل 316L وزجاج كريستال معدني وحركة Mechanical Automatic. بيع بالجملة B2B. الحد الأدنى للطلب 20 قطعة."
+      }
+    }
+  ]
+}

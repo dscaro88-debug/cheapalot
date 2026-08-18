@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>In-Stock Clearance · 32 Watch Models · Yiwu Warehouse · CheapALot</title>
+<meta name="description" content="32 in-stock clearance watch models physically warehoused in Yiwu. Men's & Women's quartz & automatic movements. Inspired by premium brands. B2B wholesale, ready to ship.">
+<link rel="canonical" href="https://www.cheapalot.com/stock.html">
+<meta property="og:title" content="In-Stock Clearance Watches · CheapALot">
+<meta property="og:description" content="32 watch models in Yiwu warehouse. Real stock, real photos, ready to ship.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.cheapalot.com/stock.html">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { background: #fff; }
+  .stock-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    color: #fff;
+    padding: 56px 0 48px;
+    border-bottom: 4px solid #ffcd00;
+  }
+  .stock-hero .eyebrow {
+    display: inline-block;
+    background: #2d7a4f;
+    color: #fff;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+  .stock-hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+    line-height: 1.1;
+  }
+  .stock-hero .accent { color: #ffcd00; }
+  .stock-hero p.lead {
+    font-size: 17px;
+    color: #ccc;
+    max-width: 720px;
+    line-height: 1.6;
+    margin: 0 0 18px;
+  }
+  .stock-meta {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+    font-size: 13px;
+    color: #aaa;
+  }
+  .stock-meta strong { color: #fff; font-size: 18px; font-family: 'Oswald', sans-serif; }
+  .stock-meta .dot { color: #2d7a4f; }
+  .stock-grid-wrap {
+    background: #fafafa;
+    padding: 48px 0 64px;
+  }
+  .stock-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .stock-section-header h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    color: #1a1a1a;
+  }
+  .stock-section-header p {
+    font-size: 13px;
+    color: #888;
+    margin: 4px 0 0;
+  }
+  .stock-filter-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .stock-filter-chip {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .stock-filter-chip:hover {
+    border-color: #2d7a4f;
+    color: #2d7a4f;
+  }
+  .stock-filter-chip.active {
+    background: #2d7a4f;
+    color: #fff;
+    border-color: #2d7a4f;
+  }
+  #watchGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 18px;
+  }
+  .stock-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #eee;
+  }
+  .stock-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+  }
+  .stock-card-img {
+    background: #f9f9f9;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .stock-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 14px;
+  }
+  .stock-card-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #2d7a4f;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .stock-card-body { padding: 12px 14px; }
+  .stock-card-sku {
+    font-size: 11px;
+    color: #888;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .stock-card-name {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 2px 0 8px;
+    color: #333;
+    line-height: 1.35;
+    min-height: 36px;
+  }
+  .stock-card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 6px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .stock-card-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #c00;
+    font-family: 'Oswald', sans-serif;
+  }
+  .stock-card-stock {
+    font-size: 11px;
+    color: #2d7a4f;
+    font-weight: 700;
+  }
+  .stock-cross-link {
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 28px 20px;
+    margin-top: 0;
+  }
+  .stock-cross-link p { margin: 0 0 6px; font-size: 14px; color: #ccc; }
+  .stock-cross-link p strong { color: #ffcd00; }
+  .stock-cross-link .links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+  .stock-cross-link a {
+    color: #fff;
+    background: #c00;
+    padding: 10px 22px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .stock-cross-link a.secondary {
+    background: transparent;
+    border: 1px solid #fff;
+  }
+  .stock-cross-link a:hover { background: #ffcd00; color: #1a1a1a; }
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container top-bar-inner">
+    <div class="top-left">
+      <span>✉ dscaro88@gmail.com</span>
+    </div>
+    <div class="top-right">
+      <span class="trade-badge">⚡ Trade to Trade · Min Order £250</span>
+    </div>
+  </div>
+</div>
+
+<!-- Main Header -->
+<header class="main-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">£</div>
+      <div class="logo-text">
+        <span class="logo-name">Cheap<span class="logo-accent">ALot</span></span>
+        <span class="logo-tag">Yiwu Sourcing · Wholesale · Clearance</span>
+      </div>
+    </a>
+    <div class="header-search">
+      <input type="text" placeholder="Search 20,000+ products..." id="globalSearch">
+      <button>🔍 SEARCH</button>
+    </div>
+    <div class="header-actions">
+      <a href="contact.html" class="header-link">📋 Contact</a>
+      <a href="#" class="header-link cart-link" onclick="cart.open(); return false;">🛒 Cart <span id="cartCount">0</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- Main Nav -->
+<nav class="main-nav" id="mainNav">
+  <div class="container">
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <ul class="nav-list">
+      <li><a href="index.html" class="nav-link">HOME</a></li>
+      <li><a href="stock.html" class="nav-link nav-watches" style="background:#2d7a4f;">✓ IN STOCK</a></li>
+      <li><a href="products.html" class="nav-link">SOURCING AGENT</a></li>
+      <li><a href="products.html?category=mixed" class="nav-link">MIXED HOUSEHOLD</a></li>
+      <li><a href="products.html?category=toys" class="nav-link">TOYS & NURSERY</a></li>
+      <li><a href="products.html" class="nav-link nav-all">ALL CATEGORIES ▾</a></li>
+      <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+      <li><a href="#faq" class="nav-link">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Stock Hero -->
+<section class="stock-hero">
+  <div class="container">
+    <div class="breadcrumbs" style="color:#888;font-size:12px;margin-bottom:14px;">
+      <a href="index.html" style="color:#888;">Home</a> / <span style="color:#fff;">In-Stock Clearance</span>
+    </div>
+    <span class="eyebrow">✓ In Stock · Ready to Ship</span>
+    <h1>Watch Collection <span class="accent">— 32 Models Live</span></h1>
+    <p class="lead">Physically warehoused in our Yiwu facility. Real stock, real photos. No waiting, no sourcing delays — these are the only models we hold in inventory today. Men's & Women's, quartz & automatic movements.</p>
+    <div class="stock-meta">
+      <span><strong>32</strong> Models</span>
+      <span class="dot">•</span>
+      <span><strong>23</strong> Men's · <strong>9</strong> Women's</span>
+      <span class="dot">•</span>
+      <span><strong>$8 – $42</strong> wholesale</span>
+      <span class="dot">•</span>
+      <span><strong>MOQ 20–100</strong> pcs</span>
+      <span class="dot">•</span>
+      <span><strong>Yiwu</strong> warehouse</span>
+    </div>
+  </div>
+</section>
+
+<!-- Stock Grid -->
+<section class="stock-grid-wrap">
+  <div class="container">
+    <div class="stock-section-header">
+      <div>
+        <h2>Browse In-Stock Models</h2>
+        <p>Click any model for full specs, multiple colourways, and WhatsApp quote.</p>
+      </div>
+      <div style="font-size:12px;color:#666;">Showing <strong id="stockCount">32</strong> of 32 models</div>
+    </div>
+
+    <div class="stock-filter-bar" id="stockFilters">
+      <button class="stock-filter-chip active" data-filter="all">All Models</button>
+      <button class="stock-filter-chip" data-filter="men">Men's</button>
+      <button class="stock-filter-chip" data-filter="women">Women's</button>
+      <button class="stock-filter-chip" data-filter="quartz">Quartz</button>
+      <button class="stock-filter-chip" data-filter="automatic">Automatic</button>
+    </div>
+
+    <div id="watchGrid"></div>
+  </div>
+</section>
+
+<!-- Cross-link to Sourcing Agent -->
+<section class="stock-cross-link">
+  <p>Can't find what you need in our warehouse?</p>
+  <p>We also operate a <strong>20-year sourcing agent service</strong> — quote to your door in 7–15 days for 20,000+ product lines.</p>
+  <div class="links">
+    <a href="products.html">Browse Sourcing Catalog (513 Lines)</a>
+    <a href="index.html#inquiry-form" class="secondary">Request Custom Quote</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="foot-col">
+      <h4>CheapALot</h4>
+      <p>Verified Yiwu sourcing partner. Wholesale · Clearance · Export logistics to Europe and beyond.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stock.html">In-Stock Clearance</a></li>
+        <li><a href="products.html">Sourcing Catalog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Buying From Us</a></li>
+        <li><a href="#">Sell Your Stock</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <p>📧 dscaro88@gmail.com</p>
+      <p>📍 Office Address: No. 18 Danxi North Road, Choucheng Street, Yiwu City, Jinhua, Zhejiang, China</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="container">
+      <p>© 2026 CheapALot.com · All Rights Reserved · A Lot of Stock. A Lot Cheap.</p>
+      <p>Trade to Trade Only · Minimum Order £250</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cartOverlay" onclick="cart.close()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Cart <span id="cartBadge">0</span></h3>
+    <button class="cart-close" onclick="cart.close()">×</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <p class="cart-empty">Your cart is empty.<br>Add products to request a quote.</p>
+  </div>
+  <div class="cart-foot" id="cartFoot" style="display:none;">
+    <div class="cart-total-row"><span>Total Items</span><strong id="cartTotalQty">0</strong></div>
+    <div class="cart-total-row big"><span>Estimated Total</span><strong id="cartTotalPrice">$0.00</strong></div>
+    <a href="#" class="cart-checkout" onclick="cart.checkoutWa(); return false;">💬 Checkout via WhatsApp</a>
+    <a href="#" class="cart-bulk-quote" onclick="cart.bulkQuote(); return false;">📧 Bulk Quote by Email</a>
+  </div>
+</div>
+
+<script src="js/cart.js"></script>
+<script>
+(function() {
+  var allWatches = [];
+  var activeFilter = 'all';
+
+  fetch('data/stock-watches.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      allWatches = data.products || [];
+      render();
+    })
+    .catch(function(err) { console.error('Failed to load watches:', err); });
+
+  function render() {
+    var grid = document.getElementById('watchGrid');
+    if (!grid) return;
+    var filtered = allWatches.filter(function(w) {
+      if (activeFilter === 'all') return true;
+      if (activeFilter === 'men') return w.sku.startsWith('DS-B');
+      if (activeFilter === 'women') return w.sku.startsWith('DS-W');
+      if (activeFilter === 'quartz') return /Quartz/i.test(w.watch_type);
+      if (activeFilter === 'automatic') return /Automatic/i.test(w.watch_type);
+      return true;
+    });
+    document.getElementById('stockCount').textContent = filtered.length;
+    grid.innerHTML = filtered.map(function(w) {
+      var badgeGender = w.sku.startsWith('DS-B') ? "MEN'S" : "WOMEN'S";
+      return '<a href="product.html?id=' + w.sku + '" class="stock-card">' +
+        '<div class="stock-card-img">' +
+        '<span class="stock-card-badge">' + badgeGender + '</span>' +
+        '<img src="' + w.image + '" alt="' + w.name.en + '" loading="lazy">' +
+        '</div>' +
+        '<div class="stock-card-body">' +
+        '<div class="stock-card-sku">' + w.sku + '</div>' +
+        '<div class="stock-card-name">' + w.name.en + '</div>' +
+        '<div class="stock-card-foot">' +
+        '<span class="stock-card-price">' + w.price_display + '</span>' +
+        '<span class="stock-card-stock">✓ In Stock</span>' +
+        '</div>' +
+        '</div>' +
+        '</a>';
+    }).join('');
+  }
+
+  document.querySelectorAll('.stock-filter-chip').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.stock-filter-chip').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeFilter = btn.getAttribute('data-filter');
+      render();
+    });
+  });
+})();
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

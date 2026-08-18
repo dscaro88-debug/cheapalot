@@ -86,11 +86,6 @@ document.querySelectorAll('form[action^="https://formspree.io/"]').forEach(form 
             btn.textContent = '\u2713 SUBMITTED \u2014 WE\'LL CONTACT YOU SOON';
             btn.style.background = '#2d7a2d';
             form.reset();
-
-            if (form.id === 'exitPopupForm') {
-                const popup = document.getElementById('exitPopup');
-                setTimeout(() => popup && popup.classList.remove('active'), 1600);
-            }
         } catch (error) {
             btn.textContent = 'SEND FAILED \u2014 TRY WHATSAPP OR EMAIL';
             btn.style.background = '#9f1d1d';
@@ -226,48 +221,7 @@ if (requestedProduct && requestedProductField) {
     requestedProductField.value = requestedProduct.slice(0, 200);
 }
 
-// Exit intent popup
-(function initExitPopup() {
-    const popup = document.getElementById('exitPopup');
-    const closeBtn = document.getElementById('exitPopupClose');
-    const form = document.getElementById('exitPopupForm');
-    if (!popup) return;
-
-    let shown = false;
-
-    document.addEventListener('mouseleave', (e) => {
-        if (e.clientY <= 0 && !shown && !sessionStorage.getItem('exitPopupShown')) {
-            popup.classList.add('active');
-            shown = true;
-            sessionStorage.setItem('exitPopupShown', '1');
-        }
-    });
-
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => popup.classList.remove('active'));
-    }
-
-    popup.addEventListener('click', (e) => {
-        if (e.target === popup) popup.classList.remove('active');
-    });
-
-    // Mobile: show on scroll up after scrolling down
-    let lastScrollY = window.pageYOffset;
-    let scrolledDown = false;
-    window.addEventListener('scroll', () => {
-        const currentY = window.pageYOffset;
-        if (currentY > lastScrollY && currentY > 600) {
-            scrolledDown = true;
-        }
-        if (currentY < lastScrollY && scrolledDown && !shown && !sessionStorage.getItem('exitPopupShown')) {
-            popup.classList.add('active');
-            shown = true;
-            sessionStorage.setItem('exitPopupShown', '1');
-            scrolledDown = false;
-        }
-        lastScrollY = currentY;
-    }, { passive: true });
-})();
+// [2026-08-18] Exit intent popup disabled — triggers removed per decision.
 
 // ─── Product Inquiry Pre-fill ───
 // Called when "Add to Cart" or "View" button is clicked on product cards

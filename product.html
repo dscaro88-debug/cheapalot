@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wholesale watches in stock from Yiwu. Premium men's and women's watches, B2B trade only. Factory-direct prices, quality guaranteed.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <title>Watch Detail | CheapALot — Yiwu Wholesale Stock</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== Product Detail Page — dshairbeauty style ===== */
+        .pd-hero {
+            background: linear-gradient(135deg, var(--gray-900) 0%, #0d0d0d 100%);
+            color: #fff;
+            padding: 16px 0 12px;
+        }
+        .pd-breadcrumb {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+        .pd-breadcrumb a { color: #fff; }
+        .pd-breadcrumb a:hover { color: var(--red); }
+
+        .pd-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            padding: 40px 0 60px;
+        }
+        @media (max-width: 900px) {
+            .pd-container { grid-template-columns: 1fr; gap: 24px; }
+        }
+
+        /* --- Image Gallery --- */
+        .pd-gallery {
+            position: sticky;
+            top: 20px;
+        }
+        .pd-main-img {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #f9f9f9;
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pd-main-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+        }
+        .pd-thumbs {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .pd-thumb {
+            width: 72px;
+            height: 72px;
+            border: 2px solid var(--gray-300);
+            border-radius: 6px;
+            cursor: pointer;
+            overflow: hidden;
+            background: #f9f9f9;
+            transition: border-color 0.2s;
+        }
+        .pd-thumb.active { border-color: var(--red); }
+        .pd-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+
+        /* --- Product Info --- */
+        .pd-info { padding: 0; }
+        .pd-sku-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .pd-sku {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gray-500);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .pd-stock-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #e8f5e9;
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+        .pd-stock-badge::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .pd-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 8px 0 6px;
+            color: var(--gray-900);
+        }
+        .pd-inspired {
+            font-size: 14px;
+            color: var(--gray-500);
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+        .pd-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--gray-300);
+        }
+        .pd-price {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--red);
+        }
+        .pd-price-unit {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+        .pd-moq {
+            background: var(--gray-100);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        /* --- Variants --- */
+        .pd-section-label {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray-900);
+            margin-bottom: 10px;
+        }
+        .pd-variants {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .pd-variant-chip {
+            padding: 8px 20px;
+            border: 2px solid var(--gray-300);
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #fff;
+        }
+        .pd-variant-chip:hover { border-color: var(--gray-500); }
+        .pd-variant-chip.active {
+            border-color: var(--red);
+            color: var(--red);
+        }
+
+        /* --- Quantity Selector --- */
+        .pd-qty-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .pd-qty-selector {
+            display: flex;
+            align-items: center;
+            border: 2px solid var(--gray-300);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .pd-qty-btn {
+            width: 44px;
+            height: 44px;
+            border: none;
+            background: var(--gray-100);
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            color: var(--gray-900);
+            transition: background 0.2s;
+        }
+        .pd-qty-btn:hover { background: var(--gray-300); }
+        .pd-qty-input {
+            width: 64px;
+            height: 44px;
+            text-align: center;
+            border: none;
+            border-left: 2px solid var(--gray-300);
+            border-right: 2px solid var(--gray-300);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--gray-900);
+            outline: none;
+        }
+        .pd-qty-hint {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        /* --- CTAs --- */
+        .pd-cta-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .pd-btn {
+            flex: 1;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            border: none;
+        }
+        .pd-btn-wa {
+            background: #25D366;
+            color: #fff;
+        }
+        .pd-btn-wa:hover { background: #1da851; }
+        .pd-btn-email {
+            background: var(--gray-900);
+            color: #fff;
+        }
+        .pd-btn-email:hover { background: var(--gray-700); }
+        .pd-btn-cart {
+            background: var(--red);
+            color: #fff;
+            flex: 0 0 52px;
+            padding: 0;
+        }
+        .pd-btn-cart:hover { background: var(--red-dark); }
+
+        /* --- Trust Icons --- */
+        .pd-trust {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 20px;
+            background: var(--gray-100);
+            border-radius: 8px;
+            margin-bottom: 32px;
+        }
+        .pd-trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            text-align: center;
+        }
+        .pd-trust-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pd-trust-icon svg { width: 32px; height: 32px; }
+        .pd-trust-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        /* --- Tabs --- */
+        .pd-tabs {
+            margin-top: 20px;
+            border-top: 1px solid var(--gray-300);
+        }
+        .pd-tab-headers {
+            display: flex;
+            gap: 0;
+            border-bottom: 2px solid var(--gray-300);
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .pd-tab-headers::-webkit-scrollbar { display: none; }
+        .pd-tab-header {
+            padding: 16px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray-500);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .pd-tab-header.active {
+            color: var(--red);
+            border-bottom-color: var(--red);
+        }
+        .pd-tab-content {
+            padding: 24px 0;
+            display: none;
+        }
+        .pd-tab-content.active { display: block; }
+        .pd-tab-content p { margin-bottom: 12px; line-height: 1.7; color: var(--gray-700); }
+        .pd-spec-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .pd-spec-table th, .pd-spec-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--gray-300);
+            text-align: left;
+            font-size: 14px;
+        }
+        .pd-spec-table th {
+            font-weight: 700;
+            color: var(--gray-900);
+            width: 40%;
+            background: var(--gray-100);
+        }
+        .pd-spec-table td { color: var(--gray-700); }
+
+        /* --- Related Products --- */
+        .pd-related {
+            background: var(--gray-100);
+            padding: 48px 0;
+        }
+        .pd-related h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .pd-related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .pd-related-card {
+            background: #fff;
+            border: 1px solid var(--gray-300);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+        .pd-related-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+        .pd-related-card img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: contain;
+            padding: 16px;
+            background: #f9f9f9;
+        }
+        .pd-related-card-body { padding: 12px 16px; }
+        .pd-related-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+        .pd-related-card .price { font-size: 18px; font-weight: 700; color: var(--red); font-family: 'Oswald', sans-serif; }
+        .pd-related-card .sku { font-size: 12px; color: var(--gray-500); }
+
+        /* ===== Cart Drawer ===== */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        .cart-overlay.open { opacity: 1; visibility: visible; }
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 420px;
+            max-width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 9999;
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-drawer.open { transform: translateX(0); }
+        .cart-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border-bottom: 1px solid var(--gray-300);
+            background: var(--gray-900);
+            color: #fff;
+        }
+        .cart-header h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        .cart-close {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            line-height: 1;
+            padding: 4px 8px;
+        }
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+        }
+        .cart-empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--gray-500);
+        }
+        .cart-item {
+            display: grid;
+            grid-template-columns: 64px 1fr auto;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-300);
+        }
+        .cart-item img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            border: 1px solid var(--gray-300);
+            border-radius: 4px;
+            padding: 4px;
+            background: #f9f9f9;
+        }
+        .cart-item-info h4 { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+        .cart-item-info .sku { font-size: 11px; color: var(--gray-500); }
+        .cart-item-info .price { font-size: 14px; font-weight: 700; color: var(--red); }
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 4px;
+        }
+        .cart-item-qty button {
+            width: 24px;
+            height: 24px;
+            border: 1px solid var(--gray-300);
+            background: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .cart-item-qty span { min-width: 28px; text-align: center; font-size: 13px; font-weight: 700; }
+        .cart-item-remove {
+            align-self: flex-start;
+            background: none;
+            border: none;
+            color: var(--gray-500);
+            cursor: pointer;
+            font-size: 18px;
+            padding: 4px;
+        }
+        .cart-item-remove:hover { color: var(--red); }
+        .cart-footer {
+            border-top: 1px solid var(--gray-300);
+            padding: 20px;
+            background: var(--gray-100);
+        }
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 16px;
+        }
+        .cart-total-label { font-size: 14px; font-weight: 600; }
+        .cart-total-value { font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 700; color: var(--red); }
+        .cart-checkout-wa {
+            width: 100%;
+            height: 48px;
+            background: #25D366;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            transition: background 0.2s;
+        }
+        .cart-checkout-wa:hover { background: #1da851; }
+        .cart-bulk-quote {
+            width: 100%;
+            height: 44px;
+            background: var(--gray-900);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.2s;
+        }
+        .cart-bulk-quote:hover { background: var(--gray-700); }
+
+        .pd-loading {
+            text-align: center;
+            padding: 120px 20px;
+            color: var(--gray-500);
+            font-size: 18px;
+        }
+        .pd-not-found {
+            text-align: center;
+            padding: 120px 20px;
+        }
+        .pd-not-found h2 { font-family: 'Oswald', sans-serif; font-size: 32px; margin-bottom: 12px; }
+    </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="container top-bar-inner">
+        <div class="top-left">
+            <span class="top-icon">📍</span>
+            <span><strong>Yiwu, China</strong> — The World's Largest Wholesale Market</span>
+            <span class="top-divider">|</span>
+            <span class="top-icon">⏱</span>
+            <span>20+ Years Export Experience</span>
+        </div>
+        <div class="top-right">
+            <span class="trade-badge">⚡ TRADE ONLY · MIN ORDER £250</span>
+        </div>
+    </div>
+</div>
+
+<!-- Main Header -->
+<header class="main-header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-mark">£</div>
+            <div class="logo-text">
+                <span class="logo-name">Cheap<span class="logo-accent">ALot</span></span>
+                <span class="logo-tag">Yiwu Sourcing · Wholesale · Clearance</span>
+            </div>
+        </a>
+        <div class="header-actions">
+            <a href="products.html" class="header-link">Browse Stock</a>
+            <a href="https://wa.me/8613367494665" class="header-wa-btn" target="_blank">WhatsApp</a>
+            <a href="#" class="header-link cart-link" onclick="cart.open(); return false;">
+                Cart <span class="cart-count" id="cartCount">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Breadcrumb Hero -->
+<div class="pd-hero">
+    <div class="container">
+        <nav class="pd-breadcrumb">
+            <a href="index.html">Home</a> ›
+            <a href="products.html">Products</a> ›
+            <a href="products.html?cat=watches">Watches</a> ›
+            <span id="bcName">Loading...</span>
+        </nav>
+    </div>
+</div>
+
+<!-- Product Detail -->
+<main id="productDetail">
+    <div class="container">
+        <div class="pd-loading">Loading product...</div>
+    </div>
+</main>
+
+<!-- Related Products -->
+<section class="pd-related" id="relatedSection" style="display:none;">
+    <div class="container">
+        <h2>More Watches In Stock</h2>
+        <div class="pd-related-grid" id="relatedGrid"></div>
+    </div>
+</section>
+
+<!-- ===== Cart Drawer ===== -->
+<div class="cart-overlay" id="cartOverlay" onclick="cart.close()"></div>
+<aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button class="cart-close" onclick="cart.close()">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+        <div class="cart-empty">
+            <p style="font-size:48px;margin-bottom:12px;">🛒</p>
+            <p>Your cart is empty</p>
+            <p style="font-size:13px;margin-top:8px;">Add products to request a bulk quote</p>
+        </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+        <div class="cart-total">
+            <span class="cart-total-label">Estimated Total</span>
+            <span class="cart-total-value" id="cartTotal">$0.00</span>
+        </div>
+        <p style="font-size:12px;color:var(--gray-500);margin-bottom:12px;">Final price confirmed per inquiry. MOQ applies per item.</p>
+        <button class="cart-checkout-wa" onclick="cart.checkoutWhatsApp()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Checkout via WhatsApp
+        </button>
+        <button class="cart-bulk-quote" onclick="cart.checkoutEmail()">
+            Request Bulk Quote (Email)
+        </button>
+    </div>
+</aside>
+
+<!-- Footer -->
+<footer style="background:var(--gray-900);color:#aaa;padding:40px 0 20px;margin-top:60px;">
+    <div class="container">
+        <p style="text-align:center;font-size:13px;">
+            <strong style="color:#fff;">CheapALot.com</strong> — Yiwu Sourcing Agent & Wholesale Stock<br>
+            WhatsApp: +86 13367494665 · Email: dscaro88@gmail.com<br>
+            <span style="color:#666;">B2B Trade Only · 20+ Years Export Experience · 30+ Countries Served</span>
+        </p>
+    </div>
+</footer>
+
+<script src="js/cart.js"></script>
+<script>
+(function() {
+    'use strict';
+
+    var LANG = 'en';
+    var WATCHES = [];
+    var currentProduct = null;
+
+    function $(id) { return document.getElementById(id); }
+
+    function escapeHtml(s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, function(c) {
+            return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+        });
+    }
+
+    function init() {
+        var params = new URLSearchParams(window.location.search);
+        var id = params.get('id') || params.get('sku') || '';
+        id = id.toLowerCase();
+
+        fetch('data/stock-watches.json')
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                WATCHES = data.products || [];
+                var product = WATCHES.filter(function(p) {
+                    return p.id === id || p.sku.toLowerCase() === id;
+                })[0];
+
+                if (!product) {
+                    showNotFound();
+                    return;
+                }
+
+                currentProduct = product;
+                renderProduct(product);
+                renderRelated(product);
+                updateDocumentMeta(product);
+            })
+            .catch(function(err) {
+                console.error('Failed to load watches:', err);
+                showNotFound();
+            });
+    }
+
+    function renderProduct(p) {
+        var name = p.name.en;
+        var desc = p.description.en;
+        var specs = p.specifications.en;
+
+        var specRows = Object.keys(specs).map(function(k) {
+            return '<tr><th>' + escapeHtml(k) + '</th><td>' + escapeHtml(specs[k]) + '</td></tr>';
+        }).join('');
+
+        var variantChips = (p.variants || []).map(function(v, i) {
+            return '<button class="pd-variant-chip' + (i === 0 ? ' active' : '') + '" data-variant="' + escapeHtml(v.value) + '">' + escapeHtml(v.label) + '</button>';
+        }).join('');
+
+        var waUrl = 'https://wa.me/8613367494665?text=' + encodeURIComponent(
+            'Hello, I am interested in:\n\n' +
+            'Product: ' + name + '\n' +
+            'SKU: ' + p.sku + '\n' +
+            'Design: ' + p.inspired_by + '\n' +
+            'Price: ' + p.price_display + p.price_unit.en + '\n' +
+            'MOQ: ' + p.moq + ' pcs\n\n' +
+            'Please confirm availability and shipping.'
+        );
+
+        var emailSubject = encodeURIComponent('Inquiry: ' + name + ' (' + p.sku + ')');
+        var emailBody = encodeURIComponent(
+            'Product: ' + name + '\n' +
+            'SKU: ' + p.sku + '\n' +
+            'Design: ' + p.inspired_by + '\n' +
+            'Price: ' + p.price_display + p.price_unit.en + '\n' +
+            'MOQ: ' + p.moq + ' pcs\n\n' +
+            'Quantity needed: \n' +
+            'Shipping destination: \n'
+        );
+        var emailUrl = 'mailto:dscaro88@gmail.com?subject=' + emailSubject + '&body=' + emailBody;
+
+        var html =
+            '<div class="container">' +
+            '  <div class="pd-container">' +
+            '    <!-- Gallery -->' +
+            '    <div class="pd-gallery">' +
+            '      <div class="pd-main-img">' +
+            '        <img src="' + p.image + '" alt="' + escapeHtml(name) + '" id="mainImg">' +
+            '      </div>' +
+            '      <div class="pd-thumbs">' +
+            '        <div class="pd-thumb active" onclick="document.getElementById(\'mainImg\').src=\'' + p.image + '\';document.querySelectorAll(\'.pd-thumb\').forEach(function(t){t.classList.remove(\'active\')});this.classList.add(\'active\')">' +
+            '          <img src="' + p.image + '" alt="">' +
+            '        </div>' +
+            '      </div>' +
+            '    </div>' +
+            '    <!-- Info -->' +
+            '    <div class="pd-info">' +
+            '      <div class="pd-sku-row">' +
+            '        <span class="pd-sku">SKU: ' + p.sku + '</span>' +
+            '        <span class="pd-stock-badge">In Stock</span>' +
+            '      </div>' +
+            '      <h1 class="pd-title">' + escapeHtml(name) + '</h1>' +
+            '      <p class="pd-inspired">' + escapeHtml(p.inspired_by) + ' — design reference, not affiliated with any brand</p>' +
+            '      <div class="pd-price-row">' +
+            '        <span class="pd-price">' + p.price_display + '</span>' +
+            '        <span class="pd-price-unit">' + p.price_unit.en + '</span>' +
+            '        <span class="pd-moq">MOQ: ' + p.moq + ' pcs</span>' +
+            '      </div>' +
+            '      <!-- Variants -->' +
+            '      <div class="pd-section-label">Color / Finish</div>' +
+            '      <div class="pd-variants">' + variantChips + '</div>' +
+            '      <!-- Quantity -->' +
+            '      <div class="pd-qty-row">' +
+            '        <div class="pd-qty-selector">' +
+            '          <button class="pd-qty-btn" onclick="pdQty(-1)">−</button>' +
+            '          <input type="number" class="pd-qty-input" id="qtyInput" value="' + p.moq + '" min="' + p.moq + '" step="' + Math.max(1, Math.floor(p.moq/10)) + '">' +
+            '          <button class="pd-qty-btn" onclick="pdQty(1)">+</button>' +
+            '        </div>' +
+            '        <span class="pd-qty-hint">Min order: ' + p.moq + ' pcs</span>' +
+            '      </div>' +
+            '      <!-- CTAs -->' +
+            '      <div class="pd-cta-row">' +
+            '        <a href="' + waUrl + '" class="pd-btn pd-btn-wa" target="_blank">' +
+            '          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>' +
+            '          Inquire via WhatsApp' +
+            '        </a>' +
+            '        <a href="' + emailUrl + '" class="pd-btn pd-btn-email">Email Inquiry</a>' +
+            '        <button class="pd-btn pd-btn-cart" onclick="addToCart()" title="Add to cart">' +
+            '          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>' +
+            '        </button>' +
+            '      </div>' +
+            '      <!-- Trust Icons -->' +
+            '      <div class="pd-trust">' +
+            '        <div class="pd-trust-item">' +
+            '          <div class="pd-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>' +
+            '          <span class="pd-trust-label">Fast Dispatch</span>' +
+            '        </div>' +
+            '        <div class="pd-trust-item">' +
+            '          <div class="pd-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9c2 0 4 .7 5.5 2"/></svg></div>' +
+            '          <span class="pd-trust-label">Quality Checked</span>' +
+            '        </div>' +
+            '        <div class="pd-trust-item">' +
+            '          <div class="pd-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z"/></svg></div>' +
+            '          <span class="pd-trust-label">12-Month Warranty</span>' +
+            '        </div>' +
+            '      </div>' +
+            '      <!-- Tabs -->' +
+            '      <div class="pd-tabs">' +
+            '        <div class="pd-tab-headers">' +
+            '          <div class="pd-tab-header active" onclick="pdTab(this, \'desc\')">Description</div>' +
+            '          <div class="pd-tab-header" onclick="pdTab(this, \'specs\')">Specifications</div>' +
+            '          <div class="pd-tab-header" onclick="pdTab(this, \'features\')">Features</div>' +
+            '          <div class="pd-tab-header" onclick="pdTab(this, \'faq\')">FAQ</div>' +
+            '        </div>' +
+            '        <div class="pd-tab-content active" id="tab-desc">' +
+            '          <p>' + escapeHtml(desc) + '</p>' +
+            '          <p>This timepiece is part of our in-stock watch collection, physically warehoused in Yiwu and ready for immediate dispatch. B2B wholesale pricing — ideal for distributors, retailers, and resellers.</p>' +
+            '          <p><strong>Design note:</strong> ' + escapeHtml(p.inspired_by) + '. This is an independent product not affiliated with, endorsed by, or connected to any referenced brand. Design references are for style categorization only.</p>' +
+            '        </div>' +
+            '        <div class="pd-tab-content" id="tab-specs">' +
+            '          <table class="pd-spec-table">' + specRows + '</table>' +
+            '        </div>' +
+            '        <div class="pd-tab-content" id="tab-features">' +
+            '          <p><strong>Movement:</strong> ' + escapeHtml(p.watch_type) + ' — reliable and accurate timekeeping</p>' +
+            '          <p><strong>Build:</strong> 316L surgical-grade stainless steel case, mineral crystal glass face</p>' +
+            '          <p><strong>Water Resistance:</strong> 3 ATM (splash and rain resistant — not for swimming)</p>' +
+            '          <p><strong>Warranty:</strong> 12 months manufacturer warranty against movement defects</p>' +
+            '          <p><strong>Packaging:</strong> Individual gift box, ready for retail display</p>' +
+            '        </div>' +
+            '        <div class="pd-tab-content" id="tab-faq">' +
+            '          <p><strong>Q: What is the minimum order?</strong><br>A: MOQ is ' + p.moq + ' pieces for this model.</p>' +
+            '          <p><strong>Q: Can I mix models in one order?</strong><br>A: Yes, you can mix any watches from our in-stock collection. Minimum value per order is £250.</p>' +
+            '          <p><strong>Q: How long until dispatch?</strong><br>A: In-stock items dispatch within 24-72 hours of payment confirmation.</p>' +
+            '          <p><strong>Q: Do you provide custom branding?</strong><br>A: Yes, custom logo engraving and branded packaging available for orders above 500 pcs. Contact us for details.</p>' +
+            '          <p><strong>Q: What shipping methods are available?</strong><br>A: Express (3-7 days), air freight (7-14 days), sea freight (25-40 days). We ship to 30+ countries.</p>' +
+            '        </div>' +
+            '      </div>' +
+            '    </div>' +
+            '  </div>' +
+            '</div>';
+
+        $('productDetail').innerHTML = html;
+        $('bcName').textContent = name;
+    }
+
+    function renderRelated(current) {
+        var related = WATCHES.filter(function(p) {
+            return p.sku !== current.sku;
+        }).slice(0, 4);
+
+        if (related.length === 0) return;
+
+        var html = related.map(function(p) {
+            return '<a href="product.html?id=' + p.sku + '" class="pd-related-card">' +
+                '<img src="' + p.image + '" alt="' + escapeHtml(p.name.en) + '" loading="lazy">' +
+                '<div class="pd-related-card-body">' +
+                '  <h3>' + escapeHtml(p.name.en) + '</h3>' +
+                '  <div class="sku">' + p.sku + '</div>' +
+                '  <div class="price">' + p.price_display + '</div>' +
+                '</div>' +
+                '</a>';
+        }).join('');
+
+        $('relatedGrid').innerHTML = html;
+        $('relatedSection').style.display = 'block';
+    }
+
+    function showNotFound() {
+        $('productDetail').innerHTML =
+            '<div class="container"><div class="pd-not-found">' +
+            '<h2>Product Not Found</h2>' +
+            '<p>The product you are looking for is not available.</p>' +
+            '<p><a href="products.html" class="btn btn-primary" style="margin-top:16px;">Browse All Products</a></p>' +
+            '</div></div>';
+    }
+
+    function updateDocumentMeta(p) {
+        document.title = p.name.en + ' (' + p.sku + ') | CheapALot';
+        var meta = document.querySelector('meta[name="description"]');
+        if (meta) meta.setAttribute('content', p.description.en.substring(0, 155));
+    }
+
+    // Tab switching
+    window.pdTab = function(el, tabId) {
+        document.querySelectorAll('.pd-tab-header').forEach(function(h) { h.classList.remove('active'); });
+        document.querySelectorAll('.pd-tab-content').forEach(function(c) { c.classList.remove('active'); });
+        el.classList.add('active');
+        var content = document.getElementById('tab-' + tabId);
+        if (content) content.classList.add('active');
+    };
+
+    // Quantity selector
+    window.pdQty = function(delta) {
+        var input = $('qtyInput');
+        var val = parseInt(input.value, 10) || currentProduct.moq;
+        var step = parseInt(input.step, 10) || 1;
+        val += delta * step;
+        if (val < currentProduct.moq) val = currentProduct.moq;
+        input.value = val;
+    };
+
+    // Add to cart
+    window.addToCart = function() {
+        if (!currentProduct) return;
+        var qty = parseInt($('qtyInput').value, 10) || currentProduct.moq;
+        var variant = '';
+        var activeChip = document.querySelector('.pd-variant-chip.active');
+        if (activeChip) variant = activeChip.getAttribute('data-variant');
+        cart.add(currentProduct, qty, variant);
+    };
+
+    init();
+})();
+</script>
+
+</body>
+</html>

@@ -414,8 +414,6 @@ const FORM_MAP = [
   { selector: 'inquiry-form', formKey: 'inquiry' },
   { selector: 'sourcingRequestForm', formKey: 'sourcing' },
   { selector: 'sourcing-request-form', formKey: 'sourcing' },
-  { selector: 'exitPopupForm', formKey: 'exit_popup' },
-  { selector: 'exit-popup-form', formKey: 'exit_popup' },
   { selector: 'sell-form', formKey: 'sell' },
   { selector: 'contact-form', formKey: 'contact' }
 ];

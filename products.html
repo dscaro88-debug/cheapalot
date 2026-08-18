@@ -8614,7 +8614,7 @@
             </div>
             <div class="header-actions">
                 <a href="contact.html" class="header-link">📋 Contact</a>
-                <a href="index.html#inquiry-form" class="header-link cart-link">🛒 Request Quote</a>
+                <a href="#" class="header-link cart-link" onclick="cart.open(); return false;">🛒 Cart <span class="cart-count" id="cartCount">0</span></a>
             </div>
         </div>
     </header>
@@ -8633,6 +8633,7 @@
                 <li><a href="products.html?category=mixed" class="nav-link">MIXED HOUSEHOLD</a></li>
                 <li><a href="products.html?category=toys" class="nav-link">TOYS & NURSERY</a></li>
                 <li><a href="products.html" class="nav-link nav-all">ALL CATEGORIES ▾</a></li>
+                <li><a href="stock.html" class="nav-link" style="color:var(--green);font-weight:700;">✓ IN STOCK</a></li>
             </ul>
         </div>
     </nav>
@@ -8647,6 +8648,17 @@
             <p>Browse 20,000+ wholesale products available for immediate dispatch</p>
         </div>
     </div>
+
+    <!-- In-Stock Watches Section -->
+    <section id="stock-watches" style="background:linear-gradient(135deg,#1a1a1a 0%,#0d0d0d 100%);color:#fff;padding:32px 0;">
+        <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+            <div>
+                <h2 style="font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;text-transform:uppercase;margin:0;">Need it shipped today?</h2>
+                <p style="font-size:14px;color:#aaa;margin:4px 0 0;">32 in-stock clearance watch models physically warehoused in Yiwu. Real stock, real photos.</p>
+            </div>
+            <a href="stock.html" class="btn btn-gold btn-lg">Browse In-Stock Watches →</a>
+        </div>
+    </section>
 
     <!-- Product Layout -->
     <div class="container product-layout">
@@ -9254,6 +9266,58 @@
         </div>
     </footer>
 
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay" onclick="cart.close()"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="cart-close" onclick="cart.close()">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total">
+                <span class="cart-total-label">Estimated Total</span>
+                <span class="cart-total-value" id="cartTotal">$0.00</span>
+            </div>
+            <p style="font-size:12px;color:var(--gray-500);margin-bottom:12px;">Final price confirmed per inquiry. MOQ applies per item.</p>
+            <button class="cart-checkout-wa" onclick="cart.checkoutWhatsApp()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Checkout via WhatsApp
+            </button>
+            <button class="cart-bulk-quote" onclick="cart.checkoutEmail()">Request Bulk Quote (Email)</button>
+        </div>
+    </aside>
+    <style>
+        .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9998;opacity:0;visibility:hidden;transition:all 0.3s;}
+        .cart-overlay.open{opacity:1;visibility:visible;}
+        .cart-drawer{position:fixed;top:0;right:0;width:420px;max-width:100%;height:100%;background:#fff;z-index:9999;transform:translateX(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;}
+        .cart-drawer.open{transform:translateX(0);}
+        .cart-header{display:flex;align-items:center;justify-content:space-between;padding:20px;border-bottom:1px solid var(--gray-300);background:var(--gray-900);color:#fff;}
+        .cart-header h2{font-family:'Oswald',sans-serif;font-size:20px;text-transform:uppercase;}
+        .cart-close{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;line-height:1;padding:4px 8px;}
+        .cart-items{flex:1;overflow-y:auto;padding:16px;}
+        .cart-empty{text-align:center;padding:60px 20px;color:var(--gray-500);}
+        .cart-item{display:grid;grid-template-columns:64px 1fr auto;gap:12px;padding:12px 0;border-bottom:1px solid var(--gray-300);}
+        .cart-item img{width:64px;height:64px;object-fit:contain;border:1px solid var(--gray-300);border-radius:4px;padding:4px;background:#f9f9f9;}
+        .cart-item-info h4{font-size:13px;font-weight:600;margin-bottom:2px;}
+        .cart-item-info .sku{font-size:11px;color:var(--gray-500);}
+        .cart-item-info .price{font-size:14px;font-weight:700;color:var(--red);}
+        .cart-item-qty{display:flex;align-items:center;gap:4px;margin-top:4px;}
+        .cart-item-qty button{width:24px;height:24px;border:1px solid var(--gray-300);background:#fff;font-size:14px;cursor:pointer;border-radius:3px;}
+        .cart-item-qty span{min-width:28px;text-align:center;font-size:13px;font-weight:700;}
+        .cart-item-remove{align-self:flex-start;background:none;border:none;color:var(--gray-500);cursor:pointer;font-size:18px;padding:4px;}
+        .cart-item-remove:hover{color:var(--red);}
+        .cart-footer{border-top:1px solid var(--gray-300);padding:20px;background:var(--gray-100);}
+        .cart-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;}
+        .cart-total-label{font-size:14px;font-weight:600;}
+        .cart-total-value{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--red);}
+        .cart-checkout-wa{width:100%;height:48px;background:#25D366;color:#fff;border:none;border-radius:6px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;transition:background 0.2s;}
+        .cart-checkout-wa:hover{background:#1da851;}
+        .cart-bulk-quote{width:100%;height:44px;background:var(--gray-900);color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background 0.2s;}
+        .cart-bulk-quote:hover{background:var(--gray-700);}
+    </style>
+
+    <script src="js/cart.js"></script>
     <script src="js/products-loader.js"></script>
     <script src="js/main.js"></script>
 </body>
