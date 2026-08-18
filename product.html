@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Wholesale watches in stock from Yiwu. Premium men's and women's watches, B2B trade only. Factory-direct prices, quality guaranteed.">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <title>Watch Detail | CheapALot — Yiwu Wholesale Stock</title>
+    <link rel="canonical" href="https://www.cheapalot.com/product.html">
+    <meta property="og:title" content="Wholesale Watch Detail | CheapALot">
+    <meta property="og:description" content="In-stock wholesale watches from Yiwu. B2B trade only. Factory-direct prices.">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://www.cheapalot.com/product.html">
+    <meta property="og:site_name" content="CheapALot">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wholesale Watch Detail | CheapALot">
+    <meta name="twitter:description" content="In-stock wholesale watches from Yiwu. B2B trade only.">
+    <title>Wholesale Watch Detail | CheapALot — Yiwu In-Stock</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -872,9 +881,97 @@
     }
 
     function updateDocumentMeta(p) {
-        document.title = p.name.en + ' (' + p.sku + ') | CheapALot';
+        // Update title and meta description
+        document.title = p.name.en + ' (SKU ' + p.sku + ') | Wholesale from Yiwu | CheapALot';
         var meta = document.querySelector('meta[name="description"]');
         if (meta) meta.setAttribute('content', p.description.en.substring(0, 155));
+
+        // Update canonical URL
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.setAttribute('href', 'https://www.cheapalot.com/product.html?id=' + p.sku);
+
+        // Update OG tags
+        var ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute('content', p.name.en + ' (' + p.sku + ') | CheapALot');
+        var ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute('content', p.description.en.substring(0, 200));
+        var ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.setAttribute('href', 'https://www.cheapalot.com/product.html?id=' + p.sku);
+        var ogType = document.querySelector('meta[property="og:type"]');
+        if (ogType) ogType.setAttribute('content', 'product');
+
+        // Update Twitter tags
+        var twTitle = document.querySelector('meta[name="twitter:title"]');
+        if (twTitle) twTitle.setAttribute('content', p.name.en + ' (' + p.sku + ') | CheapALot');
+        var twDesc = document.querySelector('meta[name="twitter:description"]');
+        if (twDesc) twDesc.setAttribute('content', p.description.en.substring(0, 200));
+
+        // Inject JSON-LD Product schema
+        var productSchema = {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": p.name.en,
+            "sku": p.sku,
+            "description": p.description.en,
+            "image": "https://www.cheapalot.com/" + p.image,
+            "brand": { "@type": "Brand", "name": "CheapALot" },
+            "category": "Watches",
+            "offers": {
+                "@type": "Offer",
+                "price": p.price,
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://www.cheapalot.com/product.html?id=" + p.sku,
+                "seller": { "@type": "Organization", "name": "CheapALot" },
+                "priceValidUntil": "2026-12-31"
+            }
+        };
+
+        // Add additional properties
+        if (p.inspired_by) productSchema.keywords = p.inspired_by;
+        if (p.watch_type) {
+            productSchema.additionalProperty = {
+                "@type": "PropertyValue",
+                "name": "Movement",
+                "value": p.watch_type
+            };
+        }
+
+        // BreadcrumbList schema
+        var breadcrumbSchema = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cheapalot.com/" },
+                { "@type": "ListItem", "position": 2, "name": "In-Stock Watches", "item": "https://www.cheapalot.com/stock.html" },
+                { "@type": "ListItem", "position": 3, "name": p.name.en, "item": "https://www.cheapalot.com/product.html?id=" + p.sku }
+            ]
+        };
+
+        // FAQ schema from product FAQ tab
+        var faqSchema = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                { "@type": "Question", "name": "What is the minimum order?", "acceptedAnswer": { "@type": "Answer", "text": "MOQ is " + p.moq + " pieces for this model (SKU " + p.sku + ")." } },
+                { "@type": "Question", "name": "Can I mix models in one order?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, you can mix any watches from our in-stock collection. Minimum value per order is £250." } },
+                { "@type": "Question", "name": "How long until dispatch?", "acceptedAnswer": { "@type": "Answer", "text": "In-stock items dispatch within 24-72 hours of payment confirmation." } },
+                { "@type": "Question", "name": "Do you provide custom branding?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, custom logo engraving and branded packaging available for orders above 500 pcs." } },
+                { "@type": "Question", "name": "What shipping methods are available?", "acceptedAnswer": { "@type": "Answer", "text": "Express (3-7 days), air freight (7-14 days), sea freight (25-40 days). We ship to 30+ countries." } }
+            ]
+        };
+
+        // Remove old JSON-LD scripts
+        document.querySelectorAll('script[type="application/ld+json"]').forEach(function(s) { s.remove(); });
+
+        // Inject new schemas
+        var schemas = [productSchema, breadcrumbSchema, faqSchema];
+        schemas.forEach(function(schema) {
+            var script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.textContent = JSON.stringify(schema);
+            document.head.appendChild(script);
+        });
     }
 
     // Tab switching
