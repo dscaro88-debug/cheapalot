@@ -248,6 +248,87 @@
     border: 1px solid #fff;
   }
   .stock-cross-link a:hover { background: #ffcd00; color: #1a1a1a; }
+
+  /* Inventory rotation countdown */
+  .stock-countdown {
+    background: linear-gradient(135deg, #0d2818 0%, #163a26 100%);
+    border-top: 1px solid rgba(255,205,0,0.18);
+    border-bottom: 4px solid #ffcd00;
+    padding: 26px 0;
+    color: #fff;
+  }
+  .stock-countdown-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .stock-countdown-text { flex: 1; min-width: 280px; }
+  .stock-countdown-text .cd-eyebrow {
+    display: inline-block;
+    background: rgba(255,205,0,0.14);
+    color: #ffcd00;
+    padding: 3px 11px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  .stock-countdown-text h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
+  }
+  .stock-countdown-text p {
+    font-size: 13px;
+    color: #a8c0b3;
+    margin: 0;
+    line-height: 1.55;
+    max-width: 500px;
+  }
+  .stock-countdown-timer {
+    display: flex;
+    gap: 9px;
+    align-items: stretch;
+  }
+  .cd-block {
+    background: rgba(0,0,0,0.32);
+    border: 1px solid rgba(255,205,0,0.22);
+    border-radius: 6px;
+    padding: 9px 13px;
+    min-width: 62px;
+    text-align: center;
+  }
+  .cd-block .cd-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffcd00;
+    line-height: 1;
+    letter-spacing: 1px;
+    font-variant-numeric: tabular-nums;
+  }
+  .cd-block .cd-lbl {
+    font-size: 9px;
+    color: #7d9388;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-top: 5px;
+    font-weight: 600;
+  }
+  @media (max-width: 720px) {
+    .stock-countdown-inner { flex-direction: column; align-items: flex-start; }
+    .stock-countdown-timer { width: 100%; justify-content: space-between; }
+    .cd-block { min-width: 0; flex: 1; padding: 8px 6px; }
+    .cd-block .cd-num { font-size: 26px; }
+  }
 </style>
 </head>
 <body>
@@ -322,6 +403,25 @@
       <span><strong>MOQ 20–100</strong> pcs</span>
       <span class="dot">•</span>
       <span><strong>Yiwu</strong> warehouse</span>
+    </div>
+  </div>
+</section>
+
+<!-- Inventory Rotation Countdown -->
+<section class="stock-countdown">
+  <div class="container">
+    <div class="stock-countdown-inner">
+      <div class="stock-countdown-text">
+        <span class="cd-eyebrow">⏱ Time-Limited Clearance Window</span>
+        <h3>This Clearance Batch Closes Soon</h3>
+        <p>Clearance inventory rotates on a fixed cycle. When the timer hits zero, remaining stock is released back to standard sourcing — 7–15 day lead time, no priority dispatch. Lock your order now to ship from current warehouse stock.</p>
+      </div>
+      <div class="stock-countdown-timer" id="cdTimer" aria-label="Time remaining until inventory rotation">
+        <div class="cd-block"><div class="cd-num" id="cdDays">00</div><div class="cd-lbl">Days</div></div>
+        <div class="cd-block"><div class="cd-num" id="cdHours">00</div><div class="cd-lbl">Hours</div></div>
+        <div class="cd-block"><div class="cd-num" id="cdMins">00</div><div class="cd-lbl">Mins</div></div>
+        <div class="cd-block"><div class="cd-num" id="cdSecs">00</div><div class="cd-lbl">Secs</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -469,6 +569,45 @@
       render();
     });
   });
+})();
+</script>
+<script>
+// Inventory rotation countdown — 9-day rolling window, persisted per visitor
+(function() {
+  var KEY = 'cheapalot_stock_cd_deadline';
+  var DURATION_MS = 9 * 24 * 3600 * 1000; // 9 days
+  function getDeadline() {
+    var now = Date.now();
+    var stored = localStorage.getItem(KEY);
+    if (stored) {
+      var d = parseInt(stored, 10);
+      if (d > now) return d;
+    }
+    var nd = now + DURATION_MS;
+    localStorage.setItem(KEY, String(nd));
+    return nd;
+  }
+  function pad(n) { return String(n).padStart(2, '0'); }
+  var deadline = getDeadline();
+  function tick() {
+    var diff = deadline - Date.now();
+    if (diff < 0) {
+      localStorage.removeItem(KEY);
+      deadline = getDeadline();
+      diff = deadline - Date.now();
+    }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    var el;
+    if ((el = document.getElementById('cdDays'))) el.textContent = pad(d);
+    if ((el = document.getElementById('cdHours'))) el.textContent = pad(h);
+    if ((el = document.getElementById('cdMins'))) el.textContent = pad(m);
+    if ((el = document.getElementById('cdSecs'))) el.textContent = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
 })();
 </script>
 <script src="js/main.js"></script>
