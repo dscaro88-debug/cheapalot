@@ -29,7 +29,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const CHROME_PATH = '/Users/carokk/Library/Caches/ms-playwright/chromium-1217/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing';
+const CHROME_PATH = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'; // 系统 Chrome
 
 // 义乌国际商贸城各区域 + 行业分类
 // URL 格式: https://www.yiwugo.com/product_list/i_1_{subMarket}_{floor}_{industryCode}.html
@@ -66,7 +66,7 @@ async function launchBrowser() {
 /**
  * 解析单个义乌购产品卡片 → 归一化对象
  */
-function parseYiwugoCard($el, catId, catZh, sourceName) {
+function parseYiwugoCard($, $el, catId, catZh, sourceName) {
   // 产品图片
   const imgSrc = $el.find('.thumbnail').attr('src') || '';
   const imageUrl = imgSrc.startsWith('//') ? 'https:' + imgSrc : imgSrc;
@@ -166,7 +166,7 @@ async function scrapeCategoryPage(page, category, pageNum) {
   const products = [];
   
   $('.products-box').each((i, el) => {
-    const prod = parseYiwugoCard($(el), category.cheapalotCat, category.nameZh, 'yiwugo');
+    const prod = parseYiwugoCard($, $(el), category.cheapalotCat, category.nameZh, 'yiwugo');
     if (prod) products.push(prod);
   });
   
@@ -201,7 +201,7 @@ async function scrapeYiwugoClearance(options = {}) {
         const $ = cheerio.load(html);
         let found = 0;
         $('.products-box').each((i, el) => {
-          const prod = parseYiwugoCard($(el), 'mixed', kw + '清仓', 'yiwugo-clearance');
+          const prod = parseYiwugoCard($, $(el), 'mixed', kw + '清仓', 'yiwugo-clearance');
           if (prod) {
             all.push(prod);
             found++;

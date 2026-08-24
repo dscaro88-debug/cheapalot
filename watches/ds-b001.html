@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Wholesale watches in stock from Yiwu. Premium men's and women's watches, B2B trade only. Factory-direct prices, quality guaranteed.">
-    <meta name="robots" content="noindex, follow">
-    <link rel="canonical" href="https://www.cheapalot.com/stock.html">
-    <meta http-equiv="refresh" content="0;url=https://www.cheapalot.com/stock.html">
-    <meta property="og:title" content="Wholesale Watches | CheapALot">
-    <meta property="og:description" content="In-stock wholesale watches from Yiwu. B2B trade only. Factory-direct prices.">
+    <meta name="description" content="Premium men&#39;s chronograph sport watch, inspired by Tag Heuer Carrera. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph m">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://www.cheapalot.com/watches/ds-b001.html">
+    <meta property="og:title" content="Men&#39;s Chronograph Sport Watch | CheapALot Wholesale Watches">
+    <meta property="og:description" content="Premium men&#39;s chronograph sport watch, inspired by Tag Heuer Carrera. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distr">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.cheapalot.com/stock.html">
+    <meta property="og:url" content="https://www.cheapalot.com/watches/ds-b001.html">
     <meta property="og:site_name" content="CheapALot">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Wholesale Watches | CheapALot">
-    <meta name="twitter:description" content="In-stock wholesale watches from Yiwu. B2B trade only.">
-    <title>Wholesale Watches In Stock | CheapALot — Yiwu</title>
+    <meta name="twitter:title" content="Men&#39;s Chronograph Sport Watch">
+    <meta name="twitter:description" content="Premium men&#39;s chronograph sport watch, inspired by Tag Heuer Carrera. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distr">
+    <title>Men&#39;s Chronograph Sport Watch (DS-B001) | CheapALot Wholesale Watches</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -585,8 +584,78 @@
         }
         .pd-not-found h2 { font-family: 'Oswald', sans-serif; font-size: 32px; margin-bottom: 12px; }
     </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Men's Chronograph Sport Watch",
+  "sku": "DS-B001",
+  "mpn": "DS-B001",
+  "category": "Watches",
+  "image": [
+    "https://www.cheapalot.com/images/stock/watches/DS-B001.webp"
+  ],
+  "description": "Premium men's chronograph sport watch, inspired by Tag Heuer Carrera. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.",
+  "brand": {
+    "@type": "Brand",
+    "name": "CheapALot"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.cheapalot.com/watches/ds-b001.html",
+    "priceCurrency": "USD",
+    "price": 3.03,
+    "priceValidUntil": "2027-12-31",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "eligibleQuantity": {
+      "@type": "QuantitativeValue",
+      "minValue": 50
+    }
+  }
+}
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.cheapalot.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Stock Watches",
+      "item": "https://www.cheapalot.com/stock.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Men's Chronograph Sport Watch",
+      "item": "https://www.cheapalot.com/watches/ds-b001.html"
+    }
+  ]
+}
+    </script>
 </head>
 <body>
+
+<!-- SSR FALLBACK: Googlebot 不执行 JS 时, 也能读到核心产品信息 -->
+<div id="ssr-product" style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+    <h1>Men&#39;s Chronograph Sport Watch</h1>
+    <p><strong>SKU:</strong> DS-B001</p>
+    <p><strong>Category:</strong> Watches</p>
+    <p><strong>Price:</strong> $3.03 / pc</p>
+    <p><strong>MOQ:</strong> MOQ: 50 pcs</p>
+    <p><strong>Stock Status:</strong> in_stock</p>
+    <p><strong>Inspired By:</strong> inspired by Tag Heuer Carrera</p>
+    <p>Premium men&#39;s chronograph sport watch, inspired by Tag Heuer Carrera. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.</p>
+    <img src="images/stock/watches/DS-B001.webp" alt="Men&#39;s Chronograph Sport Watch">
+</div>
+<!-- END SSR FALLBACK -->
+
 
 <!-- Top Bar -->
 <div class="top-bar">
@@ -890,7 +959,7 @@
         if (related.length === 0) return;
 
         var html = related.map(function(p) {
-            return '<a href="/watches/' + p.id + '.html" class="pd-related-card">' +
+            return '<a href="product.html?id=' + p.sku + '" class="pd-related-card">' +
                 '<img src="' + p.image + '" alt="' + escapeHtml(p.name.en) + '" loading="lazy">' +
                 '<div class="pd-related-card-body">' +
                 '  <h3>' + escapeHtml(p.name.en) + '</h3>' +
@@ -1039,6 +1108,20 @@
     init();
 })();
 </script>
+
+
+<!-- VISIBLE SSR PANEL: 无 JS 也能看到的核心产品信息 -->
+<noscript>
+    <div style="max-width:680px;margin:24px auto;padding:24px;background:#fff;border:2px solid #1a1a1a;border-radius:12px;font-family:Inter,sans-serif;">
+        <h1 style="font-family:Oswald,sans-serif;font-size:28px;margin:0 0 12px;">Men&#39;s Chronograph Sport Watch</h1>
+        <p style="color:#666;font-size:13px;margin:0 0 16px;">SKU: DS-B001 · Watches · in_stock</p>
+        <p style="font-size:32px;font-weight:700;color:#1a1a1a;margin:0 0 8px;">$3.03 <span style="font-size:14px;font-weight:400;color:#666;">/ pc</span></p>
+        <p style="color:#444;font-size:14px;margin:0 0 16px;">MOQ: 50 pcs</p>
+        <p style="color:#333;font-size:14px;line-height:1.6;">Premium men&#39;s chronograph sport watch, inspired by Tag Heuer Carrera. Crafted with 316L stainless steel, mineral crystal glass, and precise quartz chronograph movement. B2B wholesale — ready for distribution. Minimum order 50 pieces.</p>
+        <h3 style="font-family:Oswald,sans-serif;font-size:16px;margin:16px 0 8px;">Specifications</h3><table style="width:100%;border-collapse:collapse;font-size:13px;"><tr><th>Movement</th><td>Quartz Chronograph</td></tr><tr><th>Case Material</th><td>316L Stainless Steel</td></tr><tr><th>Case Diameter</th><td>42mm</td></tr><tr><th>Strap</th><td>Stainless Steel Bracelet</td></tr><tr><th>Water Resistance</th><td>3 ATM / 30m</td></tr><tr><th>Glass</th><td>Mineral Crystal</td></tr><tr><th>Warranty</th><td>12 months</td></tr></table>
+        <p style="margin-top:24px;font-size:14px;color:#666;">📱 <a href="https://wa.me/8613367494665" style="color:#e31837;">Contact us on WhatsApp</a> · ✉️ <a href="mailto:dscaro88@gmail.com" style="color:#e31837;">Email us</a></p>
+    </div>
+</noscript>
 
 </body>
 </html>
