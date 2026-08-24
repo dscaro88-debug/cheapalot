@@ -471,4 +471,16 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://www.cheapalot.com/blog/inventory-business-economic-downturn.html</loc>
+        <lastmod>2026-08-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.cheapalot.com/blog/brand-new-vs-returns-clearance-stock.html</loc>
+        <lastmod>2026-08-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
