@@ -477,4 +477,68 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+<url>
+        <loc>https://www.cheapalot.com/electric-bikes.html</loc>
+        <lastmod>2026-08-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.cheapalot.com/electric-bikes.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cheapalot.com/electric-bikes.html"/>
+    </url>
+    <url>
+        <loc>https://www.cheapalot.com/electric-bike-detail.html</loc>
+        <lastmod>2026-08-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.cheapalot.com/electric-bike-detail.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cheapalot.com/electric-bike-detail.html"/>
+    </url>
+    <url>
+        <loc>https://www.cheapalot.com/blog/sourcing-electric-bikes-china-guide.html</loc>
+        <lastmod>2026-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.cheapalot.com/blog/ebike-certifications-en15194-ul2849.html</loc>
+        <lastmod>2026-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.cheapalot.com/blog/folding-ebikes-wholesale-guide.html</loc>
+        <lastmod>2026-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.cheapalot.com/blog/ebike-oem-odm-private-label-guide.html</loc>
+        <lastmod>2026-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.cheapalot.com/blog/lithium-battery-shipping-ebike-importers.html</loc>
+        <lastmod>2026-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.cheapalot.com/blog/mobility-scooter-market-wholesale-guide.html</loc>
+        <lastmod>2026-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.cheapalot.com/blog/china-ebike-domestic-vs-export-market.html</loc>
+        <lastmod>2026-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.cheapalot.com/blog/negotiate-moq-china-factories-guide.html</loc>
+        <lastmod>2026-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
 </urlset>
