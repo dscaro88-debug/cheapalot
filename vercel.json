@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/product.html",
+      "destination": "/stock.html",
+      "permanent": true
+    },
+    {
       "source": "/eu-buyers.html",
       "destination": "/",
       "permanent": true
