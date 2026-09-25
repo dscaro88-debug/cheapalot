@@ -220,8 +220,8 @@
     </url>
     <!-- Blog Pages -->
     <url>
-        <loc>https://www.cheapalot.com/blog.html</loc>
-        <lastmod>2026-08-18</lastmod>
+        <loc>https://www.cheapalot.com/blog/index.html</loc>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -477,6 +477,12 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://www.cheapalot.com/blog/mid-autumn-festival-sourcing-guide.html</loc>
+        <lastmod>2026-09-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 <url>
         <loc>https://www.cheapalot.com/electric-bikes.html</loc>
         <lastmod>2026-08-25</lastmod>
@@ -540,5 +546,17 @@
         <lastmod>2026-08-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.cheapalot.com/watches.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.cheapalot.com/buying-requests.html</loc>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>
